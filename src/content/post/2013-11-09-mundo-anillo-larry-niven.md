@@ -1,0 +1,16 @@
+---
+title: 'Libro: Mundo Anillo por Larry Niven'
+description: >-
+  ![Ringworld (Ringworld
+  #1)](https://www.goodreads.com/book/show/61179.Ringworld)Llevaba tiempo con
+  esta novela de Larry Niven en mi lista de pendientes por leer y a pesar que no
+  sabia mucho acerca de...
+publishDate: '2013-11-09'
+tags:
+  - libro
+  - libros
+  - opinion
+draft: false
+---
+
+[![Ringworld (Ringworld #1)](/images/posts/2013/mundo-anillo-larry-niven/61179.jpg)](https://www.goodreads.com/book/show/61179.Ringworld)Llevaba tiempo con esta novela de Larry Niven en mi lista de pendientes por leer y a pesar que no sabia mucho acerca de su autor tenia curiosidad por lo que algunos amigos me habían comentado de su serie de novelas dedicadas al Mundo Anillo y sobre todo porque ganó los premios Hugo, Nébula y Locus del año 1971; es una de las pocas novelas de ciencia ficción que ha logrado los tres galardones. Esta es la primera de una saga de novelas de aventuras y ficción que tienen como escenario principal al mundo anillo, un mundo de dimensiones colosales y bastante particular pues fue construido por una raza desconocida y consta de un sol alrededor del cual gira un anillo y en cuya cara interior habitan trillones de seres, la mera descripción de este mundo y el entendimiento de la física relacionada con su construcción es suficiente para llamar la atención de los lectores, tan así que de acuerdo a la Wikipedia muchos fans, algunos de ellos estudiantes de física y astronomía, criticaron los conceptos detrás del mundo anillo dando pie a una saga de novelas para paliar un poco los defectos encontrados por los fans. La novela también describe una serie de criaturas por decir lo menos interesantes, una raza guerrera de Kzintis que siempre pierde las guerras contra los humanos y otra de Titerotes de Pierson que son unos cobardes pero muy avanzados tecnológicamente hablando que interactúan en una viaje al mundo anillo que se convierte en toda una aventura. Esta novela aunque muy famosa y premiada en su tiempo no es para todos los gustos pero presenta una serie de conceptos bastante interesantes como el diseño del propio mundo anillo, los dispositivos y naves que presenta y las razas que interactúan. Me gusto y ya estoy leyendo y casi terminando la segunda novela de la saga "Ingenieros del Mundo Anillo" y pronto les escribiré mi opinión.

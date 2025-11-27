@@ -1,0 +1,13 @@
+---
+title: El lenguaje del Amor - The tongue of love
+description: >-
+  Como he mencionado antes estuve en un evento en Estados Unidos y una de las
+  noches uno de los partners organizo un evento en el Hard Rock Live de
+  Universal Studios en Orlando, estábamos sentados en...
+publishDate: '2007-06-20'
+tags:
+  - personal
+draft: false
+---
+
+Como he mencionado antes estuve en un evento en Estados Unidos y una de las noches uno de los partners organizo un evento en el Hard Rock Live de Universal Studios en Orlando, estábamos sentados en una de las mesas disfrutando de una comida estilo buffet cuando se sentaron con nosotros otras dos personas norteamericanas con las que comenzamos a conversar sobre cualquier cosa. En algún momento hablamos sobre el idioma y de donde eramos y me dice uno de los americanos que la esposa enseña español pero que en realidad nunca lo aprendió a hablar bien, pero que a él le gusta el idioma porque era “The tongue of love” claro que lo que quiso decir fue “The language of love” osea “El lenguaje del amor” y la verdad se me hizo muy gracioso. La expresión me hizo recordar lo que decía mi profesor de español de bachillerato acerca del portugués, el decía que el portugués era el idioma para hablarle a las mujeres, algo así como el idioma para enamorarlas. En este viaje conocí a Sandro quien es alguien que trabaja en mi empresa pero en la sede de Brasil y escuchándolo a él hablar tiendo a concordar con la afirmación de mi profesor y no estar de acuerdo con la del norteamericano aquel, El portugués es el verdadero “Lenguaje del amor”. No es una cosa fácil hacerse entender con un brasileño o un portugués, a pesar que hablando muchas palabras se parecen, cuando se trata de escribir si es muy difícil porque a pesar de parecerse en la pronunciación se escriben muy diferente, y solo hasta que pretendo leerlas con “acento portugués” es que no “adivino” lo que quiso decir. Hace tiempo ya había tenido intenciones de estudiar portugués y creo que lo intentare algún día, pero ahora estoy dedicado a mejorar mi ingles, y con esta oportunidad que tuve de estar en Estados Unidos puedo decir que he mejorado bastante.

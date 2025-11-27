@@ -1,0 +1,49 @@
+---
+// Giscus comments component
+// Uses GitHub Discussions for comments
+---
+
+<div class="giscus-container mt-8"></div>
+
+<script>
+	const giscusTheme = document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+
+	const script = document.createElement("script");
+	script.src = "https://giscus.app/client.js";
+	script.setAttribute("data-repo", "YOUR_GITHUB_USERNAME/YOUR_REPO_NAME");
+	script.setAttribute("data-repo-id", "YOUR_REPO_ID");
+	script.setAttribute("data-category", "General");
+	script.setAttribute("data-category-id", "YOUR_CATEGORY_ID");
+	script.setAttribute("data-mapping", "pathname");
+	script.setAttribute("data-strict", "0");
+	script.setAttribute("data-reactions-enabled", "1");
+	script.setAttribute("data-emit-metadata", "0");
+	script.setAttribute("data-input-position", "bottom");
+	script.setAttribute("data-theme", giscusTheme);
+	script.setAttribute("data-lang", "en");
+	script.setAttribute("crossorigin", "anonymous");
+	script.async = true;
+
+	document.querySelector(".giscus-container")?.appendChild(script);
+
+	// Listen for theme changes
+	const observer = new MutationObserver((mutations) => {
+		mutations.forEach((mutation) => {
+			if (mutation.attributeName === "data-theme") {
+				const theme = document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+				const iframe = document.querySelector<HTMLIFrameElement>("iframe.giscus-frame");
+				if (iframe?.contentWindow) {
+					iframe.contentWindow.postMessage(
+						{ giscus: { setConfig: { theme } } },
+						"https://giscus.app",
+					);
+				}
+			}
+		});
+	});
+
+	observer.observe(document.documentElement, {
+		attributes: true,
+		attributeFilter: ["data-theme"],
+	});
+</script>

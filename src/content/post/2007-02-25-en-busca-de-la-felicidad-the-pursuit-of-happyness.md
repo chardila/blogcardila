@@ -1,0 +1,18 @@
+---
+title: 'Película: En Busca De La Felicidad'
+description: >-
+  Dirección: Gabriele Muccino. País: USA. Año: 2006. Duración: 117 min. Género:
+  Drama. Interpretación: Will Smith (Chris Gardner), Thandie Newton (Linda),
+  Jaden Christopher Syre Smith (Christopher)....
+publishDate: '2007-02-25'
+tags:
+  - movies
+  - opinion
+draft: false
+---
+
+![](/images/posts/2007/en-busca-de-la-felicidad-the-pursuit-of-happyness/windowslivewriterenbuscadelafelicidadthepursuitofhappynes-104e8en-busca-de-felicidad8.jpg)
+
+**Dirección:** Gabriele Muccino. **País:** USA. **Año:** 2006. **Duración:** 117 min. **Género:** Drama. **Interpretación:** Will Smith (Chris Gardner), Thandie Newton (Linda), Jaden Christopher Syre Smith (Christopher). **Guión:** Steven Conrad. **Producción:** Todd Black, Jason Blumenthal, Steve Tisch y James Lassiter. **Música:** Andrea Guerra. **Fotografía:** Phedon Papamichael. **Montaje:** Hughes Winborne. **Diseño de producción:** J. Michael Riva. **Vestuario:** Sharen Davis. **Estreno en USA:** 15 Diciembre 2006. **Sinopsis:** Chris Gardner (Will Smith) es un padre de familia que lucha por sobrevivir. A pesar de sus valientes intentos para mantener a la familia a flote, la madre (Thandie Newton) de su hijo de cinco años Christopher (Jaden Christopher Syre Smith), comienza a derrumbarse a causa de la tensión constante de la presión económica; incapaz de soportarlo, en contra de sus sentimientos, decide marcharse. Chris, convertido ahora en padre soltero, tenazmente continúa buscando un trabajo mejor pagado empleando todas las tácticas comerciales que conoce. Consigue unas prácticas en una prestigiosa compañía y, a pesar de no percibir ningún salario, acepta con la esperanza de finalizar el plan de estudios con un trabajo y un futuro prometedor. Sin colchón económico alguno, pronto echan a Chris y a su hijo del piso en el que viven, y se ven obligados a vivir en centros de acogida, estaciones de autobús, cuartos de baño o allá donde encuentren refugio para pasar la noche. A pesar de sus preocupaciones, Chris continúa cumpliendo sus obligaciones como padre y se muestra cariñoso y comprensivo, empleando el afecto y la confianza que su hijo ha depositado en él como incentivo para superar los obstáculos a los que se enfrenta.
+
+**Mi opinión:** Al salir de la película no se puede evitar pensar que si uno cree que tiene o ha tenido problemas en la vida, definitivamente uno no sabe lo que esta diciendo y/o pensando. Es un drama y una historia muy bonita, amena, conmovedora y agradable; cuenta una historia que es creíble, no fantástica, además esta basada en algunos hechos reales, como se deja saber al final de la película. Will Smith interpreta un papel excelente, al principio deja ver un optimismo hasta tonto que hace que su esposa lo deje, mas por desesperación que por otra cosa, luego pasa a un estado de tristeza infinita ante todos los problemas que vive al lado de su hijo y al final logra lo que se propuso generando el final feliz. El papel del niño interpretado por el hijo de Will Smith es simplemente soberbio, interpreta a un niño simpático, gracioso y que siempre acompaño a su padre hasta el final a pesar de todo lo que les pasa. Básicamente es una película que deja como enseñanza que el esfuerzo siempre tiene su recompensa y al final, la fortuna puede ser alcanzada por aquellos que no sean vagos. Me sorprendió averiguar que en la historia real de Chris Gartner, el niño es un bebe de brazos y no lo grande que muestra la película, así que no alcanzo a imaginar como sería la historia verdadera, ya que la parte en la que duerme en albergues para indigentes es cierta. Otra vez se demuestra que la realidad supera cualquier ficción. Excelente actuación de Will Smith.

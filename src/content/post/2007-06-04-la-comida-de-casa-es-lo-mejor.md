@@ -1,0 +1,13 @@
+---
+title: ¡La comida de casa es lo mejor!
+description: >-
+  Por estos días ando de viaje por Estados Unidos en Orlando (Florida) y estoy
+  sufriendo un poco por la comida y es que tengo que decir que no hay nada como
+  la comida de casa, la comida de los papas,...
+publishDate: '2007-06-04'
+tags:
+  - personal
+draft: false
+---
+
+Por estos días ando de viaje por Estados Unidos en Orlando (Florida) y estoy sufriendo un poco por la comida y es que tengo que decir que no hay nada como la comida de casa, la comida de los papas, la comida del propio país. Supongo que todo el mundo piensa igual de la comida de su tierra natal pero es que particularmente en Estados Unidos la comida es muy mala, llena de cosas grasosas y sin mucho sabor, todo muy simple y verdaderamente no muy rico y aun peor malo para la salud. Estos dos días he visto en el buffet del desayuno unos huevos que no saben a nada y son la verdad asquerosos y hablando con una de las señoras que ayuda en el evento en el que estoy, me dice que los huevos son de los que venden en polvo para preparar rápidamente, como comida rápida, obviamente no puedes hacer huevos fritos con eso pero si huevos revueltos, pero son muy feos, definitivamente este es el país (Estados Unidos) de las comidas rápidas donde hasta las huevos son sintéticos. Todas las demás opciones del desayuno son super grasosas, con tocinetas y jamón que escurre grasa o muy dulces, llenas de panes, bagels dulces y extra dulces, chocolate y demás. Es cierto que en un evento donde asisten 10 mil personas y por ende se hace comida por kilos, no se puede esperar mucho de la calidad de la comida pero no creo que sea solo eso, aun en los restaurantes económicos se ven las mismas opciones de comida, solo en los restaurantes costosos a los que muchos no tienen acceso, se ve comida buena, de calidad. Supongo que hay opciones ricas, sencillas y no tan costosas pero la verdad no las conozco y eso que he visitado Estados Unidos en varias ocasiones. Todo es sintético, incluso los jugos, no se consiguen jugos naturales en ningún lado y las frutas que se consiguen son tratadas genéticamente o no se en realidad como pero lo cierto es que duran semanas sin dañarse. A todo esto le atribuyo el hecho de la cantidad de gente con problemas de obesidad que hay aca, mucho sedentarios y mucha comida no muy sana. Yo se bien que todas las generalizaciones son peligrosas pero solo les cuento mi experiencia y lo que he visto.

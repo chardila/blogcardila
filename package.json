@@ -1,7 +1,8 @@
 {
-	"name": "blog-temp",
+	"name": "astro-cactus",
 	"type": "module",
 	"version": "6.10.0",
+	"private": false,
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
@@ -59,11 +60,6 @@
 		"typescript": "^5.9.3"
 	},
 	"pnpm": {
-		"onlyBuiltDependencies": [
-			"@biomejs/biome",
-			"@tailwindcss/oxide",
-			"esbuild",
-			"sharp"
-		]
+		"onlyBuiltDependencies": ["@biomejs/biome", "@tailwindcss/oxide", "esbuild", "sharp"]
 	}
 }
