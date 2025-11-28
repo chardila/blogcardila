@@ -1,0 +1,32 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+
+const meta = {
+	title: "Board Games",
+	description: "My board game collection and plays from BoardGameGeek",
+};
+---
+
+<PageLayout meta={meta}>
+	<div class="space-y-6">
+		<h1 class="title">Board Games</h1>
+		<p>Here's my board game collection and gaming activity tracked on BoardGameGeek.</p>
+		<div class="iframe-container">
+			<iframe
+				src="https://playback.geekgroup.app/cardila"
+				width="100%"
+				height="600"
+				frameborder="0"
+				title="BoardGameGeek Collection"
+			></iframe>
+		</div>
+	</div>
+</PageLayout>
+
+<style>
+	.iframe-container {
+		margin-top: 2rem;
+		border-radius: 0.5rem;
+		overflow: hidden;
+	}
+</style>
