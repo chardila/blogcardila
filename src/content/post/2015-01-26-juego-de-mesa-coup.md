@@ -1,5 +1,5 @@
 ---
-title: 'Juego de Mesa: Coup'
+title: 'Juego de mesa: Coup'
 description: >-
   Descripción: Eres el cabeza de familia en una ciudad-estado italiana. La
   ciudad está controlada por una corte débil y corrupta repleta de intrigas.

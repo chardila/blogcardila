@@ -1,5 +1,5 @@
 ---
-title: 'Juego: Ticket To Ride - Aventureros al Tren'
+title: 'Juego de mesa: Ticket To Ride'
 description: >-
   Designer: Alan R. Moon Artist: Cyrille Daujean, Julien Delval Publisher:
   Bandai, Bergsala Enigma, Days of Wonder, Edge Entertainment Year Published:

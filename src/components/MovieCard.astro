@@ -1,0 +1,66 @@
+---
+// Props: imdbId (string)
+const { imdbId } = Astro.props;
+const apiKey = import.meta.env.OMDB_API_KEY;
+
+let movie = null;
+
+if (imdbId && apiKey) {
+  const res = await fetch(`https://www.omdbapi.com/?i=${imdbId}&apikey=${apiKey}`);
+  movie = await res.json();
+}
+---
+
+{movie && movie.Response !== "False" ? (
+  <article class="my-6 bg-[var(--theme-bg-offset)] overflow-hidden">
+    {movie.Poster && movie.Poster !== "N/A" && (
+      <div class="w-full">
+        <img src={movie.Poster} alt={movie.Title} class="w-full object-cover" />
+      </div>
+    )}
+
+    <div class="pt-3 pb-4">
+      <h2 class="text-2xl font-bold mb-4">{movie.Title}</h2>
+
+      <div class="space-y-2 text-sm mb-4">
+        <p><span class="font-semibold">Título original:</span> {movie.Title}</p>
+        {movie.Director && movie.Director !== "N/A" && (
+          <p><span class="font-semibold">Dirección:</span> {movie.Director}</p>
+        )}
+        {movie.Writer && movie.Writer !== "N/A" && (
+          <p><span class="font-semibold">Guión:</span> {movie.Writer}</p>
+        )}
+        {movie.Country && movie.Country !== "N/A" && (
+          <p><span class="font-semibold">País:</span> {movie.Country}</p>
+        )}
+        {movie.Year && (
+          <p><span class="font-semibold">Año:</span> {movie.Year}</p>
+        )}
+        {movie.Runtime && movie.Runtime !== "N/A" && (
+          <p><span class="font-semibold">Duración:</span> {movie.Runtime}</p>
+        )}
+        {movie.Genre && movie.Genre !== "N/A" && (
+          <p><span class="font-semibold">Género:</span> {movie.Genre}</p>
+        )}
+        {movie.Actors && movie.Actors !== "N/A" && (
+          <p><span class="font-semibold">Interpretación:</span> {movie.Actors}</p>
+        )}
+        {movie.Production && movie.Production !== "N/A" && (
+          <p><span class="font-semibold">Productora:</span> {movie.Production}</p>
+        )}
+        {movie.imdbRating && movie.imdbRating !== "N/A" && (
+          <p><span class="font-semibold">Rating IMDB:</span> {movie.imdbRating}/10</p>
+        )}
+      </div>
+
+      {movie.Plot && movie.Plot !== "N/A" && (
+        <div class="mt-4">
+          <p class="font-semibold mb-2">Sinopsis:</p>
+          <p class="text-sm leading-relaxed opacity-90">{movie.Plot}</p>
+        </div>
+      )}
+    </div>
+  </article>
+) : (
+  <p class="text-center opacity-70 my-4">No se pudo cargar la información de la película.</p>
+)}

@@ -19,6 +19,8 @@ import { remarkGithubCard } from "./src/plugins/remark-github-card";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time";
 import { expressiveCodeOptions, siteConfig } from "./src/site.config";
 
+
+
 // https://astro.build/config
 export default defineConfig({
 	site: siteConfig.url,
@@ -67,6 +69,9 @@ export default defineConfig({
 		}),
 	],
 	markdown: {
+		components: {
+		MovieCard: './src/components/MovieCard.astro'
+		},		
 		rehypePlugins: [
 			rehypeHeadingIds,
 			[rehypeAutolinkHeadings, { behavior: "wrap", properties: { className: ["not-prose"] } }],

@@ -49,5 +49,4 @@ Algunos dijeron que se había enfermado. Otros, que las ánimas se habían lleva
 Porque en Girón, todos saben que las ánimas pueden ser buenas... pero también pueden pasarse de la mano.
 
 ## Referencias
-
-**Video Original:** [Historia de Ella Melando en YouTube](https://www.youtube.com/watch?v=HuuVddCFYzs)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HuuVddCFYzs?si=VGpXmpCtz3yVr0Lf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
