@@ -102,9 +102,6 @@ const recentYears = Object.keys(collection.playsPerYear)
 							<tr>
 								<th>Imagen</th>
 								<th>Nombre</th>
-								<th>Jugadores</th>
-								<th>Tiempo</th>
-								<th>Complejidad</th>
 								<th>Partidas</th>
 								<th>Mi Nota</th>
 								<th>BGG</th>
@@ -131,9 +128,6 @@ const recentYears = Object.keys(collection.playsPerYear)
 										</a>
 										{game.isExpansion && <span class="expansion-badge">Exp</span>}
 									</td>
-									<td class="text-center">{game.minPlayers}{game.maxPlayers !== game.minPlayers ? `-${game.maxPlayers}` : ''}</td>
-									<td class="text-center">{game.minPlaytime}{game.maxPlaytime !== game.minPlaytime ? `-${game.maxPlaytime}` : ''}'</td>
-									<td class="text-center">{game.averageWeight ? game.averageWeight.toFixed(1) : '—'}</td>
 									<td class="text-center font-semibold">{game.numPlays}</td>
 									<td class="text-center">{game.rating && game.rating > 0 ? game.rating.toFixed(1) : '—'}</td>
 									<td class="text-center">{game.averageRating ? game.averageRating.toFixed(1) : '—'}</td>
