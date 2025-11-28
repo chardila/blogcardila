@@ -1,0 +1,201 @@
+---
+// Astro BGGCard Component
+// Props: gameId (string) - BGG thing ID (e.g. 174430)
+// Environment variable: import.meta.env.BGG_TOKEN (Bearer token you create in BGG app)
+
+const { gameId, class: className = '' } = Astro.props;
+const token = import.meta.env.BGG_TOKEN;
+
+let xmlText: string | null = null;
+let error: string | null = null;
+let game: {
+  id: string | null;
+  title: string | null;
+  year_published: string | null;
+  image: string | null;
+  thumbnail: string | null;
+  minplayers: string | null;
+  maxplayers: string | null;
+  minplaytime: string | null;
+  maxplaytime: string | null;
+  minage: string | null;
+  publisher: string | null;
+  average: string | null;
+  bayesAverage: string | null;
+  usersrated: string | null;
+  averageWeight: string | null;
+  description: string | null;
+  rawXml: string | null;
+} | null = null;
+
+if (!gameId) {
+  error = 'BGG gameId prop is required (e.g. gameId="174430")';
+}
+
+if (!token) {
+  error = (error ? error + ' — ' : '') + 'BGG_TOKEN env var not found.';
+}
+
+async function fetchThingWithPolling(id: string, token: string | undefined) {
+  const endpoint = `https://boardgamegeek.com/xmlapi2/thing?id=${id}`;
+  const headers: HeadersInit = token ? { Authorization: `Bearer ${token}` } : {};
+
+  // Try first request
+  let res = await fetch(endpoint, { headers });
+
+  // BGG sometimes returns 202 (queued) — poll until ready or timeout
+  let tries = 0;
+  while (res.status === 202 && tries < 8) {
+    // exponential backoff-ish
+    await new Promise((r) => setTimeout(r, 1000 + tries * 500));
+    res = await fetch(endpoint, { headers });
+    tries += 1;
+  }
+
+  if (!res.ok) {
+    throw new Error(`BGG API returned ${res.status} ${res.statusText}`);
+  }
+
+  const text = await res.text();
+  return text;
+}
+
+if (!error) {
+  try {
+    xmlText = await fetchThingWithPolling(gameId, token);
+
+    // Simple regex-based XML parsing (avoids need for DOMParser in Node)
+    const getAttr = (tag: string, attr: string): string | null => {
+      const regex = new RegExp(`<${tag}[^>]*?${attr}=["']([^"']+)["']`, 'i');
+      const match = xmlText?.match(regex);
+      return match ? match[1] : null;
+    };
+
+    const getTagContent = (tag: string): string | null => {
+      const regex = new RegExp(`<${tag}[^>]*?>([\\s\\S]*?)<\\/${tag}>`, 'i');
+      const match = xmlText?.match(regex);
+      return match ? match[1].trim() : null;
+    };
+
+    const getFirstMatch = (pattern: RegExp): string | null => {
+      const match = xmlText?.match(pattern);
+      return match ? match[1] : null;
+    };
+
+    // Basic fields
+    const id = getAttr('item', 'id');
+    const title = getFirstMatch(/<name[^>]*type=["']primary["'][^>]*value=["']([^"']+)["']/)
+                  || getFirstMatch(/<name[^>]*value=["']([^"']+)["']/);
+    const year_published = getAttr('yearpublished', 'value');
+    const image = getTagContent('image');
+    const thumbnail = getTagContent('thumbnail');
+
+    const minplayers = getAttr('minplayers', 'value');
+    const maxplayers = getAttr('maxplayers', 'value');
+    const minplaytime = getAttr('minplaytime', 'value');
+    const maxplaytime = getAttr('maxplaytime', 'value');
+    const minage = getAttr('minage', 'value');
+
+    // publisher — find first link with type=boardgamepublisher
+    const publisher = getFirstMatch(/<link[^>]*type=["']boardgamepublisher["'][^>]*value=["']([^"']+)["']/);
+
+    // statistics -> ratings
+    const average = getFirstMatch(/<average[^>]*value=["']([^"']+)["']/);
+    const bayesAverage = getFirstMatch(/<bayesaverage[^>]*value=["']([^"']+)["']/);
+    const usersrated = getFirstMatch(/<usersrated[^>]*value=["']([^"']+)["']/);
+    const averageWeight = getFirstMatch(/<averageweight[^>]*value=["']([^"']+)["']/);
+
+    // description - extract and decode HTML entities
+    let description = getTagContent('description');
+    if (description) {
+      // Decode common HTML entities
+      description = description
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"')
+        .replace(/&#039;/g, "'")
+        .replace(/&nbsp;/g, ' ')
+        .replace(/<[^>]+>/g, '') // Remove HTML tags
+        .replace(/\n+/g, '\n')
+        .trim();
+    }
+
+    game = {
+      id,
+      title,
+      year_published,
+      image,
+      thumbnail,
+      minplayers,
+      maxplayers,
+      minplaytime,
+      maxplaytime,
+      minage,
+      publisher,
+      average,
+      bayesAverage,
+      usersrated,
+      averageWeight,
+      description,
+      rawXml: xmlText,
+    };
+  } catch (e) {
+    error = e.message;
+  }
+}
+---
+
+{error ? (
+  <div class={"my-6 bg-red-50 border border-red-200 p-4 text-red-800 dark:bg-red-900/20 dark:border-red-800 dark:text-red-200 " + className}>
+    <strong>Error:</strong>
+    <div class="mt-2 text-sm">{error}</div>
+  </div>
+) : game ? (
+  <article class={"my-6 bg-[var(--theme-bg-offset)] overflow-hidden " + className}>
+    {game.image ? (
+      <div class="w-full">
+        <img src={game.image} alt={`${game.title} cover`} class="w-full object-cover" />
+      </div>
+    ) : game.thumbnail ? (
+      <div class="w-full">
+        <img src={game.thumbnail} alt={`${game.title} thumbnail`} class="w-full object-cover" />
+      </div>
+    ) : null}
+
+    <div class="pt-3 pb-4">
+      <h2 class="text-2xl font-bold mb-4">{game.title} {game.year_published ? <span class="text-sm opacity-70">({game.year_published})</span> : null}</h2>
+
+      <div class="space-y-2 text-sm mb-4">
+        <p><span class="font-semibold">Nro. de Jugadores:</span> {game.minplayers}{game.maxplayers && game.maxplayers !== game.minplayers ? `-${game.maxplayers}` : ''} Jugadores</p>
+        <p><span class="font-semibold">Tiempo de Juego:</span> {game.minplaytime}{game.maxplaytime && game.maxplaytime !== game.minplaytime ? `-${game.maxplaytime}` : ''} min</p>
+        {game.minage && game.minage !== '0' && (
+          <p><span class="font-semibold">Edad Recomendada:</span> {game.minage}+</p>
+        )}
+        {game.publisher && (
+          <p><span class="font-semibold">Fabricante:</span> {game.publisher}</p>
+        )}
+        {game.averageWeight && (
+          <p><span class="font-semibold">Complejidad según BGG:</span> {Number(game.averageWeight).toFixed(2)}/5</p>
+        )}
+        {game.average && (
+          <p><span class="font-semibold">Rating:</span> {Number(game.average).toFixed(1)}/10</p>
+        )}
+        {game.usersrated && (
+          <p><span class="font-semibold">Usuarios que votaron:</span> {game.usersrated}</p>
+        )}
+      </div>
+
+      {game.description ? (
+        <div class="mt-4">
+          <p class="font-semibold mb-2">Descripción:</p>
+          <p class="text-sm leading-relaxed opacity-90">{game.description}</p>
+        </div>
+      ) : null}
+    </div>
+  </article>
+) : (
+  <div class={"my-6 text-center opacity-70 " + className}>
+    <p>Cargando información del juego...</p>
+  </div>
+)}
