@@ -11,22 +11,80 @@ const meta = {
 	<div class="space-y-6">
 		<h1 class="title">Board Games</h1>
 		<p>Here's my board game collection and gaming activity tracked on BoardGameGeek.</p>
-		<div class="iframe-container">
-			<iframe
-				src="https://playback.geekgroup.app/cardila"
-				width="100%"
-				height="600"
-				frameborder="0"
-				title="BoardGameGeek Collection"
-			></iframe>
+
+		<div class="alert">
+			<p>
+				Due to security restrictions, the collection viewer cannot be embedded directly.
+				Please click the button below to view my BoardGameGeek collection in a new window:
+			</p>
+			<a
+				href="https://playback.geekgroup.app/cardila"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="view-button"
+			>
+				View My Board Game Collection
+			</a>
+		</div>
+
+		<div class="collection-info">
+			<h2>What you'll find:</h2>
+			<ul>
+				<li>My complete board game collection</li>
+				<li>Recent plays and gaming activity</li>
+				<li>Ratings and reviews</li>
+				<li>Game statistics</li>
+			</ul>
 		</div>
 	</div>
 </PageLayout>
 
 <style>
-	.iframe-container {
-		margin-top: 2rem;
+	.alert {
+		background-color: var(--theme-bg-offset);
+		border: 1px solid var(--theme-divider);
 		border-radius: 0.5rem;
-		overflow: hidden;
+		padding: 1.5rem;
+		margin-top: 2rem;
+		text-align: center;
+	}
+
+	.view-button {
+		display: inline-block;
+		margin-top: 1rem;
+		padding: 0.75rem 2rem;
+		background-color: var(--theme-accent);
+		color: white;
+		text-decoration: none;
+		border-radius: 0.5rem;
+		font-weight: 600;
+		transition: all 0.2s;
+	}
+
+	.view-button:hover {
+		opacity: 0.9;
+		transform: translateY(-2px);
+	}
+
+	.collection-info {
+		margin-top: 2rem;
+		padding: 1.5rem;
+		background-color: var(--theme-bg-offset);
+		border-radius: 0.5rem;
+	}
+
+	.collection-info h2 {
+		margin-bottom: 1rem;
+		font-size: 1.25rem;
+		font-weight: 600;
+	}
+
+	.collection-info ul {
+		list-style: disc;
+		margin-left: 1.5rem;
+	}
+
+	.collection-info li {
+		margin-bottom: 0.5rem;
 	}
 </style>
