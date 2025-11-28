@@ -45,7 +45,7 @@ export const menuLinks: { path: string; title: string }[] = [
 		title: "Blog",
 	},
 	{
-		path: "/boardgames/1/",
+		path: "/boardgames/",
 		title: "Board Games",
 	},
 ];
