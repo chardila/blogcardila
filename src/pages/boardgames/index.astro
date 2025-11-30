@@ -29,11 +29,6 @@ try {
 const ITEMS_PER_PAGE = 20;
 const totalPages = Math.ceil(collection.games.length / ITEMS_PER_PAGE);
 const paginatedGames = collection.games.slice(0, ITEMS_PER_PAGE);
-
-// Get recent years for plays
-const recentYears = Object.keys(collection.playsPerYear)
-	.sort((a, b) => parseInt(b) - parseInt(a))
-	.slice(0, 4);
 ---
 
 <PageLayout meta={meta}>
@@ -52,7 +47,7 @@ const recentYears = Object.keys(collection.playsPerYear)
 		) : (
 			<>
 				<!-- Summary Stats -->
-				<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+				<div class="grid grid-cols-2 gap-4">
 					<div class="stat-card">
 						<div class="stat-value">{collection.totalGames}</div>
 						<div class="stat-label">Juegos</div>
@@ -61,30 +56,7 @@ const recentYears = Object.keys(collection.playsPerYear)
 						<div class="stat-value">{collection.expansions}</div>
 						<div class="stat-label">Expansiones</div>
 					</div>
-					<div class="stat-card">
-						<div class="stat-value">{collection.totalPlays}</div>
-						<div class="stat-label">Partidas Totales</div>
-					</div>
-					<div class="stat-card">
-						<div class="stat-value">{recentYears.length > 0 ? collection.playsPerYear[recentYears[0]] || 0 : 0}</div>
-						<div class="stat-label">Partidas {recentYears[0] || 'Este Año'}</div>
-					</div>
 				</div>
-
-				<!-- Plays by Year -->
-				{recentYears.length > 0 && (
-					<div class="info-card">
-						<h2 class="text-lg font-semibold mb-3">Partidas por Año</h2>
-						<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-							{recentYears.slice(0, 4).map(year => (
-								<div>
-									<div class="font-semibold text-accent">{year}</div>
-									<div class="text-2xl font-bold">{collection.playsPerYear[year]}</div>
-								</div>
-							))}
-						</div>
-					</div>
-				)}
 
 				<!-- Games Table -->
 				<div class="info-card overflow-x-auto">
