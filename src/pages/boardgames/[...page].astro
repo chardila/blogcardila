@@ -98,21 +98,6 @@ const recentYears = Object.keys(summary.playsPerYear)
 					</div>
 				</div>
 
-				<!-- Plays by Year -->
-				{recentYears.length > 0 && (
-					<div class="info-card">
-						<h2 class="text-lg font-semibold mb-3">Partidas por Año</h2>
-						<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-							{recentYears.slice(0, 4).map(year => (
-								<div>
-									<div class="font-semibold text-accent">{year}</div>
-									<div class="text-2xl font-bold">{summary.playsPerYear[year]}</div>
-								</div>
-							))}
-						</div>
-					</div>
-				)}
-
 				<!-- Games Table -->
 				<div class="info-card overflow-x-auto">
 					<h2 class="text-lg font-semibold mb-4">Colección ({page.total} juegos)</h2>
