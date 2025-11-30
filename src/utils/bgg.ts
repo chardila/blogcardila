@@ -1,4 +1,5 @@
 // Utility functions for fetching BoardGameGeek collection data
+import { getCachedData, setCachedData } from './cache';
 
 export interface BGGGame {
   id: string;
@@ -57,6 +58,17 @@ function parseXMLNumber(xmlText: string, pattern: RegExp): number | null {
 }
 
 export async function fetchBGGCollection(username: string, token: string | undefined): Promise<BGGCollectionSummary> {
+  // Check cache first
+  const cacheKey = `bgg_collection_${username}`;
+  const cached = getCachedData<BGGCollectionSummary>(cacheKey);
+
+  if (cached) {
+    console.log('[BGG] Using cached collection data');
+    return cached;
+  }
+
+  console.log('[BGG] Fetching fresh data from API');
+
   // Fetch both base games and expansions
   const baseGamesUrl = `https://boardgamegeek.com/xmlapi2/collection?username=${username}&stats=1&own=1&excludesubtype=boardgameexpansion`;
   const expansionsUrl = `https://boardgamegeek.com/xmlapi2/collection?username=${username}&stats=1&own=1&subtype=boardgameexpansion`;
@@ -189,11 +201,16 @@ export async function fetchBGGCollection(username: string, token: string | undef
   // Use total from plays API (includes games not owned), or fall back to collection sum
   const totalPlays = totalPlaysCount > 0 ? totalPlaysCount : games.reduce((sum, g) => sum + g.numPlays, 0);
 
-  return {
+  const result: BGGCollectionSummary = {
     totalGames,
     expansions,
     totalPlays,
     playsPerYear,
     games: games.sort((a, b) => b.numPlays - a.numPlays), // Sort by most played
   };
+
+  // Cache the result
+  setCachedData(cacheKey, result);
+
+  return result;
 }
