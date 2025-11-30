@@ -104,6 +104,7 @@ export default defineConfig({
 			WEBMENTION_PINGBACK: envField.string({ context: "client", access: "public", optional: true }),
 			OMDB_API_KEY: envField.string({ context: "server", access: "secret", optional: true }),
 			BGG_TOKEN: envField.string({ context: "server", access: "secret", optional: true }),
+			TMDB_API_KEY: envField.string({ context: "server", access: "secret", optional: true }),
 		},
 	},
 });
