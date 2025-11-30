@@ -1,0 +1,64 @@
+---
+title: "Example: MovieTrailerCard Component"
+description: "Demo of the MovieTrailerCard component with embedded movie trailers"
+publishDate: "2025-11-30"
+tags: ["example", "components", "movies"]
+draft: true
+---
+
+import MovieTrailerCard from '@/components/MovieTrailerCard.astro';
+
+This is an example post demonstrating the `MovieTrailerCard` component. This component fetches movie data from TMDB API and embeds YouTube trailers directly in your posts.
+
+## Example 1: Fight Club (1999)
+
+One of the most iconic movies of the 90s:
+
+<MovieTrailerCard movieId="550" />
+
+## Example 2: The Shawshank Redemption (1994)
+
+A timeless classic:
+
+<MovieTrailerCard movieId="278" />
+
+## Example 3: Inception (2010)
+
+Christopher Nolan's mind-bending thriller:
+
+<MovieTrailerCard movieId="27205" />
+
+## Example 4: Parasite (2019)
+
+Award-winning Korean film:
+
+<MovieTrailerCard movieId="496243" />
+
+## How to Use
+
+Simply add the component to your MDX posts with a TMDB movie ID:
+
+```mdx
+import MovieTrailerCard from '@/components/MovieTrailerCard.astro';
+
+<MovieTrailerCard movieId="550" />
+```
+
+### Finding Movie IDs
+
+1. Go to [themoviedb.org](https://www.themoviedb.org/)
+2. Search for your movie
+3. The ID is in the URL
+
+For example: `https://www.themoviedb.org/movie/550-fight-club` → Movie ID is `550`
+
+## Features
+
+- ✅ Embedded YouTube trailers
+- ✅ Local caching (24 hour TTL)
+- ✅ Spanish language support with English fallback
+- ✅ Rich movie metadata (genres, ratings, synopsis)
+- ✅ Fallback to backdrop/poster if no trailer available
+- ✅ Theme-aware styling (light/dark mode)
+
+See the [MovieTrailerCard README](/src/components/MovieTrailerCard.README.md) for full documentation.

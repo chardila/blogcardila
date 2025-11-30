@@ -1,0 +1,200 @@
+---
+// Astro MovieTrailerCard Component
+// Props: movieId (string or number) - TMDB movie ID (e.g. 550 for Fight Club)
+// Environment variable: import.meta.env.TMDB_API_KEY (TMDB API key from https://www.themoviedb.org/settings/api)
+
+import { getCachedData, setCachedData } from '../utils/cache';
+
+const { movieId, class: className = '' } = Astro.props;
+const apiKey = import.meta.env.TMDB_API_KEY;
+
+let error: string | null = null;
+let movie: {
+  id: number;
+  title: string;
+  originalTitle: string;
+  releaseDate: string;
+  overview: string;
+  posterPath: string | null;
+  backdropPath: string | null;
+  voteAverage: number;
+  voteCount: number;
+  genres: string[];
+  runtime: number | null;
+  trailerKey: string | null;
+} | null = null;
+
+if (!movieId) {
+  error = 'MovieTrailerCard movieId prop is required (e.g. movieId="550")';
+}
+
+if (!apiKey) {
+  error = (error ? error + ' — ' : '') + 'TMDB_API_KEY env var not found. Get one at https://www.themoviedb.org/settings/api';
+}
+
+async function fetchMovieWithTrailer(id: string | number, apiKey: string) {
+  const cacheKey = `tmdb_movie_${id}`;
+
+  // Try to get from cache first
+  const cached = getCachedData<typeof movie>(cacheKey);
+  if (cached) {
+    return cached;
+  }
+
+  // Fetch movie details
+  const movieUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=es-ES`;
+  const movieRes = await fetch(movieUrl);
+
+  if (!movieRes.ok) {
+    throw new Error(`TMDB API returned ${movieRes.status} ${movieRes.statusText}`);
+  }
+
+  const movieData = await movieRes.json();
+
+  // Fetch videos (trailers)
+  const videosUrl = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}&language=es-ES`;
+  const videosRes = await fetch(videosUrl);
+
+  let trailerKey: string | null = null;
+
+  if (videosRes.ok) {
+    const videosData = await videosRes.json();
+    // Find the first YouTube trailer
+    const trailer = videosData.results?.find(
+      (video: any) =>
+        video.site === 'YouTube' &&
+        (video.type === 'Trailer' || video.type === 'Teaser')
+    );
+    trailerKey = trailer?.key || null;
+
+    // If no Spanish trailer, try English
+    if (!trailerKey) {
+      const videosUrlEn = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}&language=en-US`;
+      const videosResEn = await fetch(videosUrlEn);
+      if (videosResEn.ok) {
+        const videosDataEn = await videosResEn.json();
+        const trailerEn = videosDataEn.results?.find(
+          (video: any) =>
+            video.site === 'YouTube' &&
+            (video.type === 'Trailer' || video.type === 'Teaser')
+        );
+        trailerKey = trailerEn?.key || null;
+      }
+    }
+  }
+
+  const result = {
+    id: movieData.id,
+    title: movieData.title,
+    originalTitle: movieData.original_title,
+    releaseDate: movieData.release_date,
+    overview: movieData.overview,
+    posterPath: movieData.poster_path,
+    backdropPath: movieData.backdrop_path,
+    voteAverage: movieData.vote_average,
+    voteCount: movieData.vote_count,
+    genres: movieData.genres?.map((g: any) => g.name) || [],
+    runtime: movieData.runtime,
+    trailerKey,
+  };
+
+  // Cache the result
+  setCachedData(cacheKey, result);
+
+  return result;
+}
+
+if (!error) {
+  try {
+    movie = await fetchMovieWithTrailer(movieId, apiKey);
+  } catch (e: any) {
+    error = e.message;
+  }
+}
+
+const posterUrl = movie?.posterPath ? `https://image.tmdb.org/t/p/w500${movie.posterPath}` : null;
+const backdropUrl = movie?.backdropPath ? `https://image.tmdb.org/t/p/original${movie.backdropPath}` : null;
+const youtubeEmbedUrl = movie?.trailerKey ? `https://www.youtube.com/embed/${movie.trailerKey}` : null;
+---
+
+{error ? (
+  <div class={"my-6 bg-red-50 border border-red-200 p-4 text-red-800 dark:bg-red-900/20 dark:border-red-800 dark:text-red-200 " + className}>
+    <strong>Error:</strong>
+    <div class="mt-2 text-sm">{error}</div>
+  </div>
+) : movie ? (
+  <article class={"my-6 bg-[var(--theme-bg-offset)] overflow-hidden " + className}>
+    {/* Trailer video if available */}
+    {youtubeEmbedUrl ? (
+      <div class="w-full aspect-video">
+        <iframe
+          width="100%"
+          height="100%"
+          src={youtubeEmbedUrl}
+          title={`${movie.title} trailer`}
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          class="w-full h-full"
+        ></iframe>
+      </div>
+    ) : backdropUrl ? (
+      <div class="w-full">
+        <img src={backdropUrl} alt={`${movie.title} backdrop`} class="w-full object-cover" />
+      </div>
+    ) : posterUrl ? (
+      <div class="w-full">
+        <img src={posterUrl} alt={`${movie.title} poster`} class="w-full object-cover max-h-96 object-top" />
+      </div>
+    ) : null}
+
+    <div class="pt-3 pb-4">
+      <h2 class="text-2xl font-bold mb-4">
+        {movie.title}
+        {movie.releaseDate && (
+          <span class="text-sm opacity-70">
+            ({new Date(movie.releaseDate).getFullYear()})
+          </span>
+        )}
+      </h2>
+
+      <div class="space-y-2 text-sm mb-4">
+        {movie.originalTitle && movie.originalTitle !== movie.title && (
+          <p><span class="font-semibold">Título original:</span> {movie.originalTitle}</p>
+        )}
+        {movie.releaseDate && (
+          <p><span class="font-semibold">Fecha de estreno:</span> {new Date(movie.releaseDate).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+        )}
+        {movie.runtime && (
+          <p><span class="font-semibold">Duración:</span> {movie.runtime} min</p>
+        )}
+        {movie.genres.length > 0 && (
+          <p><span class="font-semibold">Género:</span> {movie.genres.join(', ')}</p>
+        )}
+        {movie.voteAverage > 0 && (
+          <p><span class="font-semibold">Rating TMDB:</span> {movie.voteAverage.toFixed(1)}/10</p>
+        )}
+        {movie.voteCount > 0 && (
+          <p><span class="font-semibold">Votos:</span> {movie.voteCount.toLocaleString('es-ES')}</p>
+        )}
+      </div>
+
+      {movie.overview && (
+        <div class="mt-4">
+          <p class="font-semibold mb-2">Sinopsis:</p>
+          <p class="text-sm leading-relaxed opacity-90">{movie.overview}</p>
+        </div>
+      )}
+
+      {!youtubeEmbedUrl && (
+        <div class="mt-4 text-xs opacity-60">
+          <p>No hay trailer disponible para esta película.</p>
+        </div>
+      )}
+    </div>
+  </article>
+) : (
+  <div class={"my-6 text-center opacity-70 " + className}>
+    <p>Cargando información de la película...</p>
+  </div>
+)}
