@@ -57,7 +57,7 @@ function parseXMLNumber(xmlText: string, pattern: RegExp): number | null {
 }
 
 export async function fetchBGGCollection(username: string, token: string | undefined): Promise<BGGCollectionSummary> {
-  const collectionUrl = `https://boardgamegeek.com/xmlapi2/collection?username=${username}&stats=1&played=1`;
+  const collectionUrl = `https://boardgamegeek.com/xmlapi2/collection?username=${username}&stats=1&own=1&subtype=boardgame,boardgameexpansion`;
   const playsUrl = `https://boardgamegeek.com/xmlapi2/plays?username=${username}`;
 
   // Fetch collection data
@@ -65,7 +65,7 @@ export async function fetchBGGCollection(username: string, token: string | undef
 
   // Parse collection
   const games: BGGGame[] = [];
-  const itemRegex = /<item[^>]*objecttype="thing"[^>]*>([\s\S]*?)<\/item>/gi;
+  const itemRegex = /<item[^>]*>([\s\S]*?)<\/item>/gi;
 
   let match;
   while ((match = itemRegex.exec(collectionXml)) !== null) {
@@ -73,6 +73,7 @@ export async function fetchBGGCollection(username: string, token: string | undef
     const fullItemXml = match[0];
 
     const id = parseXMLValue(fullItemXml, /objectid="(\d+)"/) || '';
+    const subtype = parseXMLValue(fullItemXml, /subtype="([^"]+)"/);
     const name = parseXMLValue(itemXml, /<name[^>]*>([^<]+)<\/name>/) || 'Unknown';
     const thumbnail = parseXMLValue(itemXml, /<thumbnail>([^<]+)<\/thumbnail>/);
     const image = parseXMLValue(itemXml, /<image>([^<]+)<\/image>/);
@@ -88,7 +89,7 @@ export async function fetchBGGCollection(username: string, token: string | undef
     const averageRating = parseXMLNumber(itemXml, /<average[^>]*value="([^"]+)"/);
 
     const owned = /<status[^>]*own="1"/.test(itemXml);
-    const isExpansion = fullItemXml.includes('subtype="boardgameexpansion"');
+    const isExpansion = subtype === 'boardgameexpansion';
 
     games.push({
       id,
