@@ -57,23 +57,29 @@ function parseXMLNumber(xmlText: string, pattern: RegExp): number | null {
 }
 
 export async function fetchBGGCollection(username: string, token: string | undefined): Promise<BGGCollectionSummary> {
-  const collectionUrl = `https://boardgamegeek.com/xmlapi2/collection?username=${username}&stats=1&own=1`;
+  // Fetch both base games and expansions
+  const baseGamesUrl = `https://boardgamegeek.com/xmlapi2/collection?username=${username}&stats=1&own=1&excludesubtype=boardgameexpansion`;
+  const expansionsUrl = `https://boardgamegeek.com/xmlapi2/collection?username=${username}&stats=1&own=1&subtype=boardgameexpansion`;
   const playsUrl = `https://boardgamegeek.com/xmlapi2/plays?username=${username}`;
 
-  // Fetch collection data
-  const collectionXml = await fetchWithPolling(collectionUrl, token);
+  // Fetch base games and expansions
+  const [baseGamesXml, expansionsXml] = await Promise.all([
+    fetchWithPolling(baseGamesUrl, token),
+    fetchWithPolling(expansionsUrl, token),
+  ]);
 
   // Check if we got valid XML
-  if (!collectionXml || collectionXml.includes('<error>')) {
-    throw new Error('Failed to fetch collection from BGG or collection is empty');
+  if (!baseGamesXml || baseGamesXml.includes('<error>')) {
+    throw new Error('Failed to fetch base games from BGG');
   }
 
   // Parse collection
   const games: BGGGame[] = [];
   const itemRegex = /<item[^>]*>([\s\S]*?)<\/item>/gi;
 
+  // Parse base games
   let match;
-  while ((match = itemRegex.exec(collectionXml)) !== null) {
+  while ((match = itemRegex.exec(baseGamesXml)) !== null) {
     const itemXml = match[1];
     const fullItemXml = match[0];
 
@@ -94,7 +100,6 @@ export async function fetchBGGCollection(username: string, token: string | undef
     const averageRating = parseXMLNumber(itemXml, /<average[^>]*value="([^"]+)"/);
 
     const owned = /<status[^>]*own="1"/.test(itemXml);
-    const isExpansion = subtype === 'boardgameexpansion';
 
     games.push({
       id,
@@ -109,9 +114,52 @@ export async function fetchBGGCollection(username: string, token: string | undef
       numPlays,
       rating,
       averageRating,
-      lastPlayed: null, // Will be filled from plays API if needed
+      lastPlayed: null,
       owned,
-      isExpansion,
+      isExpansion: false, // Base games
+    });
+  }
+
+  // Parse expansions
+  itemRegex.lastIndex = 0; // Reset regex
+  while ((match = itemRegex.exec(expansionsXml)) !== null) {
+    const itemXml = match[1];
+    const fullItemXml = match[0];
+
+    const id = parseXMLValue(fullItemXml, /objectid="(\d+)"/) || '';
+    const subtype = parseXMLValue(fullItemXml, /subtype="([^"]+)"/);
+    const name = parseXMLValue(itemXml, /<name[^>]*>([^<]+)<\/name>/) || 'Unknown';
+    const thumbnail = parseXMLValue(itemXml, /<thumbnail>([^<]+)<\/thumbnail>/);
+    const image = parseXMLValue(itemXml, /<image>([^<]+)<\/image>/);
+
+    const minPlayers = parseXMLNumber(itemXml, /<minplayers[^>]*>(\d+)<\/minplayers>/) || 0;
+    const maxPlayers = parseXMLNumber(itemXml, /<maxplayers[^>]*>(\d+)<\/maxplayers>/) || 0;
+    const minPlaytime = parseXMLNumber(itemXml, /<minplaytime[^>]*>(\d+)<\/minplaytime>/) || 0;
+    const maxPlaytime = parseXMLNumber(itemXml, /<maxplaytime[^>]*>(\d+)<\/maxplaytime>/) || 0;
+
+    const averageWeight = parseXMLNumber(itemXml, /<averageweight[^>]*value="([^"]+)"/);
+    const numPlays = parseXMLNumber(itemXml, /<numplays[^>]*>(\d+)<\/numplays>/) || 0;
+    const rating = parseXMLNumber(itemXml, /<rating[^>]*value="([^"]+)"/);
+    const averageRating = parseXMLNumber(itemXml, /<average[^>]*value="([^"]+)"/);
+
+    const owned = /<status[^>]*own="1"/.test(itemXml);
+
+    games.push({
+      id,
+      name,
+      thumbnail,
+      image,
+      minPlayers,
+      maxPlayers,
+      minPlaytime,
+      maxPlaytime,
+      averageWeight,
+      numPlays,
+      rating,
+      averageRating,
+      lastPlayed: null,
+      owned,
+      isExpansion: true, // Expansions
     });
   }
 
