@@ -172,19 +172,22 @@ export async function fetchBGGCollection(username: string, token: string | undef
     playsXml = '';
   }
 
-  // Calculate plays per year
+  // Calculate plays per year and total plays from plays API
   const playsPerYear: Record<string, number> = {};
+  let totalPlaysCount = 0;
   const playRegex = /<play[^>]*date="(\d{4})-\d{2}-\d{2}"[^>]*>/g;
   let playMatch;
   while ((playMatch = playRegex.exec(playsXml)) !== null) {
     const year = playMatch[1];
     playsPerYear[year] = (playsPerYear[year] || 0) + 1;
+    totalPlaysCount++;
   }
 
   // Calculate summary
   const totalGames = games.filter(g => !g.isExpansion).length;
   const expansions = games.filter(g => g.isExpansion).length;
-  const totalPlays = games.reduce((sum, g) => sum + g.numPlays, 0);
+  // Use total from plays API (includes games not owned), or fall back to collection sum
+  const totalPlays = totalPlaysCount > 0 ? totalPlaysCount : games.reduce((sum, g) => sum + g.numPlays, 0);
 
   return {
     totalGames,
