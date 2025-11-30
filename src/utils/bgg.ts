@@ -57,11 +57,16 @@ function parseXMLNumber(xmlText: string, pattern: RegExp): number | null {
 }
 
 export async function fetchBGGCollection(username: string, token: string | undefined): Promise<BGGCollectionSummary> {
-  const collectionUrl = `https://boardgamegeek.com/xmlapi2/collection?username=${username}&stats=1&own=1&subtype=boardgame,boardgameexpansion`;
+  const collectionUrl = `https://boardgamegeek.com/xmlapi2/collection?username=${username}&stats=1&own=1`;
   const playsUrl = `https://boardgamegeek.com/xmlapi2/plays?username=${username}`;
 
   // Fetch collection data
   const collectionXml = await fetchWithPolling(collectionUrl, token);
+
+  // Check if we got valid XML
+  if (!collectionXml || collectionXml.includes('<error>')) {
+    throw new Error('Failed to fetch collection from BGG or collection is empty');
+  }
 
   // Parse collection
   const games: BGGGame[] = [];
