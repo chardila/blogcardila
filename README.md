@@ -25,6 +25,18 @@ This blog contains personal thoughts, movie reviews, technology articles, and va
 - Auto-generated OG images with Satori
 - RSS feeds
 - MDX support
+- Custom reusable components (see below)
+
+## Custom Components
+
+This blog includes several custom Astro components designed for rich content:
+
+- **MovieTrailerCard**: Display movie info with trailers from TMDB
+- **MovieCard**: Display movie info from OMDB
+- **BGGCard**: Display board game info from BoardGameGeek
+- **Giscus**: GitHub Discussions-based comments
+
+📖 **[See CUSTOM_COMPONENTS.md for detailed documentation and installation instructions](./CUSTOM_COMPONENTS.md)**
 
 ## Development
 
