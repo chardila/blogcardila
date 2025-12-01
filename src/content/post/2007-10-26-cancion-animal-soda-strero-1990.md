@@ -17,8 +17,6 @@ Tras el furor sobrevino un período de dispersión:
 
 anticipaba Cerati. Les dejo el video de “De música ligera” en vivo
 
-http://www.youtube.com/watch?v=KpiY999wHTM
-
 Tambien les dejo las canciones con sus letras. Ya espero ansioso el concierto!
 
 **El séptimo día**
