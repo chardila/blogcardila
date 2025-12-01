@@ -1,12 +1,9 @@
 ---
-title: Yendo o Llendo?
-description: >-
-  ¿Alguna vez te has preguntado si se escribe "yendo" o "llendo"? Es una
-  pregunta que ha confundido a muchos hablantes de español, incluso a aquellos
-  que tienen un excelente dominio del idioma. En este...
-publishDate: '2023-08-13'
+title: "Yendo o Llendo?"
+description: "Aclaración sobre la forma correcta de escribir el gerundio del verbo ir. Una duda común que ha confundido a muchos hablantes de español."
+publishDate: "2023-08-13"
 tags:
-  - palabras
+  - words
 draft: false
 ---
 

@@ -1,11 +1,9 @@
 ---
-title: 'Diferentes maneras de llamar al Dinero (biyuya, billullo,'
-description: >-
-  | Argentina | chirola, cobre, gamba, guita, guitarra, luca, mango, morlaco,
-  mosca, plata, sope |
-publishDate: '2013-10-16'
+title: "Diferentes maneras de llamar al Dinero"
+description: "Recopilación de las diferentes formas de llamar al dinero en países de habla hispana como biyuya, billullo, guita, plata, lana y muchas más."
+publishDate: "2013-10-16"
 tags:
-  - curiosidades
+  - funny
 draft: false
 ---
 

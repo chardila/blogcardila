@@ -1,12 +1,9 @@
 ---
-title: ¿Por qué el 25 de diciembre es navidad?
-description: >-
-  ![Natividad](http://blogcardila.wordpress.com/wp-content/uploads/2013/12/481px-greconatividad.jpg)El
-  25 de diciembre, los cristianos de todo el mundo se reúnen para celebrar el
-  nacimiento de Jesús....
-publishDate: '2013-12-23'
+title: "¿Por qué el 25 de diciembre es navidad?"
+description: "Explicación histórica de por qué los cristianos celebran el nacimiento de Jesús el 25 de diciembre y el origen de esta fecha."
+publishDate: "2013-12-23"
 tags:
-  - curiosidades
+  - funny
 draft: false
 ---
 

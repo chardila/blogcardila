@@ -1,12 +1,9 @@
 ---
-title: Algo más de Maia
-description: >-
-  > No quiero ser tu niña bonita, Quiero tapar la luna con el corazón, Quiero
-  ser una estrella en tu vida, puedo mirar y verte en cada anochecer antes de
-  amanecer..
-publishDate: '2007-07-07'
+title: "Algo más de Maia"
+description: "Biografía y carrera artística de la cantante barranquillera Maia, ganadora de Colombia Suena Bien en 1998. Incluye sus éxitos Niña Bonita e Ingenuidad."
+publishDate: "2007-07-07"
 tags:
-  - musica
+  - music
 draft: false
 ---
 

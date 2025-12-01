@@ -1,12 +1,9 @@
 ---
-title: Nada personal. Soda Stereo (1985)
-description: >-
-  Estas son las canciones del albúm para que las escuchen, las recuerden y se
-  las aprendan para el concierto, por supuesto con sus respectivas letras de
-  canciones (lyrics)
-publishDate: '2007-08-24'
+title: "Nada personal. Soda Stereo (1985)"
+description: "Canciones y letras del álbum Nada Personal de Soda Stereo de 1985 para disfrutar y recordar."
+publishDate: "2007-08-24"
 tags:
-  - musica
+  - music
 draft: false
 ---
 

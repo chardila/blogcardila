@@ -1,9 +1,9 @@
 ---
-title: Castellers en Barcelona
-description: 'Los Castellers según la wikipedia son:'
-publishDate: '2007-12-19'
+title: "Castellers en Barcelona"
+description: "Video y explicación sobre los Castellers, tradición catalana de construir torres humanas en Barcelona."
+publishDate: "2007-12-19"
 tags:
-  - curiosidades
+  - funny
 draft: false
 ---
 

@@ -1,14 +1,9 @@
 ---
-title: 'Libro: Mundo Anillo por Larry Niven'
-description: >-
-  ![Ringworld (Ringworld
-  #1)](https://www.goodreads.com/book/show/61179.Ringworld)Llevaba tiempo con
-  esta novela de Larry Niven en mi lista de pendientes por leer y a pesar que no
-  sabia mucho acerca de...
-publishDate: '2013-11-09'
+title: "Libro: Mundo Anillo por Larry Niven"
+description: "Reseña de Ringworld, novela clásica de ciencia ficción de Larry Niven sobre una megaestructura en forma de anillo que rodea una estrella."
+publishDate: "2013-11-09"
 tags:
-  - libro
-  - libros
+  - books
   - opinion
 draft: false
 ---

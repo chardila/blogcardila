@@ -1,12 +1,9 @@
 ---
-title: Hormigas Culonas
-description: >-
-  Hace rato que no disfrutaba de este manjar característico de Santander,
-  Colombia y ayer tuve la oportunidad. Y es que las Hormiguitas son hasta
-  famosas ya que tienen sitio web donde explican su...
-publishDate: '2009-05-16'
+title: "Hormigas Culonas"
+description: "Experiencia probando las famosas hormigas culonas, manjar característico de Santander, Colombia, con información sobre este curioso alimento."
+publishDate: "2009-05-16"
 tags:
-  - curiosidades
+  - funny
 draft: false
 ---
 

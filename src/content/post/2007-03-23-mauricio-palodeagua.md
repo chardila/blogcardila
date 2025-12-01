@@ -1,12 +1,9 @@
 ---
-title: Mauricio &amp; Palodeagua
-description: >-
-  Desde hace unos dos años aparecio Mauricio & Palodeagua con su CD "Un canto
-  caribeño" (caratula de la izquierda) y ahora lanza su segundo CD titulado
-  "Contigo" (caractula de la derecha). Buscando un...
-publishDate: '2007-03-23'
+title: "Mauricio & Palodeagua"
+description: "Reseña del nuevo CD Contigo de Mauricio & Palodeagua, ganador de disco de platino en Colombia y nominado a Grammy Latino, exponente de música caribeña."
+publishDate: "2007-03-23"
 tags:
-  - musica
+  - music
 draft: false
 ---
 

@@ -1,13 +1,10 @@
 ---
-title: 'Las Ánimas de la Capilla de los Dolores'
-description: >-
-  Historia de Girón, Santander, sobre Joaquín, un sastre que invocaba a las
-  ánimas en sus noches de tragos. Un relato de tradición oral contado por Ella
-  Melando, sobre el respeto que se debe tener con las ánimas benditas.
-publishDate: '2025-03-21'
+title: "Las Ánimas de la Capilla de los Dolores"
+description: "Historia de Girón, Santander, sobre Joaquín, un sastre que invocaba a las ánimas en sus noches de tragos. Un relato de tradición oral contado por Ella Melando, sobre el respeto que se debe tener con las ánimas benditas."
+publishDate: "2025-03-21"
 tags:
   - personal
-  - curiosidades
+  - funny
 draft: false
 ---
 Hace mucho tiempo grabé un video improvisado de Ella, en el que contaba una historia sobre las ánimas y por qué no se les debe pedir favores. Ella Melando fue una persona muy querida por mis hermanos y por mí; aunque falleció hace algunos años, la recuerdo con mucho cariño.

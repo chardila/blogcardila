@@ -1,12 +1,9 @@
 ---
-title: Rodrigo y Gabriela
-description: >-
-  Mientras estaba en Puerto Rico, mi amigo Alejandro Ochoa me mostró un CD con
-  la música de este duo musical mejicano. Sus nombres completos son Rodrigo
-  Sanchez y Gabriela Quintero, especialistas en...
-publishDate: '2007-03-10'
+title: "Rodrigo y Gabriela"
+description: "Duo musical mexicano de guitarra acústica con ritmos rápidos y fusión de metal y música latina. Incluye su espectacular versión de Stairway to Heaven."
+publishDate: "2007-03-10"
 tags:
-  - musica
+  - music
 draft: false
 ---
 

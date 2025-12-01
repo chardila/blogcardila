@@ -1,12 +1,9 @@
 ---
-title: Curioso Autoservicio
-description: >-
-  Desde hace un tiempo estoy trabajando en un proyecto en Medellín y en las
-  oficinas me encontré este pequeño autoservicio. Funciona de manera muy
-  sencilla, puedes tomar lo que quieras y revisas el...
-publishDate: '2009-04-26'
+title: "Curioso Autoservicio"
+description: "Pequeño autoservicio encontrado en oficinas de Medellín que funciona de manera sencilla basado en la confianza: tomas lo que quieras y pagas."
+publishDate: "2009-04-26"
 tags:
-  - curiosidades
+  - funny
 draft: false
 ---
 

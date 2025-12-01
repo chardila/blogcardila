@@ -1,11 +1,9 @@
 ---
-title: Origen del día del amor y la amistad
-description: >-
-  La costumbre de intercambiar presentes es celebrada en diferentes fechas de
-  acuerdo al país y además es llamada de forma diferente:
-publishDate: '2007-09-15'
+title: "Origen del día del amor y la amistad"
+description: "Historia y origen del día del amor y la amistad, una celebración que se festeja en diferentes fechas según el país."
+publishDate: "2007-09-15"
 tags:
-  - curiosidades
+  - funny
 draft: false
 ---
 

@@ -1,12 +1,9 @@
 ---
-title: Signos. Soda Stereo (1986)
-description: >-
-  Con este disco se consolidaron con sus letras, aunque no dejan algunas de las
-  letras que yo llamo oscuras como "Sin sobresaltos", "No existes", "Final caja
-  negra" pero también tiene el rock y los...
-publishDate: '2007-09-01'
+title: "Signos. Soda Stereo (1986)"
+description: "Álbum Signos de Soda Stereo de 1986 con el que se consolidaron. Incluye canciones emblemáticas y letras profundas del grupo argentino."
+publishDate: "2007-09-01"
 tags:
-  - musica
+  - music
 draft: false
 ---
 

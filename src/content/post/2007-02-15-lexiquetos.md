@@ -1,12 +1,9 @@
 ---
-title: Lexiquetos
-description: >-
-  Navegando por ahi me encontre este sitio bastante interesante donde puedes
-  encontrar como se escribe tu nombre en varios idiomas. Por ejemplo, Carlos se
-  escribe así:
-publishDate: '2007-02-15'
+title: "Lexiquetos"
+description: "Sitio web interesante donde puedes encontrar cómo se escribe tu nombre en varios idiomas como árabe, chino, japonés, sánscrito, jeroglífico egipcio y más."
+publishDate: "2007-02-15"
 tags:
-  - curiosidades
+  - funny
 draft: false
 ---
 

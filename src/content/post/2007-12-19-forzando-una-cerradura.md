@@ -1,12 +1,8 @@
 ---
-title: Forzando una cerradura
-description: >-
-  Siempre se ve en las películas que toma segundos forzar una cerradura, basta
-  un par de ganchos de pelo o alambres para poder hacerlo pero, al menos lo que
-  he visto es que eso es muy alejado de la...
-publishDate: '2007-12-19'
+title: "Forzando una cerradura"
+description: "Reflexión sobre cómo forzar cerraduras en las películas se ve fácil con ganchos de pelo, pero la realidad es muy diferente."
+publishDate: "2007-12-19"
 tags:
-  - curiosidades
   - personal
 draft: false
 ---
@@ -15,4 +11,4 @@ Siempre se ve en las películas que toma segundos forzar una cerradura, basta un
 
 Bueno, por lo menos eso me deja algo mas que tranquilo porque indica que lo que muestran en las películas no es tan cierto, y en los casos que he visto toma mucho tiempo abrir una cerradura usando ganzúas, claro según el cerrajero es mejor usar cerraduras de seguridad que son mas difíciles de forzar. Aquí les dejo el video de como forzó la cerradura este cerrajero.
 
-https://youtu.be/cXqfIWmLEGI
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cXqfIWmLEGI?si=NpVcFt5587AdQN0g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

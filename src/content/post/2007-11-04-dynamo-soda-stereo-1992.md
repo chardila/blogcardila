@@ -1,12 +1,9 @@
 ---
-title: Dynamo - Soda Stereo (1992)
-description: >-
-  Este álbum tuvo muchas cosa experimentales lo que influyo negativamente en su
-  popularidad adicionalmente la banda no fue apoyada por lo que se origino el
-  cambio de sello discográfico. Aun así...
-publishDate: '2007-11-04'
+title: "Dynamo - Soda Stereo (1992)"
+description: "Álbum experimental de Soda Stereo de 1992 que marcó un cambio en su sonido y llevó a cambios en su relación con su sello discográfico."
+publishDate: "2007-11-04"
 tags:
-  - musica
+  - music
 draft: false
 ---
 

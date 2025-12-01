@@ -1,16 +1,10 @@
 ---
-title: 'Libro: Los ingenieros del Mundo Anillo por Larry Niven'
-description: >-
-  ![The Ringworld Engineers (Ringworld
-  #2)](https://www.goodreads.com/book/show/61181.TheRingworldEngineers)Los
-  conceptos interesantes expuestos en el primer libro (Mundo Anillo) con algunas
-  preguntas...
-publishDate: '2013-11-10'
+title: "Libro: Los ingenieros del Mundo Anillo por Larry Niven"
+description: "Segunda novela de la saga Ringworld que explora más a fondo los conceptos del primer libro y responde preguntas sobre la megaestructura."
+publishDate: "2013-11-10"
 tags:
-  - libro
-  - libros
+  - books
   - opinion
-  - personal
 draft: false
 ---
 

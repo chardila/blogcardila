@@ -1,12 +1,9 @@
 ---
-title: The Blower's Daughter (Damien Rice) - Banda sonora de Closer
-description: >-
-  Como vi la película de nuevo hace unos días, escuche de nuevo la canción y
-  como me gusta, busque el video. Encontré el video sin los cortos de la
-  película y aquí lo puse para recordarlo, pero ya lo...
-publishDate: '2007-07-06'
+title: "The Blower's Daughter (Damien Rice) - Banda sonora de Closer"
+description: "Canción icónica de Damien Rice que forma parte de la banda sonora de la película Closer. Incluye el video y la letra completa."
+publishDate: "2007-07-06"
 tags:
-  - musica
+  - music
 draft: false
 ---
 

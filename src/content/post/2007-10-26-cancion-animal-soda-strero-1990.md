@@ -1,12 +1,9 @@
 ---
-title: Canción Animal. Soda Strero (1990)
-description: >-
-  En diciembre de 1990 se presentan en Velez en el cierre de su Gira Animal ante
-  40.000 personas terminado así una gira por latinoamerica presentando el disco
-  “Canción Animal”.
-publishDate: '2007-10-26'
+title: "Canción Animal. Soda Stereo (1990)"
+description: "Álbum Canción Animal de Soda Stereo de 1990 y su histórico concierto de cierre de la Gira Animal en Vélez ante 40.000 personas."
+publishDate: "2007-10-26"
 tags:
-  - musica
+  - music
 draft: false
 ---
 
