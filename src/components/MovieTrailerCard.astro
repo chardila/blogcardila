@@ -1,11 +1,14 @@
 ---
 // Astro MovieTrailerCard Component
-// Props: movieId (string or number) - TMDB movie ID (e.g. 550 for Fight Club)
+// Props:
+//   - movieId (string or number) - TMDB movie ID (e.g. 550 for Fight Club)
+//   - poster (string, optional) - Custom poster URL to override TMDB poster or use when video is unavailable
+//   - showPoster (boolean, optional) - Force showing poster instead of trailer (default: false)
 // Environment variable: import.meta.env.TMDB_API_KEY (TMDB API key from https://www.themoviedb.org/settings/api)
 
 import { getCachedData, setCachedData } from '../utils/cache';
 
-const { movieId, class: className = '' } = Astro.props;
+const { movieId, poster: customPoster, showPoster = false, class: className = '' } = Astro.props;
 const apiKey = import.meta.env.TMDB_API_KEY;
 
 let error: string | null = null;
@@ -112,9 +115,11 @@ if (!error) {
   }
 }
 
-const posterUrl = movie?.posterPath ? `https://image.tmdb.org/t/p/w500${movie.posterPath}` : null;
+// Use custom poster if provided, otherwise fall back to TMDB poster
+const posterUrl = customPoster || (movie?.posterPath ? `https://image.tmdb.org/t/p/w500${movie.posterPath}` : null);
 const backdropUrl = movie?.backdropPath ? `https://image.tmdb.org/t/p/original${movie.backdropPath}` : null;
-const youtubeEmbedUrl = movie?.trailerKey ? `https://www.youtube.com/embed/${movie.trailerKey}` : null;
+// If showPoster is true, don't show the trailer (useful when video is unavailable)
+const youtubeEmbedUrl = (!showPoster && movie?.trailerKey) ? `https://www.youtube.com/embed/${movie.trailerKey}` : null;
 ---
 
 {error ? (
