@@ -1,5 +1,5 @@
 ---
-title: Cómo encontrar el código postal (zip code) de un sector en
+title: Códigos Postales en Colombia
 description: >-
   ![CodigoPostalColombia](http://visor.codigopostal.gov.co/472/visor/) De
   acuerdo al sitio oficial de código postal para Colombia tenemos que:
