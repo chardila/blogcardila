@@ -7,8 +7,6 @@ tags:
 draft: false
 ---
 
-http://www.youtube.com/watch?v=82iXbIlKGqQ
-
 Los [Castellers](http://es.wikipedia.org/wiki/Casteller) según la wikipedia son:
 
 > Un Casteller es una persona que forma parte de una colla castellera para formar Castells (del catalán) (en castellano: castillos). Es el nombre de una tradición típica de ciertas comarcas catalanas, en especial las del Tarragonès, Alt Camp y Alt Penedès, consistente en levantar torres humanas de varios pisos de altura. En la actualidad esta tradición se ha extendido por toda Cataluña.
@@ -19,9 +17,9 @@ El origen es también muy curioso porque parece provenir de unos bailes o danzas
 
 Aquí les dejo un video que encontré con la construcción de un Castell bien grande.
 
-http://www.youtube.com/watch?v=NIIzGnoYUtc
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NIIzGnoYUtc?si=azO8Vk1vRapQ4g7A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-**Enlaces:**
+## Enlaces
 
 [http://castellersdebarcelona.cat/moncasteller/introduccio/es](http://castellersdebarcelona.cat/moncasteller/introduccio/es)
 

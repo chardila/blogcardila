@@ -11,13 +11,13 @@ Este álbum tuvo muchas cosa experimentales lo que influyo negativamente en su p
 
 Aquí les dejo el video de ensayo de “Primavera 0” antes del último recital que dieran en 1997
 
-http://www.youtube.com/watch?v=damMXIcEROc
+<iframe width="560" height="315" src="https://www.youtube.com/embed/damMXIcEROc?si=_ZcEnzlvdniXZCww" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Este es el video, también de ensayo de “Luna Roja”
 
-http://www.youtube.com/watch?v=LP2-aAAoxTA
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LP2-aAAoxTA?si=vBu1KdB3vSOFb0f2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-**La secuencia inicial**
+## La secuencia inicial
 
 > La secuencia inicial corre Ninguno de los dos lo ha advertido Miro atras y veo la razon Nunca fuiste una cancion Te oigo entrar Deseo darte un nombre nuevo
 > 
@@ -25,7 +25,7 @@ http://www.youtube.com/watch?v=LP2-aAAoxTA
 > 
 > Mojate los labios y sueña
 
-**Toma la ruta**
+## Toma la ruta
 
 > No preguntes mas por mi Nadie sabe nada nada No estes preocupada Yo la paso bien
 > 
@@ -43,7 +43,7 @@ http://www.youtube.com/watch?v=LP2-aAAoxTA
 > 
 > Toma la ruta Sal del camino y toma la ruta
 
-**En remolinos**
+## En remolinos
 
 > Dejame vivir este sueño Que delirio Una flor Una flor Otra flor Un maestro Una causa Un efecto
 > 
@@ -55,7 +55,7 @@ http://www.youtube.com/watch?v=LP2-aAAoxTA
 > 
 > Paraiso Es una cura Perfeccion Florecer mirandote a los ojos Perfeccion Florecer mirandote a los ojos Perfeccion Florecer los dos Florecer Florecer los dos Florecer
 
-**Primavera 0**
+## Primavera 0
 
 > Fluorescente azul Luz que baña mis sentidos Donde todo empieza a ser real
 > 
@@ -73,7 +73,7 @@ http://www.youtube.com/watch?v=LP2-aAAoxTA
 > 
 > Primavera 0
 
-**Camaleón**
+## Camaleón
 
 > Camaleon Se armo la escena justa Vos y yo Juntos somos como un templo
 > 
@@ -97,7 +97,7 @@ http://www.youtube.com/watch?v=LP2-aAAoxTA
 > 
 > Camaleon Nos quedamos solos Camaleon
 
-**Luna roja**
+## Luna roja
 
 > El salio y dejo la cama vacia Se entrego al suave aire del desierto Y entonces la vio La luna roja Sobre el mar negro Luna roja
 > 
@@ -107,7 +107,7 @@ http://www.youtube.com/watch?v=LP2-aAAoxTA
 > 
 > Es peligrosa Es peligrosa Es peligrosa Es peligrosa Te hace mortal Te hace mortal
 
-**Sweet sahumerio**
+## Sweet sahumerio
 
 > Ella juega en el sillon Esta descalza Algo sobrenatural La desplaza
 > 
@@ -115,7 +115,7 @@ http://www.youtube.com/watch?v=LP2-aAAoxTA
 > 
 > Poesia circular Pez espada Puedo verla de perfil Ondulandose en el mar
 
-**Ameba**
+## Ameba
 
 > Toda esa gente dice que te ama Toda esa gente dice que te odia Y te vas, y te vas Confundiendo
 > 
@@ -131,7 +131,7 @@ http://www.youtube.com/watch?v=LP2-aAAoxTA
 > 
 > Mas te olvidas Mas me obligas A este sentimiento Mas me obligas Mas te olvidas De este sentimiento
 
-**Nuestra Fe**
+## Nuestra Fe
 
 > Bajo esta piel Que estoy mudando Encendi un amanecer Que no para de crecer Que no para de crecer
 > 
@@ -139,7 +139,7 @@ http://www.youtube.com/watch?v=LP2-aAAoxTA
 > 
 > Tengo aqui el cristal En mis manos Ya soy todo un corazon Que no para de crecer Que no para de crecer
 
-**Claroscuro**
+## Claroscuro
 
 > Cuando rio de placer Y me quedo solo Suspirando formas de humo
 > 
@@ -153,7 +153,7 @@ http://www.youtube.com/watch?v=LP2-aAAoxTA
 > 
 > Dulce criatura Nunca estas segura Ya no tengas dudas Soy tan dependiente de tu amor
 
-**Fue**
+## Fue
 
 > He llegado hasta el fin Con los brazos cansados Tantas veces te vi Simulando un olvido Y eso paso
 > 
@@ -165,7 +165,7 @@ http://www.youtube.com/watch?v=LP2-aAAoxTA
 > 
 > Fue Y fue Y fue
 
-**Texturas**
+## Texturas
 
 > Son las seis Tus relieves me despiertan Despues de tanto Descansar Tiempo al tiempo de volver A celebrar
 > 

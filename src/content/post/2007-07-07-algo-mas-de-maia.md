@@ -9,9 +9,9 @@ draft: false
 
 ![Maia](/images/posts/2007/algo-mas-de-maia/maia.jpg)Me dio por investigar algo más de la vida artística de esta hermosa barranquillera Maia y les cuento que su primer álbum salio el 2003 con algunos éxitos como “Niña Bonita” y luego en su segunda producción “Natural” se destaca “Ingenuidad”, canción en estilo muy parecida a “Niña Bonita”, en realidad me parece como si fuera la continuación aunque no se si esa fue la intención. Fue ganadora del concurso Colombia Suena Bien, organizado por Sony Music en 1998 desde donde comenzó a construir su carrera artística. En el 2002 el periódico el Tiempo la denomino “La niña consentida de Sony” ya que intereso primero a altos ejecutivos de la multinacional Sony en países como España y Estados Unidos antes que si quiera se vendieran sus discos en Colombia. Un cambio bien drástico en la vida para alguien que tengo entendido por lo que he leído alcanzo a iniciar estudios de Ingeniería Mecánica y además fue profesora de Ingles y Alemán. Dicen los que saben que su fuerza esta en gran parte en sus presentaciones en vivo aunque yo digo que su música también habla muy bien de ella. Entiendo que esta por lanzar una tercera producción donde cambiara el estilo que caracterizo las dos primeras. Aquí los dejo con los videos y las letras de sus dos éxitos “Niña Bonita” e “Ingenuidad”
 
-### Niña Bonita
+## Niña Bonita
 
-http://www.youtube.com/watch?v=S41zwscIxhI
+<iframe width="560" height="315" src="https://www.youtube.com/embed/S41zwscIxhI?si=0Qhrv28GRJKgblfn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 > No quiero ser tu niña bonita, Quiero tapar la luna con el corazón, Quiero ser una estrella en tu vida, puedo mirar y verte en cada anochecer antes de amanecer..
 > 
@@ -29,9 +29,7 @@ http://www.youtube.com/watch?v=S41zwscIxhI
 > 
 > Coro. No quiero ser tu niña bonita, ni quiero estar perdida en tus sueños quiero pertenecer a tu vida, quiero causar la herida de amor, cada mañana escuchar tu corazón, sentir que tienes para mi todo el amor, que me das como yo quiero tu cariño que cada día se va llenando que cariño y amor, cariño y amor, cariño y amor.
 
-### Ingenuidad
-
-http://www.youtube.com/watch?v=WJvJ2knuAAo
+## Ingenuidad
 
 > Ingenuidad pensabas de mi, cuando todo, todo te dí, ingenuidad porque te creía, lo que quisiste yo fui, fui tu cura, fui tu remedio, como una pluma en el viento, flotaba según tu aliento,según tu respiración, daba mi vida por ti, y eso me hacía feliz, porque todo lo que te daba era verdadero amor.
 > 
