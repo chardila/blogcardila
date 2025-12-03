@@ -4,7 +4,6 @@ description: "Reseña del libro Guía del autoestopista galáctico de Douglas Ad
 publishDate: "2010-07-31"
 tags:
   - books
-  - opinion
 draft: false
 ---
 

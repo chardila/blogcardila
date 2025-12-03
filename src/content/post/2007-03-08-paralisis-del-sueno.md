@@ -1,0 +1,34 @@
+---
+title: "Parálisis del sueño"
+description: "Parálisis del sueño"
+publishDate: "2007-03-08"
+tags: 
+  - "opinion"
+---
+
+Hace algunos meses, hablando con mi hermano sobre brujas, él me relató una historia que me pareció interesante y quise profundizar en el tema porque recientemente me sucedió algo parecido a lo relatado por él.
+
+Me contó que una noche, mientras dormía placidamente en su cama, sintió que alguien o algo entro a su habitación y se ubicó cerca de él. Este ente, por llamarlo de alguna manera lo aprisiono contra la cama, algo así como que lo sujeto del pecho impidiendo su movimiento, aunque intento repetidamente moverse para tratar de sujetar al ente, no pudo hacerlo. Pasaron unos instantes que parecieron eternos hasta que el ente lo libero y ya pudo moverse. ¡Curioso y tenebroso!
+
+Bueno pues les cuento que me paso algo muy parecido hace algunos días. Una noche, como de costumbre, ya que suelo quedarme hasta tarde en la noche leyendo o trabajando en el computador, me fui a dormir bien tarde, serian alrededor de las dos o dos y media de la mañana y como me sucede a veces no podía conciliar el sueño. Pasaron algunos minutos y en realidad estaba bien cansado (razón a la que atribuyo el hecho de no poder quedarme dormido rápido), así que como siempre intente cerrar los ojos y esperar quedarme dormido. No sé cuanto tiempo habría pasado cuando sentí ruidos extraños, en realidad era como si estuviera en un lugar diferente a mi apartamento y a mi habitación, sentí sonidos como de alguna o algunas personas acercándose, abriendo la puerta de mi habitación y acercándose al borde de mi cama. Aterrador, pues la verdad no sentí miedo pero si mucha curiosidad, y abrí los ojos, pero la habitación lucia igual que siempre, la puerta de la habitación estaba cerrada y no había nadie cerca. De todas maneras seguía sintiendo la presencia de alguien cerca de mí así que intente mover mis brazos para saber si había algo ahí y no pude, estaba como congelado. Unos instantes después sentí que los sonidos se fueron y que lo que estaba apisonándome ya no estaba ahí y pude moverme.
+
+Pues como pueden ver la experiencia es prácticamente la misma que la vivida por mi hermano, por cierto, ahora puedo decir que estoy seguro de que ya había experimentado esa sensación solo que hace mucho tiempo y no lo recordaba. Y dirán ustedes, que tienen que ver estas historias con brujas, pues la razón está en que mi hermano le contó esta historia a un sacerdote (alias cura) y este le dijo que seguramente se debía a que en el pasado, él (mi hermano) habría hecho una promesa a las ánimas y no la había cumplido y hasta que no la cumplieran, las ánimas lo estarían molestando para recordarle que debe cumplir su promesa. Complicado, porque si uno no se acuerda lo que prometió está prácticamente fregado y condenado a sufrir de esto por siempre.
+
+Pues como no creo en coincidencias, hoy me dio por investigar el tema y encontré que muchas personas a lo largo y ancho de este mundo terrenal han sufrido de experiencias similares. Normalmente estos "ataques" ocurren de noche, justo antes de dormirse o de despertarse, y estos ataques someten invariablemente a sus aterrorizadas víctimas a una parálisis completa, a una presión sobre el pecho y a una intensa actividad sexual. Como tantos otros episodios sobrenaturales, la similitud tan universal sugiere un fenómeno genuino, pero, ¿de dónde vienen estas "presencias"?
+
+Si hay que creer en el folklore y en los investigadores psíquicos, estas entidades son espíritus malévolos atados a la tierra, demonios y brujas que nos atacan durante nuestro sueño. Una de las tradiciones más extendidas es la de la Vieja Bruja, un término acuñado en Canadá para la aterradora figura que se ve durante los ataques nocturnos. Y la misma Vieja Bruja aparece en todo el mundo. Los alemanes la llaman Mare (nombre del que deriva la palabra inglesa nightmare, pesadilla) los escandinavos utilizan Mara y los griegos Mora
+
+De acuerdo a lo que encontré en varios sitios en Internet, la parálisis del sueño (que es como se llama este fenómeno) es algo completamente normal y se produce cada vez que uno duerme. Es el mecanismo natural de defensa del organismo (mediante la segregación de una sustancia por el cerebro) para evitar el “escenificar físicamente los sueños”, lo cual podría resultar dañino y peligroso para el individuo dormido. Pero a veces hay un pequeño “fallo”… y esta sustancia se emite cuando estamos en el periodo de transición entre el sueño y la vigilia, ocurriendo entonces que el cuerpo continúa estando dormido, pero la mente ya se ha despertado (en ente sentido es lo contrario al sonambulismo). Puede ocurrirnos tanto al acostarnos -hipnagógicos- como al despertarnos -hipnopómpicos- y esto ocasiona que el individuo mezcle sensaciones reales del entorno que le rodea con cualquier tipo de alucinación y fantasía producida por un sueño. En definitiva el sujeto se siente incapaz de realizar cualquier movimiento o de hablar, pero está plenamente consciente de su situación y de lo que ocurre a su alrededor, ya que puede oír, oler o percibir sensaciones táctiles, incluso ver si tiene los ojos abiertos.
+
+Las alucinaciones durante los episodios de parálisis de sueño dependen mucho de las creencias y experiencias de cada uno. Así se presentan a menudo sensaciones de flotación. Hay quienes experimentan (como yo en el caso que explico al principio) una presencia en la habitación, cerca de la cama, o incluso en esta. A veces esta presencia parece incluso diabólica y se interpretan como ataques de espíritus. Sucede que el durmiente se siente atacado, por estrangulación o sofocación. Esto es así porque una de las sensaciones es la de notar un peso encima (por eso a este fenómeno se le conoce en México como “la subida del muerto”).
+
+La parálisis del sueño es un fenómeno extremadamente común que ocurre por lo menos una vez en la vida en el 40 a 50 por ciento de los sujetos normales. Sin embargo, como un problema crónico es mucho menos común.
+
+Así que como suele suceder, la mayoría de las situaciones a las que se les atribuyen explicaciones sobrenaturales, por lo menos está en particular tiene una explicación científica que funciona para mí. Espero que cuando mi hermano lea esto, se tranquilice al saber que no está condenado a cumplir con promesas que hizo a las ánimas aunque debería cumplirlas, si es que en verdad las hizo, el problema está en recordar lo que prometió, pero eso es otro problema.
+
+Si alguien quiere leer algo más respecto a este tema, aquí dejo algunos links de referencia, por mí está bien la explicación que encontré.
+
+En wikipedia:
+
+[http://es.wikipedia.org/wiki/Par%C3%A1lisis\_del\_sue%C3%B1o](http://es.wikipedia.org/wiki/Par%C3%A1lisis_del_sue%C3%B1o "http://es.wikipedia.org/wiki/Par%C3%A1lisis_del_sue%C3%B1o")
+

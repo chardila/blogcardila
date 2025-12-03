@@ -4,7 +4,6 @@ description: "Segunda novela de la saga Ringworld que explora más a fondo los c
 publishDate: "2013-11-10"
 tags:
   - books
-  - opinion
 draft: false
 ---
 

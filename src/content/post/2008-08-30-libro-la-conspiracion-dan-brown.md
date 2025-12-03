@@ -4,7 +4,6 @@ description: "Título: La Conspiración Autor: Dan Brown Núm. Páginas: 608 Edi
 publishDate: "2008-08-30"
 tags:
   - books
-  - opinion
 draft: false
 ---
 

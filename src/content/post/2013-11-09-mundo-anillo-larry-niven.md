@@ -4,7 +4,6 @@ description: "Reseña de Ringworld, novela clásica de ciencia ficción de Larry
 publishDate: "2013-11-09"
 tags:
   - books
-  - opinion
 draft: false
 ---
 
