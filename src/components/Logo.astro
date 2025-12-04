@@ -3,7 +3,7 @@ interface Props {
   size?: number | string;
   class?: string;
 }
-const { size = 48, class: klass } = Astro.props;
+const { size, class: klass } = Astro.props;
 ---
 
 <svg
@@ -12,6 +12,7 @@ const { size = 48, class: klass } = Astro.props;
   width={size}
   height={size}
   class={klass || ""}
+  style={!size ? "width: auto; height: 100%;" : ""}
 >
   <!-- Left curly brace { -->
   <text
