@@ -1,4 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+---
+interface Props {
+  size?: number | string;
+  class?: string;
+}
+const { size = 48, class: klass } = Astro.props;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 100 100"
+  width={size}
+  height={size}
+  class={klass || ""}
+>
   <!-- Left curly brace { -->
   <text
     x="20"
@@ -7,9 +21,9 @@
     dominant-baseline="middle"
     font-size="60"
     font-family="monospace"
-    fill="#2bbc8a"
+    fill="currentColor"
   >
-    {
+    {"{"}
   </text>
 
   <!-- Star in the center -->
@@ -20,7 +34,7 @@
     dominant-baseline="middle"
     font-size="50"
     font-family="monospace"
-    fill="#2bbc8a"
+    fill="currentColor"
   >
     ★
   </text>
@@ -33,8 +47,8 @@
     dominant-baseline="middle"
     font-size="60"
     font-family="monospace"
-    fill="#2bbc8a"
+    fill="currentColor"
   >
-    }
+    {"}"}
   </text>
 </svg>

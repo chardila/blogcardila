@@ -1,4 +1,5 @@
 ---
+import Logo from "@/components/Logo.astro";
 import Search from "@/components/Search.astro";
 import ThemeToggle from "@/components/ThemeToggle.astro";
 import { menuLinks } from "@/site.config";
@@ -13,25 +14,7 @@ import { siteConfig } from "../../site.config";
 			class="flex-shrink-0 sm:grayscale sm:hover:filter-none"
 			href="/"
 		>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 100 100"
-				width="48"
-				height="48"
-				class="text-accent"
-				aria-hidden="true"
-				focusable="false"
-			>
-				<title>Blog Logo</title>
-				<!-- Circle face -->
-				<circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="3"/>
-				<!-- Left eye -->
-				<circle cx="35" cy="40" r="4" fill="currentColor"/>
-				<!-- Right eye -->
-				<circle cx="65" cy="40" r="4" fill="currentColor"/>
-				<!-- Smile -->
-				<path d="M 30 60 Q 50 75, 70 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-			</svg>
+			<Logo size={48} class="text-accent" />
 		</a>
 		<!-- Blog name and menu -->
 		<div class="flex flex-col justify-start">
