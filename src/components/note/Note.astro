@@ -26,6 +26,7 @@ const { Content } = await render(note);
 				<>{note.data.title}</>
 			)
 		}
+		{note.data.draft && !import.meta.env.PROD && <span class="text-red-500 ml-2">(draft)</span>}
 	</Tag>
 	<FormattedDate
 		dateTimeOptions={{
