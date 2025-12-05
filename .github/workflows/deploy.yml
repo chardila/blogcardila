@@ -31,6 +31,7 @@ jobs:
       - name: Build Astro site
         run: npm run build
         env:
+          CLOUDFLARE_ANALYTICS_TOKEN: ${{ secrets.CLOUDFLARE_ANALYTICS_TOKEN }}
           OMDB_API_KEY: ${{ secrets.OMDB_API_KEY }}
           BGG_TOKEN: ${{ secrets.BGG_TOKEN }}
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
