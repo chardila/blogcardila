@@ -3,53 +3,37 @@ interface Props {
   size?: number | string;
   class?: string;
 }
-const { size, class: klass } = Astro.props;
+const { size = 48, class: klass } = Astro.props;
 ---
 
 <svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 100 100"
   width={size}
   height={size}
+  viewBox="0 0 256 256"
+  xmlns="http://www.w3.org/2000/svg"
   class={klass || ""}
-  style={!size ? "width: auto; height: 100%;" : ""}
 >
-  <!-- Left curly brace { -->
-  <text
-    x="20"
-    y="55"
-    text-anchor="middle"
-    dominant-baseline="middle"
-    font-size="60"
-    font-family="monospace"
-    fill="currentColor"
-  >
-    {"{"}
-  </text>
+  <!-- Chat bubble outline -->
+  <path
+    d="M64 32h128c22.1 0 40 17.9 40 40v64c0 22.1-17.9 40-40 40h-72l-32 32v-32h-24c-22.1 0-40-17.9-40-40V72c0-22.1 17.9-40 40-40z"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="20"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+  />
 
-  <!-- Star in the center -->
+  <!-- Green </> symbol -->
   <text
-    x="50"
-    y="55"
+    x="128"
+    y="132"
     text-anchor="middle"
-    dominant-baseline="middle"
-    font-size="50"
+    font-size="90"
     font-family="monospace"
-    fill="currentColor"
-  >
-    ★
-  </text>
-
-  <!-- Right curly brace } -->
-  <text
-    x="80"
-    y="55"
-    text-anchor="middle"
+    font-weight="bold"
+    fill="#8BC34A"
     dominant-baseline="middle"
-    font-size="60"
-    font-family="monospace"
-    fill="currentColor"
   >
-    {"}"}
+    ->
   </text>
 </svg>
