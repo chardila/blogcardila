@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://blog.cardila.com/sitemap-0.xml
