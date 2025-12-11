@@ -1,6 +1,6 @@
 ---
 title: "Zurrón, Soquete y Morrongo"
-description: "Zurrón, Soquete y Morrongo"
+description: "Análisis de tres palabras con orígenes diversos: zurrón del vasco, soquete del francés, y morrongo derivado de onomatopeya, que ilustran cómo el español incorpora vocabulario de diferentes fuentes lingüísticas."
 publishDate: "2007-07-04"
 tags: 
   - words
