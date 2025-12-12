@@ -11,12 +11,11 @@ export const rehypeLightbox: Plugin<[], Root> = () => {
 		let imageIndex = 0;
 
 		visit(tree, "element", (node) => {
-			// Find <img> elements with class "lightbox"
+			// Find <img> elements with data-lightbox-marker attribute
 			if (
 				node.tagName === "img" &&
 				node.properties &&
-				Array.isArray(node.properties.className) &&
-				node.properties.className.includes("lightbox")
+				node.properties["data-lightbox-marker"] !== undefined
 			) {
 				// Add data attributes for the Web Component
 				node.properties["data-lightbox"] = "";
@@ -33,7 +32,11 @@ export const rehypeLightbox: Plugin<[], Root> = () => {
 				}
 
 				// Add cursor pointer styling hint
-				const existingClasses = node.properties.className || [];
+				const existingClasses = Array.isArray(node.properties.className)
+					? node.properties.className
+					: typeof node.properties.className === "string"
+						? [node.properties.className]
+						: [];
 				node.properties.className = [...existingClasses, "cursor-zoom-in"];
 			}
 		});

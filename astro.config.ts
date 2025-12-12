@@ -16,6 +16,7 @@ import rehypeUnwrapImages from "rehype-unwrap-images";
 // Remark plugins
 import remarkDirective from "remark-directive"; /* Handle ::: directives as nodes */
 import { rehypeLightbox } from "./src/plugins/rehype-lightbox";
+import { remarkLightboxSyntax } from "./src/plugins/remark-lightbox-syntax"; /* Parse {.lightbox} syntax */
 import remarkMath from "remark-math";
 import { remarkAdmonitions } from "./src/plugins/remark-admonitions"; /* Add admonitions */
 import { remarkGithubCard } from "./src/plugins/remark-github-card";
@@ -89,7 +90,7 @@ export default defineConfig({
 			rehypeKatex,
 			rehypeLightbox,
 		],
-		remarkPlugins: [remarkReadingTime, remarkDirective, remarkGithubCard, remarkAdmonitions, remarkMath],
+		remarkPlugins: [remarkLightboxSyntax, remarkReadingTime, remarkDirective, remarkGithubCard, remarkAdmonitions, remarkMath],
 		remarkRehype: {
 			footnoteLabelProperties: {
 				className: [""],
