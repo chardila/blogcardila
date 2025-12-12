@@ -1,0 +1,204 @@
+/* Lightbox styles */
+
+/* Frame animation */
+.lightbox-frame {
+	animation: lightbox-fade-in 0.2s ease-out;
+}
+
+@keyframes lightbox-fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* Smooth image transitions when navigating */
+[data-lightbox-image] {
+	transition: opacity 0.15s ease-in-out;
+}
+
+[data-lightbox-image].loading {
+	opacity: 0.5;
+}
+
+/* Enhance the cursor zoom effect on thumbnails */
+img[data-lightbox] {
+	transition:
+		transform 0.2s ease,
+		box-shadow 0.2s ease;
+}
+
+img[data-lightbox]:hover {
+	transform: scale(1.02);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark mode shadow adjustment */
+[data-theme="dark"] img[data-lightbox]:hover {
+	box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+/* Smooth backdrop blur transition */
+dialog[open]::backdrop {
+	animation: backdrop-fade-in 0.2s ease-out;
+}
+
+@keyframes backdrop-fade-in {
+	from {
+		backdrop-filter: blur(0px);
+		background-color: rgba(0, 0, 0, 0);
+	}
+	to {
+		backdrop-filter: blur(4px);
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+}
+
+/* Dark mode adjustments for buttons */
+[data-theme="dark"] .lightbox-frame button {
+	background-color: rgba(39, 39, 42, 0.9);
+}
+
+[data-theme="dark"] .lightbox-frame button:hover:not(:disabled) {
+	background-color: rgba(63, 63, 70, 0.9);
+}
+
+/* Light mode adjustments for buttons */
+[data-theme="light"] .lightbox-frame button {
+	background-color: rgba(39, 39, 42, 0.8);
+}
+
+[data-theme="light"] .lightbox-frame button:hover:not(:disabled) {
+	background-color: rgba(63, 63, 70, 0.9);
+}
+
+/* Loading spinner */
+.lightbox-loader {
+	backdrop-filter: blur(2px);
+}
+
+/* Caption styling */
+[data-lightbox-caption] {
+	line-height: 1.5;
+	padding: 0 1rem;
+}
+
+/* Mobile touch optimization */
+@media (hover: none) and (pointer: coarse) {
+	/* Remove hover effects on touch devices */
+	img[data-lightbox]:hover {
+		transform: none;
+		box-shadow: none;
+	}
+
+	/* Larger touch targets on mobile */
+	.lightbox-frame button {
+		padding: 1rem !important;
+		min-width: 44px;
+		min-height: 44px;
+	}
+
+	/* Adjust close button for mobile */
+	[data-close-lightbox] {
+		top: 0.5rem;
+		right: 0.5rem;
+	}
+
+	/* Adjust navigation buttons for mobile */
+	[data-prev-lightbox],
+	[data-next-lightbox] {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	/* Ensure counter is visible on mobile */
+	[data-image-counter] {
+		bottom: 0.5rem;
+		font-size: 0.875rem;
+	}
+}
+
+/* Tablet and larger screens */
+@media (min-width: 640px) {
+	.lightbox-content {
+		max-height: 85vh;
+		max-width: 85vw;
+	}
+
+	[data-lightbox-image] {
+		max-height: 75vh;
+	}
+}
+
+/* Desktop optimization */
+@media (min-width: 1024px) {
+	.lightbox-content {
+		max-height: 90vh;
+		max-width: 90vw;
+	}
+
+	[data-lightbox-image] {
+		max-height: 80vh;
+	}
+
+	/* Better button hover states on desktop */
+	.lightbox-frame button:hover:not(:disabled) {
+		transform: scale(1.05);
+	}
+
+	.lightbox-frame button:active:not(:disabled) {
+		transform: scale(0.95);
+	}
+}
+
+/* Focus styles for accessibility */
+.lightbox-frame button:focus-visible {
+	outline: 2px solid var(--color-accent, #2bbc8a);
+	outline-offset: 2px;
+}
+
+img[data-lightbox]:focus-visible {
+	outline: 2px solid var(--color-accent, #2bbc8a);
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+/* Prevent body scroll when lightbox is open */
+dialog[open] {
+	overflow: hidden;
+}
+
+/* Ensure proper z-index layering */
+image-lightbox {
+	position: relative;
+	z-index: 9999;
+}
+
+image-lightbox dialog {
+	z-index: 10000;
+}
+
+/* Smooth transition for disabled buttons */
+.lightbox-frame button:disabled {
+	transition:
+		opacity 0.2s ease,
+		cursor 0.2s ease;
+}
+
+/* Image fade-in effect after loading */
+@keyframes image-fade-in {
+	from {
+		opacity: 0;
+		transform: scale(0.95);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+[data-lightbox-image][src]:not([src=""]) {
+	animation: image-fade-in 0.3s ease-out;
+}

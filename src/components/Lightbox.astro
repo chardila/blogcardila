@@ -1,0 +1,368 @@
+---
+import "@/styles/blocks/lightbox.css";
+---
+
+<image-lightbox>
+	<dialog
+		aria-label="Image lightbox"
+		class="bg-global-bg/95 h-full max-h-full w-full max-w-full border-0 backdrop:backdrop-blur-sm open:flex"
+	>
+		<div class="lightbox-frame relative flex h-full w-full items-center justify-center p-4">
+			<!-- Close button -->
+			<button
+				class="absolute top-4 right-4 z-10 cursor-pointer rounded-md bg-zinc-800/80 p-2 text-white hover:bg-zinc-700 transition-colors"
+				data-close-lightbox
+				aria-label="Close lightbox"
+			>
+				<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"
+					></path>
+				</svg>
+			</button>
+
+			<!-- Previous button -->
+			<button
+				class="absolute left-4 top-1/2 -translate-y-1/2 cursor-pointer rounded-md bg-zinc-800/80 p-3 text-white hover:bg-zinc-700 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+				data-prev-lightbox
+				aria-label="Previous image"
+			>
+				<svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+				</svg>
+			</button>
+
+			<!-- Image container -->
+			<div class="lightbox-content flex max-h-[90vh] max-w-[90vw] flex-col items-center">
+				<!-- Loading spinner -->
+				<div
+					class="lightbox-loader absolute inset-0 z-10 flex items-center justify-center bg-global-bg/50"
+				>
+					<div class="border-accent h-12 w-12 animate-spin rounded-full border-b-2"></div>
+				</div>
+
+				<img
+					class="max-h-[80vh] max-w-full object-contain"
+					data-lightbox-image
+					alt=""
+					src=""
+					style="display: none;"
+				/>
+
+				<!-- Caption -->
+				<p
+					class="text-global-text mt-4 max-w-2xl text-center text-sm"
+					data-lightbox-caption
+					style="display: none;"
+				></p>
+			</div>
+
+			<!-- Next button -->
+			<button
+				class="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer rounded-md bg-zinc-800/80 p-3 text-white hover:bg-zinc-700 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+				data-next-lightbox
+				aria-label="Next image"
+			>
+				<svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+				</svg>
+			</button>
+
+			<!-- Image counter -->
+			<div
+				class="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-md bg-zinc-800/80 px-4 py-2 text-sm text-white"
+				data-image-counter
+			>
+				<span data-current-index>1</span> / <span data-total-images>1</span>
+			</div>
+		</div>
+	</dialog>
+</image-lightbox>
+
+<script>
+	class ImageLightbox extends HTMLElement {
+		#dialog: HTMLDialogElement | null;
+		#lightboxImage: HTMLImageElement | null;
+		#captionElement: HTMLElement | null;
+		#closeBtn: HTMLButtonElement | null;
+		#prevBtn: HTMLButtonElement | null;
+		#nextBtn: HTMLButtonElement | null;
+		#currentIndexEl: HTMLElement | null;
+		#totalImagesEl: HTMLElement | null;
+		#counterEl: HTMLElement | null;
+		#loader: HTMLElement | null;
+		#controller: AbortController;
+		#images: HTMLImageElement[] = [];
+		#currentIndex = 0;
+
+		constructor() {
+			super();
+
+			// Get DOM elements
+			this.#dialog = this.querySelector<HTMLDialogElement>("dialog");
+			this.#lightboxImage = this.querySelector<HTMLImageElement>("[data-lightbox-image]");
+			this.#captionElement = this.querySelector<HTMLElement>("[data-lightbox-caption]");
+			this.#closeBtn = this.querySelector<HTMLButtonElement>("[data-close-lightbox]");
+			this.#prevBtn = this.querySelector<HTMLButtonElement>("[data-prev-lightbox]");
+			this.#nextBtn = this.querySelector<HTMLButtonElement>("[data-next-lightbox]");
+			this.#currentIndexEl = this.querySelector<HTMLElement>("[data-current-index]");
+			this.#totalImagesEl = this.querySelector<HTMLElement>("[data-total-images]");
+			this.#counterEl = this.querySelector<HTMLElement>("[data-image-counter]");
+			this.#loader = this.querySelector<HTMLElement>(".lightbox-loader");
+			this.#controller = new AbortController();
+
+			// Initialize
+			this.#collectImages();
+			this.#setupEventListeners();
+		}
+
+		/**
+		 * Find all lightbox-enabled images on the page
+		 */
+		#collectImages() {
+			const images = document.querySelectorAll<HTMLImageElement>("img[data-lightbox]");
+			this.#images = Array.from(images);
+
+			// Add click listeners to each image
+			this.#images.forEach((img, index) => {
+				img.addEventListener("click", () => this.#openLightbox(index), {
+					signal: this.#controller.signal,
+				});
+
+				// Add keyboard accessibility
+				img.setAttribute("tabindex", "0");
+				img.setAttribute("role", "button");
+				img.addEventListener(
+					"keydown",
+					(e: KeyboardEvent) => {
+						if (e.key === "Enter" || e.key === " ") {
+							e.preventDefault();
+							this.#openLightbox(index);
+						}
+					},
+					{ signal: this.#controller.signal },
+				);
+			});
+
+			// Update total count
+			if (this.#totalImagesEl) {
+				this.#totalImagesEl.textContent = String(this.#images.length);
+			}
+
+			// Show/hide navigation based on number of images
+			this.#updateNavigationVisibility();
+		}
+
+		/**
+		 * Setup event listeners for buttons and dialog
+		 */
+		#setupEventListeners() {
+			// Close button
+			if (this.#closeBtn) {
+				this.#closeBtn.addEventListener("click", () => this.#closeLightbox(), {
+					signal: this.#controller.signal,
+				});
+			}
+
+			// Navigation buttons
+			if (this.#prevBtn) {
+				this.#prevBtn.addEventListener("click", () => this.#showPrevious(), {
+					signal: this.#controller.signal,
+				});
+			}
+
+			if (this.#nextBtn) {
+				this.#nextBtn.addEventListener("click", () => this.#showNext(), {
+					signal: this.#controller.signal,
+				});
+			}
+
+			// Dialog backdrop click
+			if (this.#dialog) {
+				this.#dialog.addEventListener("click", this.#onBackdropClick, {
+					signal: this.#controller.signal,
+				});
+			}
+		}
+
+		connectedCallback() {
+			// Global keyboard shortcuts
+			window.addEventListener("keydown", this.#onKeydown, {
+				signal: this.#controller.signal,
+			});
+		}
+
+		disconnectedCallback() {
+			// Cleanup event listeners
+			this.#controller.abort();
+		}
+
+		/**
+		 * Open lightbox with specific image
+		 */
+		#openLightbox = (index: number) => {
+			if (!this.#dialog) return;
+
+			this.#currentIndex = index;
+			this.#loadImage(index);
+			this.#dialog.showModal();
+			this.#updateNavigationState();
+		};
+
+		/**
+		 * Close lightbox
+		 */
+		#closeLightbox = () => {
+			this.#dialog?.close();
+		};
+
+		/**
+		 * Load and display image at given index
+		 */
+		#loadImage(index: number) {
+			if (!this.#lightboxImage || !this.#images[index]) return;
+
+			const sourceImage = this.#images[index];
+			const src = (sourceImage.getAttribute("data-lightbox-src") || sourceImage.src) as string;
+			const alt = sourceImage.getAttribute("data-lightbox-alt") || sourceImage.alt;
+			const caption = sourceImage.getAttribute("data-lightbox-caption") || alt;
+
+			// Show loader, hide image
+			if (this.#loader) {
+				this.#loader.style.display = "flex";
+			}
+			if (this.#lightboxImage) {
+				this.#lightboxImage.style.display = "none";
+			}
+
+			// Preload image
+			const tempImg = new Image();
+			tempImg.onload = () => {
+				if (this.#lightboxImage) {
+					this.#lightboxImage.src = src;
+					this.#lightboxImage.alt = alt;
+					this.#lightboxImage.style.display = "block";
+				}
+				if (this.#captionElement) {
+					this.#captionElement.textContent = caption;
+					this.#captionElement.style.display = caption ? "block" : "none";
+				}
+				// Hide loader
+				if (this.#loader) {
+					this.#loader.style.display = "none";
+				}
+			};
+			tempImg.onerror = () => {
+				console.error("Failed to load image:", src);
+				if (this.#loader) {
+					this.#loader.style.display = "none";
+				}
+				if (this.#lightboxImage) {
+					this.#lightboxImage.style.display = "block";
+				}
+			};
+			tempImg.src = src;
+
+			// Update counter
+			if (this.#currentIndexEl) {
+				this.#currentIndexEl.textContent = String(index + 1);
+			}
+		}
+
+		/**
+		 * Show previous image
+		 */
+		#showPrevious = () => {
+			if (this.#currentIndex > 0) {
+				this.#currentIndex--;
+				this.#loadImage(this.#currentIndex);
+				this.#updateNavigationState();
+			}
+		};
+
+		/**
+		 * Show next image
+		 */
+		#showNext = () => {
+			if (this.#currentIndex < this.#images.length - 1) {
+				this.#currentIndex++;
+				this.#loadImage(this.#currentIndex);
+				this.#updateNavigationState();
+			}
+		};
+
+		/**
+		 * Update navigation button states
+		 */
+		#updateNavigationState() {
+			// Disable/enable prev/next buttons based on position
+			if (this.#prevBtn) {
+				this.#prevBtn.disabled = this.#currentIndex === 0;
+			}
+			if (this.#nextBtn) {
+				this.#nextBtn.disabled = this.#currentIndex === this.#images.length - 1;
+			}
+		}
+
+		/**
+		 * Update navigation visibility based on image count
+		 */
+		#updateNavigationVisibility() {
+			// Hide navigation if only one image
+			if (this.#images.length <= 1) {
+				if (this.#prevBtn) this.#prevBtn.style.display = "none";
+				if (this.#nextBtn) this.#nextBtn.style.display = "none";
+				if (this.#counterEl) this.#counterEl.style.display = "none";
+			}
+		}
+
+		/**
+		 * Handle backdrop click to close
+		 */
+		#onBackdropClick = (event: MouseEvent) => {
+			// Close if clicking on the dialog backdrop (not the content)
+			if (event.target === this.#dialog) {
+				this.#closeLightbox();
+			}
+		};
+
+		/**
+		 * Handle keyboard navigation
+		 */
+		#onKeydown = (e: KeyboardEvent) => {
+			if (!this.#dialog?.open) return;
+
+			switch (e.key) {
+				case "Escape":
+					this.#closeLightbox();
+					break;
+				case "ArrowLeft":
+					e.preventDefault();
+					this.#showPrevious();
+					break;
+				case "ArrowRight":
+					e.preventDefault();
+					this.#showNext();
+					break;
+				case "Home":
+					e.preventDefault();
+					if (this.#images.length > 0) {
+						this.#currentIndex = 0;
+						this.#loadImage(0);
+						this.#updateNavigationState();
+					}
+					break;
+				case "End":
+					e.preventDefault();
+					if (this.#images.length > 0) {
+						this.#currentIndex = this.#images.length - 1;
+						this.#loadImage(this.#currentIndex);
+						this.#updateNavigationState();
+					}
+					break;
+			}
+		};
+	}
+
+	// Define custom element
+	customElements.define("image-lightbox", ImageLightbox);
+</script>

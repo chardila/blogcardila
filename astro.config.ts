@@ -15,6 +15,7 @@ import rehypeKatex from "rehype-katex";
 import rehypeUnwrapImages from "rehype-unwrap-images";
 // Remark plugins
 import remarkDirective from "remark-directive"; /* Handle ::: directives as nodes */
+import { rehypeLightbox } from "./src/plugins/rehype-lightbox";
 import remarkMath from "remark-math";
 import { remarkAdmonitions } from "./src/plugins/remark-admonitions"; /* Add admonitions */
 import { remarkGithubCard } from "./src/plugins/remark-github-card";
@@ -86,6 +87,7 @@ export default defineConfig({
 			],
 			rehypeUnwrapImages,
 			rehypeKatex,
+			rehypeLightbox,
 		],
 		remarkPlugins: [remarkReadingTime, remarkDirective, remarkGithubCard, remarkAdmonitions, remarkMath],
 		remarkRehype: {
