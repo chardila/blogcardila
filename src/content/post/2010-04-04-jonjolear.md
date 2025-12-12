@@ -3,7 +3,7 @@ title: "Jonjolear"
 description: "Exploro el significado, uso y origen de la palabra colombiana 'jonjolear', un verbo regional que significa mimar o consentir."
 publishDate: "2010-04-04"
 tags: 
-  - words
+  - palabras
 ---
 
 > **Jonjolear**  

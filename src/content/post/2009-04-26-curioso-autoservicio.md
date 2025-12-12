@@ -3,7 +3,7 @@ title: "Curioso Autoservicio"
 description: "Pequeño autoservicio encontrado en oficinas de Medellín que funciona de manera sencilla basado en la confianza: tomas lo que quieras y pagas."
 publishDate: "2009-04-26"
 tags:
-  - funny
+  - curiosidad
 draft: false
 ---
 

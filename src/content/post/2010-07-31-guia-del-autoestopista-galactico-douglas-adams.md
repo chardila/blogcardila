@@ -3,7 +3,7 @@ title: "Libro: Guía del autoestopista galáctico. Por Douglas Adams"
 description: "Reseña del libro Guía del autoestopista galáctico de Douglas Adams, una obra de ciencia ficción humorística que sigue las aventuras de Arthur Dent tras la destrucción de la Tierra."
 publishDate: "2010-07-31"
 tags:
-  - books
+  - libros
 draft: false
 ---
 

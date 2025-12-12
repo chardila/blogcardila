@@ -3,7 +3,7 @@ title: "Batuquear"
 publishDate: "2012-02-06"
 description: "Significado, usos y origen cultural de la palabra batuquear."
 tags: 
-  - words
+  - palabras
 ---
 
 En días pasados, hablando con una pareja de uruguayos, alguno de ellos mencionó la palabra **batuquear**.  

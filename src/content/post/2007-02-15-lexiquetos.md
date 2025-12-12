@@ -3,7 +3,7 @@ title: "Lexiquetos"
 description: "Sitio web interesante donde puedes encontrar cómo se escribe tu nombre en varios idiomas como árabe, chino, japonés, sánscrito, jeroglífico egipcio y más."
 publishDate: "2007-02-15"
 tags:
-  - funny
+  - curiosidad
 draft: false
 ---
 

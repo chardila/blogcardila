@@ -3,7 +3,7 @@ title: "Origen del día del amor y la amistad"
 description: "Historia y origen del día del amor y la amistad, una celebración que se festeja en diferentes fechas según el país."
 publishDate: "2007-09-15"
 tags:
-  - funny
+  - curiosidad
 draft: false
 ---
 

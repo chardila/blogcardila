@@ -3,7 +3,7 @@ title: "Dynamo - Soda Stereo (1992)"
 description: "Álbum experimental de Soda Stereo de 1992 que marcó un cambio en su sonido y llevó a cambios en su relación con su sello discográfico."
 publishDate: "2007-11-04"
 tags:
-  - music
+  - música
 draft: false
 ---
 

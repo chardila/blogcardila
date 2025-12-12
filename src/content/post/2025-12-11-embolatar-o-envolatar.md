@@ -4,7 +4,7 @@ title: "¿Envolatado o Embolatado?"
 description: "Exploro el origen, significado y la forma correcta de escribir embolatado/envolatado, un colombianismo lleno de historia lingüística."
 publishDate: 2025-12-11
 tags:
-  - words
+  - palabras
 ---
 
 Hace años alguien me preguntó por chat cómo se escribía correctamente: **¿embolatado o envolatado?** En ese momento pensé que la respuesta sería sencilla… hasta que me fui de cabeza a investigar. Resulta que este es uno de esos colombianismos que usamos todos los días, pero cuya ortografía ha generado debates, estudios y hasta artículos académicos enteros.

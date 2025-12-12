@@ -3,7 +3,7 @@ title: "¿Ceviche, cebiche, seviche o sebiche?"
 description: "Exploro cuál es la forma correcta de escribir ceviche —cebiche, seviche o sebiche— y qué dice la RAE sobre cada variante."
 publishDate: "2009-06-10"
 tags:
-  - words
+  - palabras
 ---
 
 Hace unos días, mientras celebrábamos el cumpleaños de un amigo en un restaurante bastante reconocido, me encontré con algo que me llamó la atención: en la carta ofrecían un **“Cebiche de camarón”** escrito con *b*. Mi primera reacción fue pensar que era un error ortográfico imperdonable en un sitio así.  

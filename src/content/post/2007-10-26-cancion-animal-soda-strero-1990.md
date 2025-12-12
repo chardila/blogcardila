@@ -3,7 +3,7 @@ title: "Canción Animal. Soda Stereo (1990)"
 description: "Álbum Canción Animal de Soda Stereo de 1990 y su histórico concierto de cierre de la Gira Animal en Vélez ante 40.000 personas."
 publishDate: "2007-10-26"
 tags:
-  - music
+  - música
 draft: false
 ---
 

@@ -3,7 +3,7 @@ title: "Rodrigo y Gabriela"
 description: "Duo musical mexicano de guitarra acústica con ritmos rápidos y fusión de metal y música latina. Incluye su espectacular versión de Stairway to Heaven."
 publishDate: "2007-03-10"
 tags:
-  - music
+  - música
 draft: false
 ---
 

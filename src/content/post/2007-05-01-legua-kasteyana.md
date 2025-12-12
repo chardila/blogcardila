@@ -3,7 +3,7 @@ title: "Lengua Kasteyana"
 description: "Lengua Kasteyana"
 publishDate: "2007-05-01"
 tags: 
-  - "funny"
+  - "curiosidad"
 ---
 
 Me encontré esto y no puedo dejar de pensar en lo que pasaría si fuera cierto. Claro que es una broma pero da escalofríos.

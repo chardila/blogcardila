@@ -3,7 +3,7 @@ title: "¿Dónde se habla el mejor español?"
 description: "¿Dónde se habla el mejor español?"
 publishDate: "2007-03-25"
 tags: 
-  - "opinion"
+  - "opinión"
 ---
 
 A propósito del XIII Congreso de las Academias de la Lengua llevado a cabo en Medellín, y el IV Congreso Internacional de la Lengua realizado en Cartagena, recordé una discusión que tuve el año pasado cuando estuve en Puerto Rico, con un par de venezolanos y un peruano, y es que todos alegaban que en sus respectivos países hablan el mejor español. Por mi trabajo y por mis viajes he tenido que hablar con gente de muchas partes entre ellos, argentinos, chilenos, venezolanos, peruanos, puertorriqueños, guatemaltecos, costarricenses, cubanos, mexicanos, españoles y por supuesto colombianos y sé muy bien que todos hablamos diferente y no por ello mejor o peor.

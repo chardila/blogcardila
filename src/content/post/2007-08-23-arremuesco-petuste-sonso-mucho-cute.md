@@ -3,7 +3,7 @@ title: "Arremuesco,  Petuste, Sonso, mucho cute"
 description: "Exploración de cuatro palabras y expresiones santandereanas: arremuesco, petuste, sonso y la construcción 'mucho cute', que reflejan la riqueza del español colombiano regional y la identidad cultural de Santander."
 publishDate: "2007-08-23"
 tags: 
-  - words
+  - palabras
 ---
 
 ## Origen y significado de "Arremuesco", "Petuste", "Sonso" y "Mucho cute"

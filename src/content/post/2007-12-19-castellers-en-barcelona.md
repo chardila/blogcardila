@@ -3,7 +3,7 @@ title: "Castellers en Barcelona"
 description: "Video y explicación sobre los Castellers, tradición catalana de construir torres humanas en Barcelona."
 publishDate: "2007-12-19"
 tags:
-  - funny
+  - curiosidad
 draft: false
 ---
 

@@ -3,7 +3,7 @@ title: "Libro: Mundo Anillo por Larry Niven"
 description: "Reseña de Ringworld, novela clásica de ciencia ficción de Larry Niven sobre una megaestructura en forma de anillo que rodea una estrella."
 publishDate: "2013-11-09"
 tags:
-  - books
+  - libros
 draft: false
 ---
 

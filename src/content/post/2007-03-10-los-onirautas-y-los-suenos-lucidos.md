@@ -3,7 +3,7 @@ title: "Los onironautas y los sueños Lúcidos"
 description: "Los onironautas y los sueños Lúcidos"
 publishDate: "2007-03-10"
 tags: 
-  - "opinion"
+  - "opinión"
 ---
 
 Sigo con el tema del sueño y lo que pasa cuando estamos en los brazos de Morfeo. Pues hace mucho tiempo, cuando era un chiquillo y tenía alrededor de 5-6 años, me pasaba constantemente que tenía un sueño que se repetía y se repetía, noche tras noche, al punto que en algún momento comencé a estar consciente dentro del sueño que era un sueño. Luego que fui capaz de reconocer que estaba en un sueño, comencé a hacer cosas que no haría estando despierto como golpear puertas de casas o darle patadas a las puertas de las casas, romper vidrios y demás actividades vandálicas (recuerden que tenía 5-6 años) sin temor a ser castigado, que chévere verdad?. En mi sueño, según recuerdo, yo aparecía en un lugar, pueblo que no reconocía y el pueblo era algo así como un pueblo fantasma porque nunca había nadie allí, así que yo podía jugar con todo lo que había en el pueblo y si rompía algo, nadie se enteraba y menos me castigaban, todo un paraíso para un niño. Luego de un tiempo de estar en estos sueños y ser consciente de ello, pasaba que me aburría así que intentaba conscientemente de despertarme y para ello recuerdo que hice de todo, me golpeaba, me pinchaba con algo, me cacheteaba y nada, hasta que un día descubrí como hacerlo y sencillamente consistía en concentrarme en querer despertar hasta que lo lograba y al despertar recordaba todo lo que había sucedido en el sueño.

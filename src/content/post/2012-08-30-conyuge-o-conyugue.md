@@ -3,7 +3,7 @@ title: "¿Cónyuge o Cónyugue?"
 publishDate: "2012-08-30"
 description: "Cómo se escribe correctamente: cónyuge o cónyugue, cuál es su origen y por qué suele confundirse."
 tags: 
-  - words
+  - palabras
 ---
 
 En días pasados, en la oficina surgió la duda sobre cómo se escribe y pronuncia esta palabra. Me puse a investigar en la RAE y esto fue lo que encontré:

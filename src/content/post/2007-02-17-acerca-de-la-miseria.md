@@ -3,7 +3,7 @@ title: "Acerca de la miseria"
 description: "Cuento tradicional de Don Segundo Sombra de Ricardo Güiraldes que explica el origen de la miseria en el mundo. Una historia sobre un herrero pobre que engaña al diablo tres veces y por qué la miseria nunca se va."
 publishDate: "2007-02-17"
 tags:
-  - words
+  - palabras
 draft: false
 ---
 

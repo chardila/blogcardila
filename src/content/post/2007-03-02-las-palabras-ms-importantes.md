@@ -3,7 +3,7 @@ title: "Las palabras más importantes"
 description: "La Biblia del Manchester United, un cartel que se encuentra en los camerinos del equipo con las palabras más importantes para el trabajo en equipo."
 publishDate: "2007-03-02"
 tags:
-  - funny
+  - curiosidad
 draft: false
 ---
 

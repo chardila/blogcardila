@@ -3,7 +3,7 @@ title: "Algo más de Maia"
 description: "Biografía y carrera artística de la cantante barranquillera Maia, ganadora de Colombia Suena Bien en 1998. Incluye sus éxitos Niña Bonita e Ingenuidad."
 publishDate: "2007-07-07"
 tags:
-  - music
+  - música
 draft: false
 ---
 

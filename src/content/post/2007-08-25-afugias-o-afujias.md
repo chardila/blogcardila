@@ -3,7 +3,7 @@ title: "Afugias o Afujías: una palabra muy nuestra"
 description: "Un recorrido por el significado, origen y uso de las palabras afugias/afujías, un colombianismo con historia y mucha identidad."
 publishDate: "2007-08-25"
 tags:
-  - words
+  - palabras
 ---
 
 > **_afugias_**: penas, dificultades.  

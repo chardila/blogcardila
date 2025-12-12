@@ -4,7 +4,7 @@ description: "Historia de Girón, Santander, sobre Joaquín, un sastre que invoc
 publishDate: "2025-03-21"
 tags:
   - personal
-  - funny
+  - curiosidad
 draft: false
 ---
 Hace mucho tiempo grabé un video improvisado de Ella, en el que contaba una historia sobre las ánimas y por qué no se les debe pedir favores. Ella Melando fue una persona muy querida por mis hermanos y por mí; aunque falleció hace algunos años, la recuerdo con mucho cariño.

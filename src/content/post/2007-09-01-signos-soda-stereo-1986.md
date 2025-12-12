@@ -3,7 +3,7 @@ title: "Signos. Soda Stereo (1986)"
 description: "Álbum Signos de Soda Stereo de 1986 con el que se consolidaron. Incluye canciones emblemáticas y letras profundas del grupo argentino."
 publishDate: "2007-09-01"
 tags:
-  - music
+  - música
 draft: false
 ---
 

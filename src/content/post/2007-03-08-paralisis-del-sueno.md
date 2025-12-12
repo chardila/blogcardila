@@ -3,7 +3,7 @@ title: "Parálisis del sueño"
 description: "Parálisis del sueño"
 publishDate: "2007-03-08"
 tags: 
-  - "opinion"
+  - "opinión"
 ---
 
 Hace algunos meses, hablando con mi hermano sobre brujas, él me relató una historia que me pareció interesante y quise profundizar en el tema porque recientemente me sucedió algo parecido a lo relatado por él.

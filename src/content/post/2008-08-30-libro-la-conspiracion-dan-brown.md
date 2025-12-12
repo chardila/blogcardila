@@ -3,7 +3,7 @@ title: "Libro: La Conspiración, Dan Brown"
 description: "Título: La Conspiración Autor: Dan Brown Núm. Páginas: 608 Editorial: Umbriel ISBN: 84-95618-82-6"
 publishDate: "2008-08-30"
 tags:
-  - books
+  - libros
 draft: false
 ---
 

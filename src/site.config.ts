@@ -38,15 +38,19 @@ export const menuLinks: { path: string; title: string }[] = [
 	},
 	{
 		path: "/about/",
-		title: "Acerca de",
+		title: "Acerca",
 	},
 	{
 		path: "/posts/",
 		title: "Blog",
 	},
 	{
+		path: "/notes/",
+		title: "Notas",
+	},
+	{
 		path: "/boardgames/",
-		title: "Juegos de Mesa",
+		title: "Juegos",
 	},
 ];
 

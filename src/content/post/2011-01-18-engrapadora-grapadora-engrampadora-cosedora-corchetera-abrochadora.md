@@ -3,7 +3,7 @@ title: "Grapadora, engrampadora, cosedora, corchetera o abrochadora"
 description: "Un vistazo curioso a los distintos nombres de la grapadora en el mundo hispanohablante: engrapadora, cosedora, abrochadora, corchetera y más."
 publishDate: "2011-01-18"
 tags: 
-  - words
+  - palabras
 ---
 
 Este utensilio resultó tener más nombres de los que imaginaba. En mi trabajo interactúo con personas de varios países, y un día descubrimos —entre risas y confusiones— que cada uno lo llama de manera diferente. Lo que para unos es *grapadora*, para otros es *corchetera*, *engrapadora* o incluso *abrochadora*.  

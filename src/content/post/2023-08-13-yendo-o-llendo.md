@@ -3,7 +3,7 @@ title: "Yendo o Llendo?"
 description: "Aclaración sobre la forma correcta de escribir el gerundio del verbo ir. Una duda común que ha confundido a muchos hablantes de español."
 publishDate: "2023-08-13"
 tags:
-  - words
+  - palabras
 draft: false
 ---
 

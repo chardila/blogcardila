@@ -3,7 +3,7 @@ title: "Hormigas Culonas"
 description: "Experiencia probando las famosas hormigas culonas, manjar característico de Santander, Colombia, con información sobre este curioso alimento."
 publishDate: "2009-05-16"
 tags:
-  - funny
+  - curiosidad
 draft: false
 ---
 

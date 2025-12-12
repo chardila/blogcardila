@@ -3,7 +3,7 @@ title: "¿Por qué el 25 de diciembre es navidad?"
 description: "Explicación histórica de por qué los cristianos celebran el nacimiento de Jesús el 25 de diciembre y el origen de esta fecha."
 publishDate: "2013-12-23"
 tags:
-  - funny
+  - curiosidad
 draft: false
 ---
 

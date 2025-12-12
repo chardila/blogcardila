@@ -3,7 +3,7 @@ title: "Gente linda colombiana"
 description: "Divertida reflexión sobre la belleza de los colombianos con la frase: Si las visas las dieran por ser gente linda, U.S estaría lleno de Colombianos."
 publishDate: "2008-01-22"
 tags:
-  - "funny"
+  - "curiosidad"
 draft: false
 ---
 

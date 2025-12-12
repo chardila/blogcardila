@@ -3,7 +3,7 @@ title: "Señal curiosa"
 description: "Señal curiosa vista en varios lugares de Praga que parece más un dibujo de una escena que una señal de tránsito convencional."
 publishDate: "2008-04-12"
 tags:
-  - funny
+  - curiosidad
 draft: false
 ---
 

@@ -3,7 +3,7 @@ title: "Maia - Colombia es pasión"
 description: "Video y letra de la canción Colombia es Pasión interpretada por Maia junto a otros cantantes colombianos, exaltando el orgullo de ser colombiano."
 publishDate: "2007-07-07"
 tags:
-  - music
+  - música
 draft: false
 ---
 

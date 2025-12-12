@@ -3,7 +3,7 @@ title: "Steve Jobs - Ceremonia de graduación Stanford University"
 description: "Steve Jobs - Ceremonia de graduación Stanford University"
 publishDate: "2007-03-09"
 tags: 
-  - "opinion"
+  - "opinión"
 ---
 
 Hace algunos meses Raúl Rodríguez, un amigo con quien estudie en la universidad (UIS - Universidad Industrial de Santander) y quien está actualmente viviendo en Edimburgo, Escocia, tradujo el discurso que dio Steve Jobs, CEO _de Apple Computer y Pixar Animation Studios,_ a los graduandos de la Universidad de Stanford, esto sucedió en junio 12 de 2005. 

@@ -3,7 +3,7 @@ title: "Libro: Los ingenieros del Mundo Anillo por Larry Niven"
 description: "Segunda novela de la saga Ringworld que explora más a fondo los conceptos del primer libro y responde preguntas sobre la megaestructura."
 publishDate: "2013-11-10"
 tags:
-  - books
+  - libros
 draft: false
 ---
 

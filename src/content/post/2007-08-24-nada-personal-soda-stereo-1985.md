@@ -3,7 +3,7 @@ title: "Nada personal. Soda Stereo (1985)"
 description: "Canciones y letras del álbum Nada Personal de Soda Stereo de 1985 para disfrutar y recordar."
 publishDate: "2007-08-24"
 tags:
-  - music
+  - música
 draft: false
 ---
 

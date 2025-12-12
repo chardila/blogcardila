@@ -3,7 +3,7 @@ title: "Mauricio & Palodeagua"
 description: "Reseña del nuevo CD Contigo de Mauricio & Palodeagua, ganador de disco de platino en Colombia y nominado a Grammy Latino, exponente de música caribeña."
 publishDate: "2007-03-23"
 tags:
-  - music
+  - música
 draft: false
 ---
 
