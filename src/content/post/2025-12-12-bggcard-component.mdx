@@ -1,0 +1,260 @@
+---
+title: "BGGCard: Mi Componente Astro para Mostrar Juegos de Mesa"
+description: "Un componente hecho por mí para facilitar la creación de posts sobre juegos de mesa usando datos directamente de BoardGameGeek."
+publishDate: "2025-12-12"
+tags: ["boardgames", "components"]
+---
+
+import BGGCard from "@/components/BGGCard.astro";
+
+## ¿Por qué hice este componente?
+
+Los que me conocen saben que me encantan los juegos de mesa. Tengo una colección grande (y creciendo 😅), y cada cierto tiempo me gusta escribir reseñas o recomendaciones en el blog. Pero siempre me pasaba lo mismo: tenía que copiar manualmente la información básica del juego —año, jugadores, duración, editorial, rating— desde BoardGameGeek. Y hacer eso una y otra vez es aburrido, propenso a errores, y sinceramente me quitaba las ganas de escribir.
+
+Así que decidí crear **BGGCard**, un componente de Astro que se encarga de hacer *todo ese trabajo repetitivo por mí*. Solo le paso el ID del juego, y automáticamente trae la información oficial desde la API de BoardGameGeek y la muestra en una tarjeta bonita y consistente. Esto me permite concentrarme en lo que realmente quiero escribir: mi experiencia con el juego y mis opiniones personales.
+
+
+## ¿Qué es BGGCard?
+
+**BGGCard** es un componente de Astro que te permite mostrar tarjetas interactivas con información detallada de juegos de mesa obtenida directamente de la API de [BoardGameGeek](https://boardgamegeek.com). Ideal para blogs, reseñas o artículos sobre juegos.
+
+El componente se conecta a la API de BoardGameGeek, obtiene los datos del juego y los muestra en una tarjeta visualmente atractiva con toda la información relevante.
+
+## Características Principales
+
+✨ **Información Completa del Juego**
+- Portada e imagen del juego
+- Título y año de publicación
+- Número de jugadores (mínimo y máximo)
+- Duración de partida (en minutos)
+- Edad recomendada
+- Fabricante/Editorial
+- Rating y evaluaciones de usuarios
+- Nivel de complejidad
+- Descripción completa del juego
+
+🔄 **Manejo Inteligente de API**
+- Reintentos automáticos cuando la API está procesando (HTTP 202)
+- Polling exponencial para optimizar tiempos de respuesta
+- Autenticación requerida con token de Bearer
+
+🎨 **Diseño Responsive**
+- Se adapta automáticamente a todos los tamaños de pantalla
+- Tema claro/oscuro integrado con el blog
+- Clases CSS personalizables
+
+## Requisitos Previos
+
+### 1. Token de BoardGameGeek (REQUERIDO)
+
+El token es **obligatorio** para que el componente funcione. Sin él, la API de BoardGameGeek rechazará las solicitudes.
+
+**Pasos para obtener tu token:**
+
+1. Ve a https://boardgamegeek.com/application
+2. Inicia sesión con tu cuenta de BoardGameGeek (crea una si no tienes)
+3. Copia el token proporcionado
+4. Configúralo como variable de entorno `BGG_TOKEN`
+
+**En `.env` o `.env.local`:**
+```bash
+BGG_TOKEN=tu_token_aqui
+```
+
+**Nota:** El token es personal y no debe compartirse públicamente. Mantenlo en variables de entorno, nunca en el código fuente.
+
+### 2. ID del Juego
+
+Necesitas el ID del juego de BoardGameGeek. Puedes encontrarlo en la URL del juego:
+- URL: `https://boardgamegeek.com/boardgame/174430/gloomhaven`
+- ID: `174430`
+
+## Cómo Usar el Componente
+
+### Importar el Componente
+
+En tu archivo `.mdx`:
+```astro
+import BGGCard from "@/components/BGGCard.astro";
+```
+
+### Sintaxis Básica
+
+```astro
+<BGGCard gameId="174430" />
+```
+
+### Con Clases CSS Personalizadas
+
+```astro
+<BGGCard
+  gameId="174430"
+  class="rounded-lg shadow-xl"
+/>
+```
+
+## Ejemplos de Uso
+
+### Ejemplo 1: Gloomhaven
+
+A continuación se muestra un ejemplo real del componente mostrando **Gloomhaven**, uno de los juegos de mesa más populares:
+
+<BGGCard gameId="174430" />
+
+### Ejemplo 2: Catan (Los Colonos de Catán)
+
+Otro clásico que siempre recomiendo:
+
+<BGGCard gameId="13" />
+
+### Ejemplo 3: Ticket to Ride
+
+Un juego más accesible y familiar:
+
+<BGGCard gameId="9209" />
+
+## Información Mostrada por el Componente
+
+El componente muestra los siguientes datos del juego:
+
+| Campo | Descripción |
+|-------|-------------|
+| **Imagen** | Portada o thumbnail del juego |
+| **Título y Año** | Nombre del juego y año de publicación |
+| **Jugadores** | Rango de jugadores (ej: 1-4 Jugadores) |
+| **Duración** | Tiempo de juego en minutos |
+| **Edad Recomendada** | Edad mínima sugerida |
+| **Fabricante** | Editorial/Fabricante |
+| **Complejidad** | Escala de 0-5 según BGG |
+| **Rating** | Calificación promedio de usuarios |
+| **Usuarios que Votaron** | Cantidad de evaluaciones |
+| **Descripción** | Sinopsis completa del juego |
+
+## Personalización
+
+### Aplicar Estilos Personalizados
+
+Puedes pasar clases de Tailwind a través de la prop `class`:
+
+```astro
+<BGGCard
+  gameId="174430"
+  class="border-2 border-accent rounded-lg"
+/>
+```
+
+### Manejo de Errores
+
+El componente maneja automáticamente varios escenarios:
+
+- ❌ **Sin gameId**: Muestra mensaje de error
+- ❌ **Sin token configurado**: Muestra error (token requerido)
+- ❌ **Error de API**: Muestra mensaje de error descriptivo
+- ⏳ **Cargando**: Muestra estado "Cargando información del juego..."
+
+## Casos de Uso
+
+📝 **Reseñas de Juegos**: Incluye tarjetas en tus posts de reseñas para mostrar información oficial
+
+🎯 **Recomendaciones**: Destaca juegos recomendados con información completa
+
+📚 **Colecciones**: Documenta tu colección de juegos en el blog
+
+🎓 **Educativo**: Enseña sobre diferentes juegos y sus características
+
+## Cómo Encontrar el Código
+
+El código fuente del componente está disponible en GitHub:
+
+**Repositorio:** [https://github.com/chardila/blogcardila](https://github.com/chardila/blogcardila)
+
+**Ruta del componente:**
+```
+blog/src/components/BGGCard.astro
+```
+
+**URL directa en GitHub:**
+```
+https://github.com/chardila/blogcardila/blob/master/blog/src/components/BGGCard.astro
+```
+
+## Características Técnicas
+
+### Parsing XML sin Dependencias
+
+El componente usa expresiones regulares para parsear XML sin necesidad de librerías externas:
+
+```typescript
+const getAttr = (tag: string, attr: string): string | null => {
+  const regex = new RegExp(`<${tag}[^>]*?${attr}=["']([^"']+)["']`, 'i');
+  const match = xmlText?.match(regex);
+  return match ? match[1] : null;
+};
+```
+
+### Polling Automático
+
+Cuando BoardGameGeek devuelve un HTTP 202 (queued), el componente reintentar automáticamente:
+
+```typescript
+while (res.status === 202 && tries < 8) {
+  await new Promise((r) => setTimeout(r, 1000 + tries * 500));
+  res = await fetch(endpoint, { headers });
+  tries += 1;
+}
+```
+
+### Decodificación de Entidades HTML
+
+Las descripciones se limpian y decodifican automáticamente:
+
+```typescript
+description = description
+  .replace(/&amp;/g, '&')
+  .replace(/&lt;/g, '<')
+  .replace(/&quot;/g, '"')
+  .replace(/<[^>]+>/g, '') // Remove HTML tags
+  .trim();
+```
+
+## Ejemplo Completo en un Post
+
+```astro
+---
+import BGGCard from "@/components/BGGCard.astro";
+---
+
+# Mi Juego Favorito: Gloomhaven
+
+Gloomhaven es un juego de dungeon crawling increíble que...
+
+<BGGCard gameId="174430" />
+
+El componente anterior muestra la información oficial del juego.
+```
+
+## Solución de Problemas
+
+### "BGG_TOKEN env var not found"
+**Solución:** Este error indica que tu token no está configurado. Es obligatorio para que el componente funcione.
+1. Obtén tu token en https://boardgamegeek.com/application
+2. Configúralo en `.env.local` o `.env` como `BGG_TOKEN=tu_token`
+3. Reinicia el servidor de desarrollo
+
+### "BGG API error: 401"
+**Solución:** Tu token es inválido o ha expirado.
+1. Verifica que has copiado el token completo y sin espacios
+2. Obtén un nuevo token en https://boardgamegeek.com/application
+3. Actualiza tu variable de entorno
+
+### API retorna timeout
+La API de BoardGameGeek puede ser lenta ocasionalmente. El componente reintentar automáticamente hasta 8 veces antes de fallar. Si persiste, intenta más tarde.
+
+### Imagen no aparece
+Algunos juegos no tienen imagen en BGG. El componente usa thumbnail como fallback automáticamente.
+
+## Conclusión
+
+BGGCard es una forma elegante y eficiente de integrar información oficial de BoardGameGeek en tus posts sin tener que escribir manualmente todos los detalles de cada juego. Perfecto para bloggers que escriben sobre juegos de mesa.
+
+¿Preguntas o sugerencias? ¡No dudes en revisar el código en GitHub!
