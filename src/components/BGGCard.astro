@@ -40,14 +40,20 @@ async function fetchThingWithPolling(id: string, token: string | undefined) {
   const endpoint = `https://boardgamegeek.com/xmlapi2/thing?id=${id}`;
   const headers: HeadersInit = token ? { Authorization: `Bearer ${token}` } : {};
 
+  console.log(`[BGGCard] Fetching game ${id} from BGG API...`);
+
   // Try first request
   let res = await fetch(endpoint, { headers });
+  console.log(`[BGGCard] Initial response for game ${id}: ${res.status} ${res.statusText}`);
 
   // BGG sometimes returns 202 (queued) — poll until ready or timeout
   let tries = 0;
-  while (res.status === 202 && tries < 8) {
+  const maxTries = 12; // Increased for build environments
+  while (res.status === 202 && tries < maxTries) {
     // exponential backoff-ish
-    await new Promise((r) => setTimeout(r, 1000 + tries * 500));
+    const delay = 1000 + tries * 500;
+    console.log(`[BGGCard] Game ${id} queued, retry ${tries + 1}/${maxTries} after ${delay}ms`);
+    await new Promise((r) => setTimeout(r, delay));
     res = await fetch(endpoint, { headers });
     tries += 1;
   }
@@ -68,18 +74,18 @@ if (!error) {
     const getAttr = (tag: string, attr: string): string | null => {
       const regex = new RegExp(`<${tag}[^>]*?${attr}=["']([^"']+)["']`, 'i');
       const match = xmlText?.match(regex);
-      return match ? match[1] : null;
+      return match?.[1] ?? null;
     };
 
     const getTagContent = (tag: string): string | null => {
       const regex = new RegExp(`<${tag}[^>]*?>([\\s\\S]*?)<\\/${tag}>`, 'i');
       const match = xmlText?.match(regex);
-      return match ? match[1].trim() : null;
+      return match?.[1]?.trim() ?? null;
     };
 
     const getFirstMatch = (pattern: RegExp): string | null => {
       const match = xmlText?.match(pattern);
-      return match ? match[1] : null;
+      return match?.[1] ?? null;
     };
 
     // Basic fields
@@ -141,7 +147,8 @@ if (!error) {
       rawXml: xmlText,
     };
   } catch (e) {
-    error = e.message;
+    error = e instanceof Error ? e.message : String(e);
+    console.error(`[BGGCard] Error fetching game ${gameId}:`, error);
   }
 }
 ---
