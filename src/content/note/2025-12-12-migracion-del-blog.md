@@ -1,6 +1,6 @@
 ---
 title: "Migración del blog y reorganización digital"
-publishDate: "2025-12-12T00:00:00-05:00"
+publishDate: "2025-12-12T00:05:00Z"
 description: "Actualizaciones sobre la migración del blog de WordPress a Astro y la reorganización de mi mundo digital"
 draft: false
 ---

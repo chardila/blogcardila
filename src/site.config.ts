@@ -49,7 +49,7 @@ export const menuLinks: { path: string; title: string }[] = [
 		title: "Notas",
 	},
 	{
-		path: "/boardgames/",
+		path: "/bgg/",
 		title: "Juegos",
 	},
 ];

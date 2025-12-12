@@ -1,0 +1,23 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+
+const meta = {
+	description: "Board Game Geek Collection - Mi colección de juegos de mesa",
+	title: "Juegos",
+};
+---
+
+<PageLayout meta={meta}>
+	<h1 class="title mb-6">Juegos</h1>
+	<div class="w-full">
+		<iframe
+			src="https://bgg.cardila.com"
+			title="Board Game Geek Collection"
+			class="w-full border-0 rounded"
+			style="height: calc(100vh - 200px); min-height: 600px;"
+			loading="lazy"
+			allow="fullscreen"
+		>
+		</iframe>
+	</div>
+</PageLayout>
