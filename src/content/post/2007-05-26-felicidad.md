@@ -1,7 +1,6 @@
 ---
 title: Felicidad
 description: 'Personal Reflection: Brief poignant thought on happiness emerging from knowledge discovery rather than complete understanding.'
-  contrario, saber todo ser�a una maldición...
 publishDate: '2007-05-26'
 tags:
   - personal

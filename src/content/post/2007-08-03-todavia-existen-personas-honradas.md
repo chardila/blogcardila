@@ -1,7 +1,6 @@
 ---
 title: ¡Todavía existen personas honradas!
 description: 'Personal: True story of anonymous hero who recovered stolen purse. Inspiring tale of human kindness.'
-  carro en un semáforo en la séptima, a la...
 publishDate: '2007-08-03'
 tags:
   - personal

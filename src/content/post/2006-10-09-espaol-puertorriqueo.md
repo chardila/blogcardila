@@ -1,7 +1,6 @@
 ---
 title: Español Puertorriqueño
 description: 'Culture: Guide to Puerto Rican Spanish pronunciation & dialect patterns. Understanding regional linguistic quirks.'
-  he podido mas que quedar sorprendido....
 publishDate: '2006-10-09'
 tags:
   - personal

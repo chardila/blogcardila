@@ -1,7 +1,6 @@
 ---
 title: ¡La comida de casa es lo mejor!
 description: 'Personal: Traveler''s lament on America''s food quality vs Colombia. Homesickness expressed through cuisine.'
-  la comida de casa, la comida de los papas,...
 publishDate: '2007-06-04'
 tags:
   - personal

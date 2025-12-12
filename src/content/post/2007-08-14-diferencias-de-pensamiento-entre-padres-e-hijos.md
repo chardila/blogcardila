@@ -1,7 +1,6 @@
 ---
 title: Diferencias de pensamiento entre padres e hijos
 description: 'Personal: Plane story illustrating gap between parental worry and children''s carefree perspective on safety.'
-  ven las cosas desde el punto de vista de...
 publishDate: '2007-08-14'
 tags:
   - personal

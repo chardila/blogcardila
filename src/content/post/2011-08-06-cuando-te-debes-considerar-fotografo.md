@@ -1,7 +1,6 @@
 ---
 title: Cuando te debes considerar fotógrafo
 description: 'Photography Wisdom: Carl Mydans'' quote on becoming a photographer. True artistry transcends equipment.'
-  mismo. Entonces empieza la creatividad
 publishDate: '2011-08-06'
 tags:
   - personal

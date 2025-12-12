@@ -1,7 +1,6 @@
 ---
 title: Así hablamos los santandereanos (Colombia)
 description: 'Culture: Comprehensive dictionary of Santander regional dialect. Unique Colombian linguistic & cultural identity.'
-  tabaco, sino chicote El santandereano cuando se cae no...
 publishDate: '2007-09-07'
 tags: []
 draft: false

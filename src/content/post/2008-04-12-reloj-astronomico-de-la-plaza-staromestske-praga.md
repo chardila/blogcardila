@@ -1,7 +1,6 @@
 ---
 title: 'Reloj astronómico de la plaza Staromestske, Praga'
 description: 'Travel: Prague''s 600-year-old astronomical clock with apostle procession. Medieval marvel combining art & engineering.'
-  paseo de los apóstoles.
 publishDate: '2008-04-12'
 tags:
   - personal

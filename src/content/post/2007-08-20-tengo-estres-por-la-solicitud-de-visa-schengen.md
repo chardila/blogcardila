@@ -1,7 +1,6 @@
 ---
 title: ¡Tengo estrés por la solicitud de Visa Schengen!
 description: 'Personal: Candid reflection on visa stress, international inequality & frustration with documentation requirements.'
-  vacaciones a Europa y no puedo dejar de tener...
 publishDate: '2007-08-20'
 tags:
   - personal

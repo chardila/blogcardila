@@ -1,7 +1,6 @@
 ---
 title: Apagar hoy las luces por 5 min contra el calentamiento
 description: 'Personal: Worldwide blackout initiative account raising climate awareness and energy consumption concerns.'
-  Este es el correo que recibí:
 publishDate: '2007-08-09'
 tags:
   - personal

@@ -1,7 +1,6 @@
 ---
 title: 'Justicia en Colombia: Lenta y Ciega'
 description: 'Personal: Year-long wait for theft investigation. Critique of Colombia''s slow & ineffective justice system.'
-  recibí la llamada de una fiscal que tomo el...
 publishDate: '2013-09-12'
 tags:
   - personal

@@ -1,9 +1,6 @@
 ---
 title: Fotografía Amateur
-description: >-
-  > Let me here call attention to one of the most universally popular mistakes
-  that have to do with photography - that of classing supposedly excellent work
-  as professional, and using the term amateur...
+description: 'Photography: Exploring the misleading labels of professional vs amateur photography and what truly defines quality work.'
 publishDate: '2011-08-06'
 tags:
   - personal

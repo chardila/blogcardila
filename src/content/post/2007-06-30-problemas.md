@@ -1,7 +1,6 @@
 ---
 title: Problemas
 description: 'Personal: Witty Chilean saying about problems that disappear return uninvited. Humorous reflection on life''s recurring challenges.'
-  no problemas. Para el caso de problemas...
 publishDate: '2007-06-30'
 tags:
   - personal

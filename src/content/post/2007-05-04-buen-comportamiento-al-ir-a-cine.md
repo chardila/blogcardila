@@ -1,9 +1,6 @@
 ---
 title: Buen comportamiento al ir a cine
-description: >-
-  No se si exista algo como "Etiqueta para ver una película en una sala de
-  cine", pero si no existe debería existir porque muchas personas parecen no
-  tener el mismo sentido común que otros tenemos. A...
+description: 'Opinion: Guide to movie theater etiquette and common sense behavior for respectful audience members.'
 publishDate: '2007-05-04'
 tags:
   - personal

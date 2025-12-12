@@ -1,7 +1,6 @@
 ---
 title: Quiero Nacer
 description: 'Personal Essay: Powerful meditation on breaking free from society''s expectations to forge your own destiny.'
-  encontrar mi propia vida, a labrar mi propio destino y...
 publishDate: '2007-07-12'
 tags:
   - personal

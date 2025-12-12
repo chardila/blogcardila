@@ -1,9 +1,6 @@
 ---
 title: 'Elise: Women don''t like questions'
-description: >-
-  > Elise: Invite me to dinner, Frank? Frank: What? Elise: \[gives him a look\]
-  Frank: Would you like to have dinner? Elise: Women don't like questions.
-  Frank: Join me for dinner. Elise: Too demanding....
+description: 'Movie Quote: Memorable dialogue from The Tourist about questions, demands, and romantic communication.'
 publishDate: '2011-08-21'
 tags:
   - personal

@@ -1,8 +1,6 @@
 ---
 title: Códigos Postales en Colombia
-description: >-
-  ![CodigoPostalColombia](http://visor.codigopostal.gov.co/472/visor/) De
-  acuerdo al sitio oficial de código postal para Colombia tenemos que:
+description: 'Guide: How to find postal codes (ZIP codes) for any location in Colombia using official resources.'
 publishDate: '2015-01-28'
 tags:
   - personal
