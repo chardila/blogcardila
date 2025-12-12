@@ -2,7 +2,7 @@
 title: "Prueba de Lightbox"
 description: "Nota de prueba para verificar la funcionalidad del lightbox en imágenes"
 publishDate: "2025-12-12T17:30:00Z"
-draft: false
+draft: true
 ---
 
 # Probando el Lightbox
@@ -17,11 +17,11 @@ Esta es una nota de prueba para verificar la funcionalidad del lightbox personal
 
 Estas tres imágenes se pueden navegar con las flechas del teclado:
 
-![Maia 1](/images/posts/2007/algo-mas-de-maia/maia.jpg){.lightbox}
+![Maia](/images/posts/2007/algo-mas-de-maia/maia.jpg){.lightbox}
 
-![Maia 2](/images/posts/2007/maia-colombia-es-pasion/maia1.jpg){.lightbox}
+![Felicidad](/images/posts/2007/felicidad/516049734_181c2feabb.jpg){.lightbox}
 
-![Maia 3](/images/posts/2007/maia-colombia-es-pasion/maia2.jpg){.lightbox}
+![Rosa Roja](/images/posts/2007/origen-del-dia-del-amor-y-la-amistad/rosa-20roja-2d200x129.jpg){.lightbox}
 
 ## Imagen normal (sin lightbox)
 
