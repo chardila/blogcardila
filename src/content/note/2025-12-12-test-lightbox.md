@@ -2,7 +2,7 @@
 title: "Prueba de Lightbox"
 description: "Nota de prueba para verificar la funcionalidad del lightbox en imágenes"
 publishDate: "2025-12-12T17:30:00Z"
-draft: false
+draft: true
 ---
 
 # Probando el Lightbox
