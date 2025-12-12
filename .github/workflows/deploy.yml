@@ -35,6 +35,9 @@ jobs:
           OMDB_API_KEY: ${{ secrets.OMDB_API_KEY }}
           BGG_TOKEN: ${{ secrets.BGG_TOKEN }}
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          WEBMENTION_API_KEY: ${{ secrets.WEBMENTION_API_KEY }}
+          WEBMENTION_URL: ${{ secrets.WEBMENTION_URL }}
+          WEBMENTION_PINGBACK: ${{ secrets.WEBMENTION_PINGBACK }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
