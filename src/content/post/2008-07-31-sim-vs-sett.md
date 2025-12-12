@@ -1,8 +1,6 @@
 ---
 title: SIM vs SETT
-description: >-
-  Antes se llamaba SETT (Servicios Especializados de Transito y Transporte) y
-  Ahora es SIM (Servicios Integrales para la Movilidad), pero en lugar de
+description: 'Personal: Colombia''s transportation service system downgrade. New bureaucracy worsens licensing & efficiency.'
   mejorar empeoro. Tengo que hacer un viaje de...
 publishDate: '2008-07-31'
 tags:

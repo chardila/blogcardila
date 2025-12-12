@@ -1,8 +1,6 @@
 ---
 title: Quiero Nacer
-description: >-
-  Mis sueños quieren ser apagados por la sociedad y aun así permito que la
-  sociedad reine en todos mis sueños, es quizá mi ignorancia o mi temor a
+description: 'Personal Essay: Powerful meditation on breaking free from society''s expectations to forge your own destiny.'
   encontrar mi propia vida, a labrar mi propio destino y...
 publishDate: '2007-07-12'
 tags:

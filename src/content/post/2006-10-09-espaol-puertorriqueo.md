@@ -1,8 +1,6 @@
 ---
 title: Español Puertorriqueño
-description: >-
-  El español puertorriqueño es el dialecto del idioma español empleado en Puerto
-  Rico. Después de pasar un par de días acá y escuchar la forma como hablan, no
+description: 'Culture: Guide to Puerto Rican Spanish pronunciation & dialect patterns. Understanding regional linguistic quirks.'
   he podido mas que quedar sorprendido....
 publishDate: '2006-10-09'
 tags:

@@ -1,6 +1,6 @@
 ---
 title: Cine
-description: Críticas, análisis y reflexiones sobre películas. Posts sobre cintas que me han impactado, sus argumentos, personajes y las emociones que despiertan.
+description: Críticas y análisis de películas que he visto. Reflexiones sobre historias, personajes y el impacto emocional del cine en mi vida.
 ---
 
 Categoría dedicada a las películas. Aquí encontrarás desde críticas clásicas de films que me marcaron, análisis de historias y personajes, hasta reflexiones personales inspiradas por el séptimo arte.

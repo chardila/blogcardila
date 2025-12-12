@@ -1,8 +1,6 @@
 ---
 title: Ambigrama con mi nombre
-description: >-
-  Alberto Portacio muy amablemente me ha dedicado un ambigrama usando mi nombre.
-  Muchas gracias Alberto.
+description: 'Culture: Custom ambigram art by Alberto Portacio. Twin words reading "Carlos" & "Ardila" when rotated.'
 publishDate: '2007-03-03'
 tags:
   - personal

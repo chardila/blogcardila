@@ -1,8 +1,6 @@
 ---
 title: El lenguaje del Amor - The tongue of love
-description: >-
-  Como he mencionado antes estuve en un evento en Estados Unidos y una de las
-  noches uno de los partners organizo un evento en el Hard Rock Live de
+description: 'Personal: Amusing language observations from travels. Portuguese vs Spanish as "the language of love" debate.'
   Universal Studios en Orlando, estábamos sentados en...
 publishDate: '2007-06-20'
 tags:

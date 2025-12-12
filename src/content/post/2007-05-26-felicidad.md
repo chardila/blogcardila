@@ -1,8 +1,6 @@
 ---
 title: Felicidad
-description: >-
-  !Ah, la felicidad no está en el conocimiento, sino en la adquisición de ese
-  conocimiento. Sabiendo para siempre seremos para siempre venturosos; por el
+description: 'Personal Reflection: Brief poignant thought on happiness emerging from knowledge discovery rather than complete understanding.'
   contrario, saber todo ser�a una maldición...
 publishDate: '2007-05-26'
 tags:

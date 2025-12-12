@@ -1,8 +1,6 @@
 ---
 title: Así hablamos los santandereanos (Colombia)
-description: >-
-  El santandereano no habla de muchas cosas, sino de jijuemil vainas El
-  santandereano no come pudín, torta , sino amasijo El santandereano no fuma
+description: 'Culture: Comprehensive dictionary of Santander regional dialect. Unique Colombian linguistic & cultural identity.'
   tabaco, sino chicote El santandereano cuando se cae no...
 publishDate: '2007-09-07'
 tags: []

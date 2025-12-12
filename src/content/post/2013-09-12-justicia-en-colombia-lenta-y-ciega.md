@@ -1,8 +1,6 @@
 ---
 title: 'Justicia en Colombia: Lenta y Ciega'
-description: >-
-  https://twitter.com/cardila/status/378540591266529280 Hace un año realice un
-  denuncio de un robo que me hicieron en el apartamento y hasta el día de ayer
+description: 'Personal: Year-long wait for theft investigation. Critique of Colombia''s slow & ineffective justice system.'
   recibí la llamada de una fiscal que tomo el...
 publishDate: '2013-09-12'
 tags:

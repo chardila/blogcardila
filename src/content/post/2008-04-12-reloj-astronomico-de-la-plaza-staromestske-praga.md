@@ -1,8 +1,6 @@
 ---
 title: 'Reloj astronómico de la plaza Staromestske, Praga'
-description: >-
-  La zona de arriba es la zona de las figuras animadas que aparecen cuando se da
-  la hora en punto, figuras que son los apóstoles porque se le llama la zona del
+description: 'Travel: Prague''s 600-year-old astronomical clock with apostle procession. Medieval marvel combining art & engineering.'
   paseo de los apóstoles.
 publishDate: '2008-04-12'
 tags:

@@ -1,8 +1,6 @@
 ---
 title: ¡La comida de casa es lo mejor!
-description: >-
-  Por estos días ando de viaje por Estados Unidos en Orlando (Florida) y estoy
-  sufriendo un poco por la comida y es que tengo que decir que no hay nada como
+description: 'Personal: Traveler''s lament on America''s food quality vs Colombia. Homesickness expressed through cuisine.'
   la comida de casa, la comida de los papas,...
 publishDate: '2007-06-04'
 tags:

@@ -1,8 +1,6 @@
 ---
 title: ¡Tengo estrés por la solicitud de Visa Schengen!
-description: >-
-  !Schengen-countriesEl miércoles (Agosto 22 de 2007) a las 8 AM tengo la cita
-  en la embajada de Francia para solicitar la Visa Schengen para poderme ir de
+description: 'Personal: Candid reflection on visa stress, international inequality & frustration with documentation requirements.'
   vacaciones a Europa y no puedo dejar de tener...
 publishDate: '2007-08-20'
 tags:

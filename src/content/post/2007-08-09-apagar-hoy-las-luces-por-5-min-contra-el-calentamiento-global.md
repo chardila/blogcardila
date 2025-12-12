@@ -1,8 +1,6 @@
 ---
 title: Apagar hoy las luces por 5 min contra el calentamiento
-description: >-
-  Recibí un correo hace unos días y la verdad no lo tome en serio, pensé que era
-  una mas de esas cadenas de correo que siempre ignoro y resulto no ser así.
+description: 'Personal: Worldwide blackout initiative account raising climate awareness and energy consumption concerns.'
   Este es el correo que recibí:
 publishDate: '2007-08-09'
 tags:

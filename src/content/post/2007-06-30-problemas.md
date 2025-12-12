@@ -1,8 +1,6 @@
 ---
 title: Problemas
-description: >-
-  Le escuche esta frase a un chileno en una conversación y me pareció cómica. No
-  pude encontrar el origen pero generalmente se usa en el contesto de personas y
+description: 'Personal: Witty Chilean saying about problems that disappear return uninvited. Humorous reflection on life''s recurring challenges.'
   no problemas. Para el caso de problemas...
 publishDate: '2007-06-30'
 tags:
