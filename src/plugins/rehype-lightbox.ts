@@ -20,8 +20,12 @@ export const rehypeLightbox: Plugin<[], Root> = () => {
 				// Add data attributes for the Web Component
 				node.properties["data-lightbox"] = "";
 				node.properties["data-lightbox-index"] = imageIndex++;
-				node.properties["data-lightbox-src"] = node.properties.src || "";
+				// Use the original URL if available (for public/images), otherwise use src (for src/assets optimized)
+				node.properties["data-lightbox-src"] = node.properties["data-lightbox-original"] || node.properties.src || "";
 				node.properties["data-lightbox-alt"] = node.properties.alt || "";
+
+				// Add lazy loading for better performance
+				node.properties.loading = "lazy";
 
 				// Check for custom caption from data-caption attribute
 				if (node.properties["data-caption"]) {

@@ -2,7 +2,7 @@
 title: "Prueba de Lightbox"
 description: "Nota de prueba para verificar la funcionalidad del lightbox en imágenes"
 publishDate: "2025-12-12T17:30:00Z"
-draft: true
+draft: false
 ---
 
 # Probando el Lightbox
@@ -54,3 +54,9 @@ Esta imagen NO tiene lightbox, es una imagen normal:
 ## Dark Mode
 
 El lightbox debe adaptarse automáticamente al tema oscuro/claro del sitio.
+
+## Prueba de Optimización con src/assets
+
+Esta imagen está en `src/assets/` y debería ser optimizada por Astro automáticamente:
+
+![Test High Resolution](../../assets/testHighRes.jpg){.lightbox}

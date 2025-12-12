@@ -32,6 +32,13 @@ export const remarkLightboxSyntax: Plugin<[], Root> = () => {
 						}
 						current.data.hProperties["data-lightbox-marker"] = "";
 
+						// Preserve original high-res URL for lightbox
+						// Only for images from public/ (absolute paths) or remote URLs
+						// For images from src/assets (relative paths), let Astro optimize them
+						if (current.url && (current.url.startsWith("/") || current.url.startsWith("http"))) {
+							current.data.hProperties["data-lightbox-original"] = current.url;
+						}
+
 						// Check for data-caption in the syntax
 						const captionMatch = next.value.match(/data-caption="([^"]+)"/);
 						if (captionMatch) {

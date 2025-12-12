@@ -119,7 +119,7 @@ import "@/styles/blocks/lightbox.css";
 		 * Find all lightbox-enabled images on the page
 		 */
 		#collectImages() {
-			const images = document.querySelectorAll<HTMLImageElement>("img[data-lightbox]");
+			const images = document.querySelectorAll<HTMLImageElement>("img[data-lightbox-index]");
 			this.#images = Array.from(images);
 
 			// Add click listeners to each image
@@ -222,7 +222,9 @@ import "@/styles/blocks/lightbox.css";
 			if (!this.#lightboxImage || !this.#images[index]) return;
 
 			const sourceImage = this.#images[index];
-			const src = (sourceImage.getAttribute("data-lightbox-src") || sourceImage.src) as string;
+			const lightboxSrc = sourceImage.getAttribute("data-lightbox-src");
+			// If lightbox-src is a relative path (from src/assets), use the actual optimized src instead
+			const src = (lightboxSrc && !lightboxSrc.startsWith("..") ? lightboxSrc : sourceImage.src) as string;
 			const alt = sourceImage.getAttribute("data-lightbox-alt") || sourceImage.alt;
 			const caption = sourceImage.getAttribute("data-lightbox-caption") || alt;
 
