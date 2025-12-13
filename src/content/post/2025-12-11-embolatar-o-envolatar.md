@@ -7,6 +7,8 @@ tags:
   - palabras
 ---
 
+![Envolatado o Embolatado](../../assets/images/embolatado.png){.lightbox}
+
 Hace años alguien me preguntó por chat cómo se escribía correctamente: **¿embolatado o envolatado?** En ese momento pensé que la respuesta sería sencilla… hasta que me fui de cabeza a investigar. Resulta que este es uno de esos colombianismos que usamos todos los días, pero cuya ortografía ha generado debates, estudios y hasta artículos académicos enteros.
 
 Aquí dejo una explicación clara y actualizada sobre cuál es la forma correcta, de dónde viene el término y qué significa realmente.
