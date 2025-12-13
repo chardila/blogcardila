@@ -6,6 +6,16 @@ tags: ["personal", "astro"]
 ---
 
 import BGGCard from "@/components/BGGCard.astro";
+import { Image } from 'astro:assets';
+import photo from '../../assets/images/BggCard.png';
+
+<Image src={photo} 
+  alt="BGGCard"
+  data-lightbox=""
+  data-lightbox-index="0"
+  data-lightbox-alt="BGGCard"
+  data-lightbox-caption="BGGCard"
+  class="cursor-zoom-in" />
 
 ## ¿Por qué hice este componente?
 
