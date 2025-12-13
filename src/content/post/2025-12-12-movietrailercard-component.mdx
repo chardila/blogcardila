@@ -1,0 +1,104 @@
+---
+title: "MovieTrailerCard: Componente Astro para Películas"
+description: "¡Luces, cámara, acción! Te presento mi solución para incrustar trailers de películas y sus metadatos automáticamente en mis posts, usando la API de TMDB."
+publishDate: "2025-12-12"
+tags: ["personal", "astro", "componentes"]
+---
+
+import MovieTrailerCard from "@/components/MovieTrailerCard.astro";
+
+## ¿Por qué hice este componente?
+
+Si sigues mi blog, habrás notado que el cine es un tema recurrente por aquí. Me encanta escribir sobre las películas que he visto, hacer recomendaciones o simplemente analizar mis favoritas. Sin embargo, siempre me encontraba con la misma fricción: incrustar un trailer de YouTube y copiar manualmente la fecha de estreno, el director o la sinopsis era un proceso tedioso.
+
+Quería algo que fluyera tan bien como mi escritura. Algo donde pudiera decir "hey, mira esta película" y *pum*, apareciera mágicamente el trailer listo para ver, con toda la información relevante al lado, sin que yo tuviera que pelear con iFrames o buscar datos en pestañas infinitas.
+
+Así nació **MovieTrailerCard**.
+
+## ¿Por qué TMDB?
+
+Para este componente, necesitaba una fuente de datos robusta. Evalué varias opciones, pero **The Movie Database (TMDB)** fue la ganadora indiscutible por varias razones:
+
+1.  **API Increíble:** Es súper completa, rápida y bien documentada.
+2.  **Trailers:** Tienen una base de datos inmensa de links a YouTube para trailers y teasers.
+3.  **Multilenguaje:** Me permite traer la sinopsis y datos en español (y si no hay trailer en español, hace fallback a inglés automáticamente, ¡un detalle que me encanta!).
+
+## ¿Qué es MovieTrailerCard?
+
+Es un componente de Astro diseñado para enriquecer mis posts con contenido cinematográfico de alta calidad. Tú le das el ID de la película, y él se encarga del resto.
+
+### Características que me encantan
+
+*   🎥 **Trailer Automático:** Busca el trailer en YouTube y lo incrusta. Si no hay trailer, muestra elegantemente el backdrop o el poster de la película.
+*   🇪🇸 **Soporte de Idioma:** Prioriza contenido en español.
+*   ⚡ **Rápido:** Usa caché local en el sistema de archivos (por 24 horas), así que no saturo la API de TMDB cada vez que reconstruyo el sitio.
+*   🎨 **Diseño Adaptable:** Se ve genial tanto en modo claro como oscuro.
+
+## Cómo Encontrar el Código
+
+Como siempre, creo en el código abierto y en compartir lo que aprendo. Puedes encontrar el código fuente completo en mi repositorio:
+
+**Repositorio:** [https://github.com/chardila/blogcardila](https://github.com/chardila/blogcardila)
+
+**Ruta del componente:**
+```bash
+blog/src/components/MovieTrailerCard.astro
+```
+
+**URL directa:**
+[Ver Componente en GitHub](https://github.com/chardila/blogcardila/blob/master/blog/src/components/MovieTrailerCard.astro)
+
+## Cómo Lo Uso
+
+Es ridículamente fácil. Primero, necesito el ID de la película de TMDB (ese numerito que sale en la URL cuando buscas una peli en su web).
+
+Por ejemplo, para una de mis favoritas, **Fight Club** (ID: 550):
+
+```astro
+import MovieTrailerCard from "@/components/MovieTrailerCard.astro";
+
+<MovieTrailerCard movieId="550" />
+```
+
+Y el resultado es una tarjeta hermosa con el trailer, el año, la duración y la sinopsis:
+
+<MovieTrailerCard movieId="550" />
+
+¿Y si quiero hablar de un clásico como **The Godfather**?
+
+```astro
+<MovieTrailerCard movieId="238" />
+```
+
+<MovieTrailerCard movieId="238" />
+
+## Detalles Técnicos Interesantes
+
+Para los curiosos del código, hay un par de cosas "bajo el capó" que valen la pena mencionar:
+
+### Caché Local para no "quemar" la API
+
+Para evitar hacer llamadas innecesarias a la API (y que me bloqueen por rate limiting), implementé un sistema de caché simple usando el sistema de archivos.
+
+```typescript
+// Lógica simplificada
+const cacheKey = `tmdb_movie_${id}`;
+const cached = getCachedData(cacheKey);
+
+if (cached) {
+  return cached; // ¡Retorno instantáneo!
+}
+
+// ... si no está en caché, llamamos a la API y guardamos el resultado
+setCachedData(cacheKey, result);
+```
+
+### Fallback de Trailers
+
+No todas las películas tienen trailers en español. El componente es lo suficientemente listo como para buscar primero en español (`es-ES`) y, si no encuentra nada, buscar en inglés (`en-US`) antes de rendirse y mostrar solo una imagen.
+
+## Conclusión
+
+**MovieTrailerCard** ha hecho que escribir sobre cine en mi blog sea un placer de nuevo. Eliminó la fricción técnica y me dejó solo con la parte divertida: compartir mi pasión por las películas.
+
+Si tienes un blog en Astro y te gusta el cine, ¡te animo a que le eches un vistazo al código y lo pruebes!
