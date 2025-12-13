@@ -6,7 +6,7 @@ tags:
   - palabras
 ---
 
-![El diablo esta en los detalles](../../assets/images/el-diablo-esta-en-los-detalles.jpg){.lightbox}
+![El diablo esta en los detalles](../../assets/images/el-diablo-esta-en-los-detalles.png){.lightbox}
 
 Hace rato que no escribía en el blog, pero intentaré retomarlo en este año nuevo 2023 :). En días pasados me di cuenta de que tengo la costumbre de usar esta frase en mi día a día y que tal vez no todos adivinan cuál es el significado o mejor entienden cuál es el significado que yo le doy, así que esta es la razón del artículo.
 
