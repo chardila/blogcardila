@@ -19,9 +19,13 @@ export const rehypeLightbox: Plugin<[], Root> = () => {
 			) {
 				// Add data attributes for the Web Component
 				node.properties["data-lightbox"] = "";
-				node.properties["data-lightbox-index"] = imageIndex++;
-				// Use the original URL if available (for public/images), otherwise use src (for src/assets optimized)
-				node.properties["data-lightbox-src"] = node.properties["data-lightbox-original"] || node.properties.src || "";
+				node.properties["data-lightbox-index"] = String(imageIndex++);
+
+				// Only set explicit source if we have a specific original (e.g. absolute public path)
+				// Otherwise rely on the src attribute (which Astro may have optimized)
+				if (node.properties["data-lightbox-original"]) {
+					node.properties["data-lightbox-src"] = node.properties["data-lightbox-original"];
+				}
 				node.properties["data-lightbox-alt"] = node.properties.alt || "";
 
 				// Add lazy loading for better performance
@@ -35,13 +39,15 @@ export const rehypeLightbox: Plugin<[], Root> = () => {
 					node.properties["data-lightbox-caption"] = node.properties.alt || "";
 				}
 
-				// Add cursor pointer styling hint
 				const existingClasses = Array.isArray(node.properties.className)
 					? node.properties.className
 					: typeof node.properties.className === "string"
 						? [node.properties.className]
 						: [];
-				node.properties.className = [...existingClasses, "cursor-zoom-in"];
+				// Join classes into a string and set 'class' directly to avoid Astro/React confusion
+				node.properties.class = [...existingClasses, "cursor-zoom-in"].join(" ");
+				// Remove className to prevent duplication or misuse
+				delete node.properties.className;
 			}
 		});
 	};
