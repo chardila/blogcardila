@@ -6,16 +6,10 @@ tags: ["personal", "astro"]
 ---
 
 import MovieTrailerCard from "@/components/MovieTrailerCard.astro";
-import { Image } from 'astro:assets';
+import LightboxImage from "@/components/LightboxImage.astro";
 import photo from '../../assets/images/MovieTrailerCard.png';
 
-<Image src={photo} 
-  alt="MovieTrailerCard"
-  data-lightbox=""
-  data-lightbox-index="0"
-  data-lightbox-alt="MovieTrailerCard"
-  data-lightbox-caption="MovieTrailerCard"
-  class="cursor-zoom-in" />
+<LightboxImage src={photo} alt="MovieTrailerCard" />
 
 ## ¿Por qué hice este componente?
 
