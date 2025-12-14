@@ -27,14 +27,14 @@ import { siteConfig } from "../../site.config";
 			</a>
 			<nav
 				aria-label="Main menu"
-				class="bg-global-bg absolute -inset-x-4 top-12 hidden flex-col divide-y px-2 py-4 group-[.menu-open]:z-50 group-[.menu-open]:flex sm:static sm:z-auto sm:-ml-4 sm:flex sm:flex-row sm:divide-x sm:divide-y-0 sm:bg-transparent sm:p-0"
+				class="bg-global-bg/95 absolute inset-0 z-40 hidden flex-col items-center justify-center gap-y-6 pt-24 text-lg group-[.menu-open]:fixed group-[.menu-open]:flex sm:static sm:z-auto sm:-ml-4 sm:mt-0 sm:flex sm:flex-row sm:items-start sm:justify-start sm:gap-y-0 sm:divide-x sm:bg-transparent sm:pt-0 sm:text-sm"
 				id="navigation-menu"
 			>
 				{
 					menuLinks.map((link) => (
 						<a
 							aria-current={Astro.url.pathname === link.path ? "page" : false}
-							class="text-accent px-2 py-4 font-semibold sm:px-4 sm:py-0 sm:underline-offset-2 sm:hover:underline"
+							class="text-accent px-4 py-2 font-semibold sm:py-0 sm:underline-offset-2 sm:hover:underline"
 							href={link.path}
 						>
 							{link.title}
@@ -50,7 +50,7 @@ import { siteConfig } from "../../site.config";
 		<button
 			aria-expanded="false"
 			aria-haspopup="menu"
-			class="group relative ms-4 h-7 w-7 sm:invisible sm:hidden"
+			class="group relative z-50 ms-4 h-7 w-7 sm:invisible sm:hidden"
 			id="toggle-navigation-menu"
 			type="button"
 		>
