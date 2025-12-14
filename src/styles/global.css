@@ -82,4 +82,41 @@
 	--tw-prose-links: var(--color-global-text);
 	--tw-prose-quotes: var(--color-quote);
 	--tw-prose-th-borders: #666;
+
+	/* Inline code styling */
+	:not(pre) > code {
+		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+		font-size: 0.875em;
+		font-weight: 600;
+		padding: 0.125rem 0.375rem;
+		border-radius: 0.25rem;
+		background-color: oklch(92% 0.01 235);
+		color: oklch(35% 0.08 330);
+		border: 1px solid oklch(85% 0.02 235);
+	}
+
+	/* Dark mode inline code */
+	:where([data-theme="dark"]) :not(pre) > code {
+		background-color: oklch(28% 0.03 265);
+		color: oklch(85% 0.12 150);
+		border: 1px solid oklch(35% 0.05 265);
+	}
+
+	/* Keyboard keys styling */
+	kbd {
+		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+		font-size: 0.875em;
+		padding: 0.125rem 0.375rem;
+		border-radius: 0.25rem;
+		background-color: oklch(92% 0.01 235);
+		color: oklch(35% 0.08 330);
+		border: 1px solid oklch(80% 0.02 235);
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	}
+
+	:where([data-theme="dark"]) kbd {
+		background-color: oklch(28% 0.03 265);
+		color: oklch(85% 0.12 150);
+		border: 1px solid oklch(35% 0.05 265);
+	}
 }
