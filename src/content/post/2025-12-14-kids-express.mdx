@@ -8,10 +8,15 @@ draft: false
 ---
 
 import BGGCard from '@/components/BGGCard.astro';
+import LightboxImage from "@/components/LightboxImage.astro";
+import photo01 from '../../assets/images/kidsexpress01.jpg';
+import photo02 from '../../assets/images/kidsexpress02.jpg';
 
 <BGGCard gameId="404447" />
 
 ### Descripción general y primeras sensaciones
+
+<LightboxImage src={photo01} alt="Kids Express" />
 
 **Kids Express** es un **juego de mesa cooperativo para niños**, publicado en 2024 por **Ludonaute** y distribuido por **Asmodee**. Aunque toma inspiración temática del conocido *Colt Express*, no se siente como una versión “recortada”, sino como un juego con identidad propia, pensado desde cero para jugar en familia.
 
@@ -93,6 +98,8 @@ En nuestra primera partida hubo risas, emoción y mucha conversación. El moment
 No hubo frustración por perder ni discusiones por ganar. Todo giró alrededor de ayudarse y pensar juntos.
 
 ### Calidad de los componentes
+
+<LightboxImage src={photo02} alt="Kids Express" />
 
 Los materiales se sienten resistentes y pensados para uso infantil. Las figuras aguantan bien el manejo y el tren, aunque hay que tratarlo con cierto cuidado, se siente sólido. En general, es un juego que inspira confianza para sacarlo a mesa una y otra vez.
 
