@@ -10,7 +10,7 @@ draft: false
 ## Criar sin jaula: aprender a soltar sin dejar de cuidar
 
 Este post está inspirado en un artículo que leí en *The Argument* titulado *“How Getting Richer Made Teenagers Less Free”*, donde se plantea una paradoja: aunque los niños hoy viven en mejores condiciones materiales, muchos tienen menos libertad y autonomía que antes. Esta es mi reflexión personal como papá de dos niños pequeños.
-**Enlace:** [How Getting Richer Made Teenagers Less Free](https://www.theargument.org/2025/12/18/how-getting-richer-made-teenagers-less-free/)
+**Enlace:** [How Getting Richer Made Teenagers Less Free](https://www.theargumentmag.com/p/how-getting-richer-made-teenagers)
 
 ---
 
