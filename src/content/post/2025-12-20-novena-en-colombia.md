@@ -1,11 +1,11 @@
--
-title: “La novena que nadie me enseñó, pero que nunca olvidé”
-description: “Una reflexión personal sobre el origen y la popularización de la Novena de Aguinaldos en Colombia, vista desde la memoria, la infancia y la paternidad.”
-publishDate: 2025-12-20
+---
+title: "La novena que nadie me enseñó, pero que nunca olvidé"
+description: "Una reflexión personal sobre el origen y la popularización de la Novena de Aguinaldos en Colombia, vista desde la memoria, la infancia y la paternidad."
+publishDate: "2025-12-20"
 tags: 
-  - “personal”
+  - "personal"
 draft: true
--
+---
 
 ## Diciembre, memoria y una pregunta que vuelve
 
