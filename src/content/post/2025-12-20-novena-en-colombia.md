@@ -4,7 +4,7 @@ description: "Una reflexión personal sobre el origen y la popularización de la
 publishDate: "2025-12-20"
 tags: 
   - "personal"
-draft: true
+draft: false
 ---
 
 ## Diciembre, memoria y una pregunta que vuelve
