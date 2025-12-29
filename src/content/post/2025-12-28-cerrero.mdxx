@@ -7,7 +7,12 @@ tags:
 draft: false
 ---
 
+import LightboxImage from "@/components/LightboxImage.astro";
+import photo01 from '../../assets/images/cerrero.png';
+
 # Cerrero
+
+<LightboxImage src={photo01} alt="Café Cerrero" />
 
 Hace unos días estábamos en un restaurante y alguien con quien compartía la mesa pidió un café. Hasta ahí, todo normal.  
 Lo curioso vino después: lo pidió **“no muy cerrero”**.
