@@ -73,9 +73,7 @@ export default defineConfig({
 		}),
 	],
 	markdown: {
-		components: {
-			MovieCard: './src/components/MovieCard.astro'
-		},
+
 		rehypePlugins: [
 			rehypeHeadingIds,
 			[rehypeAutolinkHeadings, { behavior: "wrap", properties: { className: ["not-prose"] } }],
