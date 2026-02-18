@@ -70,6 +70,7 @@
 		]
 	},
 	"overrides": {
-		"sharp": "$sharp"
+		"sharp": "$sharp",
+		"lodash": "4.17.23"
 	}
 }
