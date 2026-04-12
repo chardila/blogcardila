@@ -99,7 +99,8 @@ export default defineConfig({
 		optimizeDeps: {
 			exclude: ["@resvg/resvg-js"],
 		},
-		plugins: [tailwind(), rawFonts([".ttf", ".woff"])],
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		plugins: [tailwind(), rawFonts([".ttf", ".woff"])] as any[],
 	},
 	env: {
 		schema: {
