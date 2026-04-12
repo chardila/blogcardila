@@ -146,7 +146,7 @@ import Giscus from '@/components/Giscus.astro';
 ## Installation in Another Project
 
 ### Prerequisites
-- Astro project (v4 or v5)
+- Astro project (v5 or v6)
 - Node.js and npm/pnpm
 
 ### Step 1: Copy Component Files

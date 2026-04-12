@@ -66,7 +66,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [master]
+    branches: [ master ]
   workflow_dispatch:
 
 permissions:
@@ -78,20 +78,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout your repository using git
+        uses: actions/checkout@v6
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version: 22
 
       - name: Install dependencies
-        run: |
-          cd blog
-          npm ci
+        run: npm ci
 
-      - name: Build with environment variables
+      - name: Build Astro site
+        run: npm run build
         env:
           CLOUDFLARE_ANALYTICS_TOKEN: ${{ secrets.CLOUDFLARE_ANALYTICS_TOKEN }}
           OMDB_API_KEY: ${{ secrets.OMDB_API_KEY }}
@@ -100,14 +99,11 @@ jobs:
           WEBMENTION_API_KEY: ${{ secrets.WEBMENTION_API_KEY }}
           WEBMENTION_URL: ${{ secrets.WEBMENTION_URL }}
           WEBMENTION_PINGBACK: ${{ secrets.WEBMENTION_PINGBACK }}
-        run: |
-          cd blog
-          npm run build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5.0.0
         with:
-          path: ./blog/dist
+          path: ./dist
 
   deploy:
     needs: build
@@ -118,8 +114,10 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 ```
+
+**Note:** This project includes a `.npmrc` file with `legacy-peer-deps=true` to resolve peer dependency conflicts introduced by the Astro 6 upgrade. Do not remove this file.
 
 3. **Enable GitHub Pages:**
    - Go to **Settings** > **Pages**

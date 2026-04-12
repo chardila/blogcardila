@@ -10,7 +10,7 @@ This blog contains personal thoughts, movie reviews, technology articles, and va
 
 ## Tech Stack
 
-- **Framework**: [Astro](https://astro.build) v5
+- **Framework**: [Astro](https://astro.build) v6
 - **Theme**: [Astro Cactus](https://github.com/chrismwilliams/astro-theme-cactus)
 - **Styling**: Tailwind CSS v4
 - **Deployment**: GitHub Pages
