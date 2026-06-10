@@ -9,7 +9,7 @@ coverImage:
   alt: "LLM Wiki: el patrón de Karpathy que cambió mis notas"
 ---
 
-Hace un tiempo caí en un artículo de Wyndo en The AI Maker que describe cómo tomó el concepto de "LLM Wiki" de Andrej Karpathy y lo implementó como un segundo cerebro personal en Obsidian. No sería la primera vez que leo sobre sistemas de notas, pero este tenía algo diferente: describía exactamente lo que yo estaba intentando construir, sin saberlo.
+Hace un tiempo caí en [un artículo de Wyndo en The AI Maker](https://aimaker.substack.com/p/llm-wiki-obsidian-knowledge-base-andrej-karphaty) que describe cómo tomó el concepto de "LLM Wiki" de Andrej Karpathy y lo implementó como un segundo cerebro personal en Obsidian. No sería la primera vez que leo sobre sistemas de notas, pero este tenía algo diferente: describía exactamente lo que yo estaba intentando construir, sin saberlo.
 
 El argumento de partida es directo: las herramientas tradicionales de notas fracasan porque el costo de mantenimiento manual crece más rápido que el valor que producen. Cada nota que agregas crea deuda cognitiva. Con el tiempo, el sistema se vuelve tan pesado que prefieres no usarlo.
 
