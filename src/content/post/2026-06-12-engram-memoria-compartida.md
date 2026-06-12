@@ -3,7 +3,7 @@ title: "Engram: memoria compartida entre humanos e IA"
 description: "Cómo construí un sistema de memoria personal sobre Obsidian y Claude Code para que cada conversación con la IA no empiece desde cero."
 publishDate: "2026-06-12"
 tags: [ia, obsidian, productividad, claude-code]
-draft: true
+draft: false
 coverImage:
   src: "../../assets/images/2026-06-12-engram-memoria-compartida.png"
   alt: "Engram: memoria compartida entre humanos e IA"
