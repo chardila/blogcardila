@@ -54,3 +54,29 @@ La solución final no fue especialmente sofisticada: una base de datos PostgreSQ
 También me recordó algo que he aprendido varias veces a lo largo de mi carrera: la mejor forma de entender una tecnología es construir algo con ella. Leer sobre IA generativa ayuda, pero enfrentarse a problemas reales de contexto, calidad de datos, costos y precisión enseña mucho más.
 
 Al final, el proyecto terminó siendo menos sobre fútbol y más sobre aprendizaje. Me permitió experimentar con técnicas modernas de desarrollo asistido por IA, validar ideas rápidamente y comprobar que hoy es posible construir prototipos útiles en cuestión de horas, algo que hace pocos años habría tomado días o semanas. Hace algunos años probablemente no me habría animado a construir algo así — no porque fuera especialmente complejo, sino porque reunir todas las piezas e integrarlas requería una inversión considerable de tiempo. Hoy los LLMs no solo ayudan a escribir código; también reducen significativamente el costo de explorar ideas. Es algo que he seguido explorando con [Engram](https://blog.cardila.com/posts/2026-06-12-engram-memoria-compartida), un sistema donde Claude actúa como participante activo del flujo de trabajo, no solo como asistente de código.
+
+## Conceptos
+
+### Ingeniería de Contexto
+
+Es darle a la IA toda la información que necesita, en el formato correcto y en el momento preciso, para que pueda realizar una tarea específica sin necesidad de múltiples aclaraciones o preguntas adicionales.
+
+### Fine-tuning
+
+El fine-tuning (o ajuste fino) consiste en reentrenar parcialmente un modelo previamente entrenado utilizando datos específicos de un dominio o tarea. Durante este proceso se modifican los pesos del modelo, alterando permanentemente su comportamiento para adaptarlo mejor al problema que queremos resolver.
+
+### RAG (Retrieval-Augmented Generation)
+
+RAG significa "Retrieval-Augmented Generation" o "Generación Aumentada por Recuperación".
+
+Consiste en proporcionar al modelo información específica y actualizada en tiempo de ejecución para que genere respuestas basadas en esos datos, además del conocimiento adquirido durante su entrenamiento original.
+
+### Prompt Engineering
+
+El prompt engineering es la práctica de diseñar, refinar y optimizar las instrucciones proporcionadas a un modelo de IA con el objetivo de obtener respuestas más precisas, útiles y consistentes.
+
+### Schema Linking
+
+El schema linking es una técnica utilizada en sistemas Text-to-SQL que permite relacionar una consulta en lenguaje natural con las tablas y columnas relevantes de una base de datos.
+
+Gracias a este proceso, el modelo puede identificar qué información necesita consultar y generar consultas SQL correctas para responder la pregunta del usuario.
