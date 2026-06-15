@@ -5,7 +5,7 @@
 <div id="disqus_thread" class="mt-8"></div>
 
 <script is:inline>
-	var disqus_config = function () {
+	window.disqus_config = function () {
 		this.page.url = window.location.href;
 		this.page.identifier = window.location.pathname;
 	};
@@ -13,7 +13,7 @@
 		var d = document,
 			s = d.createElement("script");
 		s.src = "https://blogcardila.disqus.com/embed.js";
-		s.setAttribute("data-timestamp", +new Date());
+		s.setAttribute("data-timestamp", String(+new Date()));
 		(d.head || d.body).appendChild(s);
 	})();
 </script>
