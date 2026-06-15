@@ -4,7 +4,7 @@ import { type CollectionEntry, render } from "astro:content";
 import Masthead from "@/components/blog/Masthead.astro";
 import TOC from "@/components/blog/TOC.astro";
 import WebMentions from "@/components/blog/webmentions/index.astro";
-import Giscus from "@/components/Giscus.astro";
+import Disqus from "@/components/Disqus.astro";
 
 import BaseLayout from "./Base.astro";
 
@@ -37,7 +37,7 @@ const readingTime: string = remarkPluginFrontmatter.readingTime;
 			>
 				<slot />
 				<WebMentions />
-				<Giscus />
+				<Disqus />
 			</div>
 		</div>
 	</article>
