@@ -38,6 +38,7 @@ jobs:
           WEBMENTION_API_KEY: ${{ secrets.WEBMENTION_API_KEY }}
           WEBMENTION_URL: ${{ secrets.WEBMENTION_URL }}
           WEBMENTION_PINGBACK: ${{ secrets.WEBMENTION_PINGBACK }}
+          PUBLIC_COMMENTS_API: https://blog-comments-worker.carlos-ardila-account.workers.dev
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5.0.0
