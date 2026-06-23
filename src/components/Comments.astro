@@ -54,7 +54,11 @@ const COMMENTS_API = import.meta.env.PUBLIC_COMMENTS_API ?? 'http://localhost:87
 			<div class="rounded border border-[var(--theme-accent)] bg-[var(--theme-bg-offset)] p-4 text-sm text-[var(--theme-text)]">
 				<p class="font-medium">¡Revisa tu email!</p>
 				<p class="mt-1 text-[var(--theme-text-lighter)]">
-					Te enviamos un enlace de verificación. Haz clic en él y vuelve aquí para comentar.
+					Te enviamos un enlace de verificación. Haz clic en él <strong>en este mismo browser</strong> para comentar.
+				</p>
+				<p class="mt-2 text-[var(--theme-text-lighter)]">
+					¿El link abrió en otro browser? Copia la URL del email y pégala aquí, o
+					<button id="retry-auth-btn" class="underline hover:text-[var(--theme-text)]">solicita un nuevo enlace</button>.
 				</p>
 			</div>
 		</div>
@@ -307,6 +311,12 @@ const COMMENTS_API = import.meta.env.PUBLIC_COMMENTS_API ?? 'http://localhost:87
 			btn.disabled = false;
 			btn.textContent = 'Publicar comentario';
 		}
+	});
+
+	// ── Retry auth ───────────────────────────────────────────────────────────
+
+	document.getElementById('retry-auth-btn')?.addEventListener('click', () => {
+		showPanel('auth-panel');
 	});
 
 	// ── Logout ───────────────────────────────────────────────────────────────
