@@ -1,6 +1,6 @@
 import fs from "node:fs";
 // Rehype plugins
-import { rehypeHeadingIds } from "@astrojs/markdown-remark";
+import { rehypeHeadingIds, unified } from "@astrojs/markdown-remark";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@tailwindcss/vite";
@@ -73,31 +73,38 @@ export default defineConfig({
 		}),
 	],
 	markdown: {
-
-		rehypePlugins: [
-			rehypeHeadingIds,
-			[rehypeAutolinkHeadings, { behavior: "wrap", properties: { className: ["not-prose"] } }],
-			[
-				rehypeExternalLinks,
-				{
-					rel: ["noreferrer", "noopener"],
-					target: "_blank",
-				},
+		processor: unified({
+			rehypePlugins: [
+				rehypeHeadingIds,
+				[rehypeAutolinkHeadings, { behavior: "wrap", properties: { className: ["not-prose"] } }],
+				[
+					rehypeExternalLinks,
+					{
+						rel: ["noreferrer", "noopener"],
+						target: "_blank",
+					},
+				],
+				rehypeUnwrapImages,
+				rehypeKatex,
+				rehypeLightbox,
 			],
-			rehypeUnwrapImages,
-			rehypeKatex,
-			rehypeLightbox,
-		],
-		remarkPlugins: [remarkLightboxSyntax, remarkReadingTime, remarkDirective, remarkGithubCard, remarkAdmonitions, remarkMath],
-		remarkRehype: {
-			footnoteLabelProperties: {
-				className: [""],
+			remarkPlugins: [remarkLightboxSyntax, remarkReadingTime, remarkDirective, remarkGithubCard, remarkAdmonitions, remarkMath],
+			remarkRehype: {
+				footnoteLabelProperties: {
+					className: [""],
+				},
 			},
-		},
+		}),
 	},
 	vite: {
 		optimizeDeps: {
 			exclude: ["@resvg/resvg-js"],
+			include: ["@pagefind/default-ui"],
+		},
+		server: {
+			watch: {
+				ignored: ["**/.data/**"],
+			},
 		},
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		plugins: [tailwind(), rawFonts([".ttf", ".woff"])] as any[],
