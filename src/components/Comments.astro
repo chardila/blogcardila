@@ -1,0 +1,322 @@
+---
+const COMMENTS_API = import.meta.env.PUBLIC_COMMENTS_API ?? 'http://localhost:8787';
+---
+
+<section class="comments-section mt-12 border-t border-[var(--theme-divider)] pt-8">
+	<h2 class="mb-6 text-xl font-semibold text-[var(--theme-text)]">Comentarios</h2>
+
+	<div id="comments-list" class="mb-8 space-y-6">
+		<p class="text-sm text-[var(--theme-text-lighter)] italic">Cargando comentarios...</p>
+	</div>
+
+	<div id="comments-ui">
+		<!-- Estado: no autenticado -->
+		<div id="auth-panel">
+			<p class="mb-4 text-sm text-[var(--theme-text-lighter)]">
+				Deja un comentario. Solo necesitas verificar tu email una vez.
+			</p>
+			<form id="auth-form" class="flex flex-col gap-3 sm:flex-row sm:items-end">
+				<div class="flex flex-1 flex-col gap-1">
+					<label for="input-name" class="text-xs font-medium text-[var(--theme-text)]">Nombre</label>
+					<input
+						id="input-name"
+						type="text"
+						name="name"
+						placeholder="Tu nombre"
+						required
+						maxlength="60"
+						class="rounded border border-[var(--theme-divider)] bg-[var(--theme-bg-offset)] px-3 py-2 text-sm text-[var(--theme-text)] placeholder:text-[var(--theme-text-lighter)] focus:outline-none focus:ring-2 focus:ring-[var(--theme-accent)]"
+					/>
+				</div>
+				<div class="flex flex-1 flex-col gap-1">
+					<label for="input-email" class="text-xs font-medium text-[var(--theme-text)]">Email</label>
+					<input
+						id="input-email"
+						type="email"
+						name="email"
+						placeholder="tu@email.com"
+						required
+						class="rounded border border-[var(--theme-divider)] bg-[var(--theme-bg-offset)] px-3 py-2 text-sm text-[var(--theme-text)] placeholder:text-[var(--theme-text-lighter)] focus:outline-none focus:ring-2 focus:ring-[var(--theme-accent)]"
+					/>
+				</div>
+				<button
+					type="submit"
+					class="shrink-0 rounded bg-[var(--theme-accent)] px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-80 disabled:opacity-50"
+				>
+					Enviar magic link
+				</button>
+			</form>
+			<p id="auth-error" class="mt-2 hidden text-sm text-red-500"></p>
+		</div>
+
+		<!-- Estado: esperando verificación -->
+		<div id="awaiting-panel" class="hidden">
+			<div class="rounded border border-[var(--theme-accent)] bg-[var(--theme-bg-offset)] p-4 text-sm text-[var(--theme-text)]">
+				<p class="font-medium">¡Revisa tu email!</p>
+				<p class="mt-1 text-[var(--theme-text-lighter)]">
+					Te enviamos un enlace de verificación. Haz clic en él y vuelve aquí para comentar.
+				</p>
+			</div>
+		</div>
+
+		<!-- Estado: autenticado -->
+		<div id="comment-panel" class="hidden">
+			<p id="greeting" class="mb-3 text-sm text-[var(--theme-text-lighter)]"></p>
+			<form id="comment-form" class="flex flex-col gap-3">
+				<textarea
+					id="comment-content"
+					name="content"
+					placeholder="Escribe tu comentario..."
+					required
+					maxlength="2000"
+					rows="4"
+					class="w-full rounded border border-[var(--theme-divider)] bg-[var(--theme-bg-offset)] px-3 py-2 text-sm text-[var(--theme-text)] placeholder:text-[var(--theme-text-lighter)] focus:outline-none focus:ring-2 focus:ring-[var(--theme-accent)] resize-y"
+				></textarea>
+				<div class="flex items-center gap-3">
+					<button
+						type="submit"
+						class="rounded bg-[var(--theme-accent)] px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-80 disabled:opacity-50"
+					>
+						Publicar comentario
+					</button>
+					<button
+						type="button"
+						id="logout-btn"
+						class="text-xs text-[var(--theme-text-lighter)] underline hover:text-[var(--theme-text)]"
+					>
+						Cerrar sesión
+					</button>
+				</div>
+				<p id="comment-error" class="hidden text-sm text-red-500"></p>
+			</form>
+		</div>
+	</div>
+</section>
+
+<script is:inline define:vars={{ COMMENTS_API }}>
+	const API = COMMENTS_API;
+	const JWT_KEY = 'blog_comments_jwt';
+	const NAME_KEY = 'blog_comments_name';
+
+	function getSlug() {
+		return window.location.pathname.replace(/\/$/, '') || '/';
+	}
+
+	function getJWT() {
+		return localStorage.getItem(JWT_KEY);
+	}
+
+	function getName() {
+		return localStorage.getItem(NAME_KEY) ?? '';
+	}
+
+	function setSession(jwt, name) {
+		localStorage.setItem(JWT_KEY, jwt);
+		localStorage.setItem(NAME_KEY, name);
+	}
+
+	function clearSession() {
+		localStorage.removeItem(JWT_KEY);
+		localStorage.removeItem(NAME_KEY);
+	}
+
+	// ── Panels ──────────────────────────────────────────────────────────────
+
+	function showPanel(id) {
+		for (const panel of ['auth-panel', 'awaiting-panel', 'comment-panel']) {
+			document.getElementById(panel).classList.toggle('hidden', panel !== id);
+		}
+	}
+
+	// ── Render comments ─────────────────────────────────────────────────────
+
+	function renderComments(comments) {
+		const list = document.getElementById('comments-list');
+		if (!comments.length) {
+			list.innerHTML = '<p class="text-sm italic text-[var(--theme-text-lighter)]">Sé el primero en comentar.</p>';
+			return;
+		}
+		list.innerHTML = comments
+			.map((c) => {
+				const date = new Date(c.created_at).toLocaleDateString('es', {
+					year: 'numeric',
+					month: 'short',
+					day: 'numeric',
+				});
+				return `<div class="rounded border border-[var(--theme-divider)] bg-[var(--theme-bg-offset)] p-4">
+					<div class="mb-2 flex items-center gap-2">
+						<span class="text-sm font-medium text-[var(--theme-text)]">${escHtml(c.author_name)}</span>
+						<span class="text-xs text-[var(--theme-text-lighter)]">${date}</span>
+					</div>
+					<p class="text-sm text-[var(--theme-text)] whitespace-pre-wrap">${escHtml(c.content)}</p>
+				</div>`;
+			})
+			.join('');
+	}
+
+	function appendComment(comment) {
+		const list = document.getElementById('comments-list');
+		const placeholder = list.querySelector('p');
+		if (placeholder) placeholder.remove();
+		const date = new Date(comment.created_at).toLocaleDateString('es', {
+			year: 'numeric',
+			month: 'short',
+			day: 'numeric',
+		});
+		const div = document.createElement('div');
+		div.className = 'rounded border border-[var(--theme-divider)] bg-[var(--theme-bg-offset)] p-4';
+		div.innerHTML = `<div class="mb-2 flex items-center gap-2">
+				<span class="text-sm font-medium text-[var(--theme-text)]">${escHtml(comment.author_name)}</span>
+				<span class="text-xs text-[var(--theme-text-lighter)]">${date}</span>
+			</div>
+			<p class="text-sm text-[var(--theme-text)] whitespace-pre-wrap">${escHtml(comment.content)}</p>`;
+		list.appendChild(div);
+	}
+
+	function escHtml(str) {
+		return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+	}
+
+	// ── Load comments ────────────────────────────────────────────────────────
+
+	async function loadComments() {
+		try {
+			const res = await fetch(`${API}/api/comments?slug=${encodeURIComponent(getSlug())}`);
+			const data = await res.json();
+			renderComments(Array.isArray(data) ? data : []);
+		} catch {
+			document.getElementById('comments-list').innerHTML =
+				'<p class="text-sm text-red-500">No se pudieron cargar los comentarios.</p>';
+		}
+	}
+
+	// ── Magic link verification (runs on page load if ?comment_token present) ──
+
+	async function checkMagicToken() {
+		const params = new URLSearchParams(window.location.search);
+		const token = params.get('comment_token');
+		if (!token) return false;
+
+		// Clean the URL without reloading
+		const cleanUrl = window.location.pathname + window.location.hash;
+		history.replaceState(null, '', cleanUrl);
+
+		try {
+			const res = await fetch(`${API}/api/auth/verify?token=${encodeURIComponent(token)}`);
+			const data = await res.json();
+			if (res.ok && data.jwt) {
+				setSession(data.jwt, data.name);
+				return true;
+			}
+		} catch {
+			// fall through to unauthenticated state
+		}
+		return false;
+	}
+
+	// ── Init ─────────────────────────────────────────────────────────────────
+
+	async function init() {
+		await loadComments();
+
+		const verified = await checkMagicToken();
+
+		if (verified || getJWT()) {
+			showPanel('comment-panel');
+			document.getElementById('greeting').textContent = `Comentando como ${getName()}.`;
+		} else {
+			showPanel('auth-panel');
+		}
+	}
+
+	// ── Auth form ────────────────────────────────────────────────────────────
+
+	document.getElementById('auth-form').addEventListener('submit', async (e) => {
+		e.preventDefault();
+		const form = e.target;
+		const name = form.querySelector('#input-name').value.trim();
+		const email = form.querySelector('#input-email').value.trim();
+		const btn = form.querySelector('button[type="submit"]');
+		const errEl = document.getElementById('auth-error');
+
+		btn.disabled = true;
+		btn.textContent = 'Enviando...';
+		errEl.classList.add('hidden');
+
+		try {
+			const res = await fetch(`${API}/api/auth/magic-link`, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ email, name }),
+			});
+			const data = await res.json();
+			if (res.ok) {
+				showPanel('awaiting-panel');
+			} else {
+				errEl.textContent = data.error ?? 'Error al enviar el enlace.';
+				errEl.classList.remove('hidden');
+			}
+		} catch {
+			errEl.textContent = 'Error de red. Inténtalo de nuevo.';
+			errEl.classList.remove('hidden');
+		} finally {
+			btn.disabled = false;
+			btn.textContent = 'Enviar magic link';
+		}
+	});
+
+	// ── Comment form ─────────────────────────────────────────────────────────
+
+	document.getElementById('comment-form').addEventListener('submit', async (e) => {
+		e.preventDefault();
+		const content = document.getElementById('comment-content').value.trim();
+		const btn = e.target.querySelector('button[type="submit"]');
+		const errEl = document.getElementById('comment-error');
+
+		btn.disabled = true;
+		btn.textContent = 'Publicando...';
+		errEl.classList.add('hidden');
+
+		try {
+			const res = await fetch(`${API}/api/comments`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					Authorization: `Bearer ${getJWT()}`,
+				},
+				body: JSON.stringify({ slug: getSlug(), content }),
+			});
+			const data = await res.json();
+
+			if (res.status === 401) {
+				clearSession();
+				showPanel('auth-panel');
+				return;
+			}
+			if (res.ok) {
+				appendComment(data);
+				document.getElementById('comment-content').value = '';
+			} else {
+				errEl.textContent = data.error ?? 'Error al publicar el comentario.';
+				errEl.classList.remove('hidden');
+			}
+		} catch {
+			errEl.textContent = 'Error de red. Inténtalo de nuevo.';
+			errEl.classList.remove('hidden');
+		} finally {
+			btn.disabled = false;
+			btn.textContent = 'Publicar comentario';
+		}
+	});
+
+	// ── Logout ───────────────────────────────────────────────────────────────
+
+	document.getElementById('logout-btn').addEventListener('click', () => {
+		clearSession();
+		showPanel('auth-panel');
+		document.getElementById('input-name').value = '';
+		document.getElementById('input-email').value = '';
+	});
+
+	init();
+</script>
