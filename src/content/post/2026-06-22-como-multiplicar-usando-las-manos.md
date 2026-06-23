@@ -3,7 +3,7 @@ title: "Cómo multiplicar usando las manos"
 description: "Dos trucos con los dedos para multiplicar por 9 y entre 6 y 10, sin necesitar memorizar las tablas. Útil para niños que aprenden diferente."
 publishDate: "2026-06-22"
 tags: [educación, matemáticas, niños]
-draft: true
+draft: false
 coverImage:
   src: "../../assets/images/2026-06-22-como-multiplicar-usando-las-manos.png"
   alt: "Cómo multiplicar usando las manos"
