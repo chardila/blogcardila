@@ -14,7 +14,7 @@ This blog contains personal thoughts, movie reviews, technology articles, and va
 - **Theme**: [Astro Cactus](https://github.com/chrismwilliams/astro-theme-cactus)
 - **Styling**: Tailwind CSS v4
 - **Deployment**: GitHub Pages
-- **Comments**: Giscus (GitHub Discussions)
+- **Comments**: Custom system (Cloudflare Workers + D1 + Workers AI + Resend)
 
 ## Key Features
 
@@ -35,9 +35,81 @@ This blog includes several custom Astro components designed for rich content:
 - **MovieTrailerCard**: Display movie info with trailers from TMDB
 - **MovieCard**: Display movie info from OMDB
 - **BGGCard**: Display board game info from BoardGameGeek
-- **Giscus**: GitHub Discussions-based comments
+- **Comments**: Custom email magic-link comment system (see below)
 
 📖 **[See CUSTOM_COMPONENTS.md for detailed documentation and installation instructions](./CUSTOM_COMPONENTS.md)**
+
+## Comment System
+
+The blog uses a custom comment system built on Cloudflare's free tier, replacing Giscus (which required a GitHub account). Visitors can comment using only their name and email — no account needed.
+
+### Architecture
+
+```
+blog.cardila.com (GitHub Pages, static)
+  └─ Comments.astro (vanilla JS component)
+       ├─ GET  /api/comments?slug=…      ─┐
+       ├─ POST /api/auth/magic-link        │  Cloudflare Worker
+       ├─ GET  /api/auth/verify?token=…   │  (blog-comments-worker)
+       └─ POST /api/comments            ─┘
+                                           ├─ D1 SQLite (users, tokens, comments)
+                                           ├─ Workers AI — Llama 3.1 8B (spam moderation)
+                                           └─ Resend API (magic link emails + notifications)
+```
+
+### Features
+
+- **Email magic link auth** — visitors enter their name and email, receive a one-time link, and stay logged in for 30 days via JWT in localStorage. No passwords stored.
+- **Nested replies** — comments can be replied to; replies appear indented below the parent comment.
+- **Two-layer moderation** — a word blocklist catches common insults instantly; the LLM (Llama 3.1 8B) handles contextual spam and hate speech.
+- **Owner notifications** — an email is sent to `carlos@ardila.com.co` whenever a comment is approved.
+- **No cold starts** — Cloudflare Workers never pause (unlike Supabase free tier).
+
+### Auth Flow
+
+1. Visitor submits name + email → worker stores a one-time token (15 min TTL) in D1 and sends a magic link via Resend.
+2. Visitor clicks the link → token is validated, user is upserted in D1, a signed JWT (30-day expiry) is returned.
+3. JWT stored in `localStorage`; subsequent visits skip auth automatically.
+
+### Worker setup (local, not tracked in GitHub)
+
+The Cloudflare Worker lives in `../comments-worker/` relative to this directory. To deploy changes:
+
+```bash
+# Apply D1 migrations
+npx wrangler d1 migrations apply blog-comments --remote --config ../comments-worker/wrangler.toml
+
+# Deploy worker
+npx wrangler deploy --config ../comments-worker/wrangler.toml
+
+# Delete all comments (admin)
+npx wrangler d1 execute blog-comments --remote --command "DELETE FROM comments;" --config ../comments-worker/wrangler.toml
+```
+
+Required secrets (set via `wrangler secret put`):
+- `JWT_SECRET` — random string used to sign JWTs
+- `RESEND_API_KEY` — from resend.com
+- `BLOG_URL` — `https://blog.cardila.com`
+
+### Environment variable for the build
+
+`PUBLIC_COMMENTS_API` is baked in at build time via `.github/workflows/deploy.yml`. The component reads it with `import.meta.env.PUBLIC_COMMENTS_API`.
+
+### D1 Schema
+
+```sql
+CREATE TABLE users        (id, email UNIQUE, name, created_at);
+CREATE TABLE magic_tokens (id, email, name, token UNIQUE, expires_at, used);
+CREATE TABLE comments     (id, post_slug, user_id, author_name, content,
+                           status DEFAULT 'approved', moderation_note,
+                           parent_id REFERENCES comments(id), created_at);
+```
+
+### Sending domain
+
+Magic links and notifications are sent from `noreply@notificaciones.cardila.com` (verified subdomain in Resend to avoid conflicts with existing email on `cardila.com.co`).
+
+---
 
 ## Image Lightbox & Optimization
 
