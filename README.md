@@ -73,17 +73,17 @@ blog.cardila.com (GitHub Pages, static)
 
 ### Worker setup (local, not tracked in GitHub)
 
-The Cloudflare Worker lives in `../comments-worker/` relative to this directory. To deploy changes:
+The Cloudflare Worker lives in `comments-worker/` inside this repo. To deploy changes:
 
 ```bash
 # Apply D1 migrations
-npx wrangler d1 migrations apply blog-comments --remote --config ../comments-worker/wrangler.toml
+npx wrangler d1 migrations apply blog-comments --remote --config comments-worker/wrangler.toml
 
 # Deploy worker
-npx wrangler deploy --config ../comments-worker/wrangler.toml
+npx wrangler deploy --config comments-worker/wrangler.toml
 
 # Delete all comments (admin)
-npx wrangler d1 execute blog-comments --remote --command "DELETE FROM comments;" --config ../comments-worker/wrangler.toml
+npx wrangler d1 execute blog-comments --remote --command "DELETE FROM comments;" --config comments-worker/wrangler.toml
 ```
 
 Required secrets (set via `wrangler secret put`):

@@ -1,0 +1,22 @@
+name = "blog-comments-worker"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+preview_urls = false
+
+[[d1_databases]]
+binding = "blog_comments"
+database_name = "blog-comments"
+database_id = "e0821f59-2f2b-488c-8c0c-37b37bb46da7"
+
+[ai]
+binding = "AI"
+
+[vars]
+ALLOWED_ORIGIN = "https://blog.cardila.com"
+
+# Secrets (set via wrangler secret put):
+# RESEND_API_KEY
+# JWT_SECRET
+# BLOG_URL  (base URL for magic link redirect, e.g. https://cardila.com.co)
