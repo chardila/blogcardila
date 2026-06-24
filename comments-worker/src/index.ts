@@ -172,10 +172,9 @@ async function moderateComment(env: Env, content: string): Promise<{ verdict: 'a
 				return parsed as { verdict: 'approved' | 'spam'; reason: string };
 			}
 		}
-		// If the LLM response can't be parsed, default to approved to avoid false positives
-		return { verdict: 'approved', reason: 'moderation parse fallback' };
+		return { verdict: 'spam', reason: 'moderación no disponible' };
 	} catch {
-		return { verdict: 'approved', reason: 'moderation error fallback' };
+		return { verdict: 'spam', reason: 'moderación no disponible' };
 	}
 }
 
