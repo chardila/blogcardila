@@ -9,7 +9,7 @@
     "migrate:remote": "wrangler d1 execute blog-comments --remote --file=./migrations/001_initial.sql"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20250620.0",
+    "@cloudflare/workers-types": "^5.20260823.1",
     "typescript": "^5.9.3",
     "wrangler": "^4.114.0"
   }
