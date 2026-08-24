@@ -5,10 +5,27 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "npm"
+    directory: "/"
     schedule:
       interval: "monthly"
-    allow:
-      - dependency-type: "direct"
     open-pull-requests-limit: 20
+    groups:
+      minor-patch:
+        update-types:
+          - "minor"
+          - "patch"
+    # Major bumps are NOT grouped: each lands in its own PR for individual
+    # review, per the risk policy in /dependabot-review
+    # (docs/superpowers/specs/2026-08-24-dependabot-workflow-design.md).
+
+  - package-ecosystem: "npm"
+    directory: "/comments-worker"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 10
+    groups:
+      minor-patch:
+        update-types:
+          - "minor"
+          - "patch"
